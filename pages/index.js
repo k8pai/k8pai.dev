@@ -107,8 +107,8 @@ export default function Home() {
 				<br />
 				<br />
 				<div className=' w-full grid grid-cols-2 md:grid-cols-1 sm:grid-cols-1 xsm:grid-cols-1 grid-flow-rows gap-4 place-items-center'>
-					<Works name={'Todolist'} desc={"This is a sample crud operations project to showcase my skills."} date={'16 Dec 2022'} link={'http://todolist-k8pai.vercel.app'} />
-					<Works name={'SpiritWolf'} desc={"This is an NFT project I worked on with Web3 works included."} date={'13 July 2022'} link={'http://spiritwolf.vercel.app'} />
+					<Works name={'Todolist'} desc={"This is a sample crud operations project to showcase my skills."} date={'16 Dec 2022'} link={'http://todolist-k8pai.vercel.app'} imgLink="/todolist.png" />
+					<Works name={'SpiritWolf'} desc={"This is an NFT project I worked on with Web3 works included."} date={'13 July 2022'} link={'http://spiritwolf.vercel.app'} imgLink="/spiritwolf.png" />
 					{/* <Works name={'Todolist'} desc={"This is a sample crud operations project to showcase my skills."} date={'16 Dec 2022'} link={'http://todolist-k8pai.vercel.app'} /> */}
 					{/* <Works name={'Todolist'} desc={"This is a sample crud operations project to showcase my skills."} date={'16 Dec 2022'} link={'http://todolist-k8pai.vercel.app'} /> */}
 				</div>
