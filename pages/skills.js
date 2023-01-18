@@ -17,6 +17,8 @@ const skills = () => {
 			<div className=' w-full grid grid-cols-2 md:grid-cols-1 sm:grid-cols-1 xsm:grid-cols-1 grid-flow-rows gap-4 place-items-center'>
 				<Certificate name={'Internet Fundamentals'} from={"Codedamn Community"} date={'12 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/BasicsOfWeb.jpg"} />
 				<Certificate name={'HTML and CSS'} from={"Codedamn Community"} date={'17 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/HtmlAndCss.jpg"} />
+				<Certificate name={'Git and Github'} from={"Codedamn Community"} date={'18 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/GitVersionControl.jpg"} />
+				<Certificate name={'NPM'} from={"Codedamn Community"} date={'18 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/NodePackageManager.jpg"} />
 				
 			</div>
 			
