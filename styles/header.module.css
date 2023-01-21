@@ -1,0 +1,15 @@
+.scroll-down header {
+    transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up header {
+    position: fixed;
+    background-color: black;
+    filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
+}
+.scroll-up header ul li a{
+    color: white;
+}
+.scroll-up header ul li a:after{
+    background-color: white;
+}

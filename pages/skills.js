@@ -1,11 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
-import { IconContext } from 'react-icons'
-import { AiOutlineGithub, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail, AiOutlineTwitter } from 'react-icons/ai'
-import { SiDiscord } from 'react-icons/si'
 import Certificate from '../components/Certificate'
-import Works from '../components/Works'
 
 const skills = () => {
   return (
@@ -19,7 +13,11 @@ const skills = () => {
 				<Certificate name={'HTML and CSS'} from={"Codedamn Community"} date={'17 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/HtmlAndCss.jpg"} />
 				<Certificate name={'Git and Github'} from={"Codedamn Community"} date={'18 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/GitVersionControl.jpg"} />
 				<Certificate name={'NPM'} from={"Codedamn Community"} date={'18 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/NodePackageManager.jpg"} />
-				
+				<Certificate name={'Basic Javascript Concepts'} from={"UpGrad Campus"} date={'18 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/BasicJavascript.png"} />
+				<Certificate name={'Advanced Javascript'} from={"UpGrad Campus"} date={'18 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/AdvancedJavascript.png"} />
+				<Certificate name={'Chrome Dev Tools'} from={"UpGrad Campus"} date={'18 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/ChromeDevTools.jpg"} />
+				<Certificate name={'Introduction CryptCurrency'} from={"UpGrad Campus"} date={'18 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/CryptoCurrecyIntroduction.png"} />
+				<Certificate name={'Google Cloud Program'} from={"Google Cloud"} date={'18 July 2021'} link={''} imgLink={"/certificates/GoogleCloudCertification.jpg"} />
 			</div>
 			
 		</div>
