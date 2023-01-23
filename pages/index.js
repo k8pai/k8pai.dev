@@ -8,6 +8,9 @@ import { AiOutlineInstagram, AiOutlineGithub, AiOutlineTwitter, AiOutlineLinkedi
 import { SiDiscord } from 'react-icons/si';
 import { IconContext } from 'react-icons';
 import { BootstrapIcon, ExpressIcon, GithubIcon, GitIcon, HtmlIcon, JavaScriptIcon, Logok8pai, MongodbIcon, MysqlIcon, NextJsIcon, NodeJsIcon, PrismaIcon, ReactIcon, ScssIcon, SolidityIcon, TailwindcssIcon, TypeScriptIcon, VercelIcon, VscodeIcon, Web3Icon } from '../components/socialIcons/SocialIcons';
+import Input from '../components/Input';
+import Textarea from '../components/Textarea';
+import ContactForm from '../components/ContactForm';
 
 
 export default function Home() {
@@ -204,6 +207,16 @@ export default function Home() {
 					{/* <Works name={'Todolist'} desc={"This is a sample crud operations project to showcase my skills."} date={'16 Dec 2022'} link={'http://todolist-k8pai.vercel.app'} /> */}
 				</div>
 				
+			</div>
+
+			<div className=' w-full py-[100px]'>
+				
+				<h1 className='recent works font-fjalla uppercase font-bold tracking-widest text-center text-4xl my-6'>Contact Me</h1>
+				<br />
+				<br />
+				<div className='w-full'>
+					<ContactForm />
+				</div>
 			</div>
 		</div>
 	)
