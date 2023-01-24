@@ -3,11 +3,11 @@ import sgmail from '@sendgrid/mail'
 sgmail.setApiKey(process.env.SENDGRID_API_KEY)
 
 export default async (req, res) => {
-	if(req.method === "POST"){
+	if(req.method === 'POST'){
 		console.log(req.body);
 		const { name, email, message } = req.body;
 		const msg = {
-			to: 'thek8pai@gmail.com',
+			to: 'thek8pai@protonmail.com',
 			from: 'thek8pai@gmail.com',
 			subject: `${name.toUpperCase()} sent you a message`,
 			text: `Email => ${email}`,
@@ -15,10 +15,10 @@ export default async (req, res) => {
 		}
 		try{
 			await sgmail.send(msg)
-			res.status(200).json({ success: true })
+			res.status(200).json({ message: msg, success: true })
 		} catch (err) {
 			console.log(err)
-			res.status(200).json( { success: false })
+			res.status(200).json({ message: msg, success: false })
 		}
 	}
 }

@@ -10,7 +10,7 @@ import { IconContext } from 'react-icons';
 import { BootstrapIcon, ExpressIcon, GithubIcon, GitIcon, HtmlIcon, JavaScriptIcon, Logok8pai, MongodbIcon, MysqlIcon, NextJsIcon, NodeJsIcon, PrismaIcon, ReactIcon, ScssIcon, SolidityIcon, TailwindcssIcon, TypeScriptIcon, VercelIcon, VscodeIcon, Web3Icon } from '../components/socialIcons/SocialIcons';
 import Input from '../components/Input';
 import Textarea from '../components/Textarea';
-import ContactForm from '../components/ContactForm';
+import ContactForm from './ContactForm';
 
 
 export default function Home() {

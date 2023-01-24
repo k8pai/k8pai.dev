@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Input from './Input';
-import Textarea from './Textarea';
+import Input from '../components/Input';
+import Textarea from '../components/Textarea';
 
 export default function ContactForm() {
 	const [values, setValues] = new useState({
@@ -11,8 +11,6 @@ export default function ContactForm() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		console.log(values);
-
 		try{
 			const res = await fetch('/api/send', {
 				method: 'POST',
@@ -36,7 +34,7 @@ export default function ContactForm() {
 
 	return (
 		<div className='mx-4'>
-			<form className='w-full max-w-2xl mx-auto my-4' onSubmit={handleSubmit} method='POST'>
+			<form className='w-full max-w-2xl mx-auto my-4' onSubmit={handleSubmit}>
 				<Input value={values.name} onChange={onChange} id={'name'} name={"name"} label={'Your name'} placeholder={"Enter your name..."} type={"text"} />
 				<Input value={values.email} onChange={onChange} id={'email'} name={"email"} label={'Your email'} placeholder={"Enter your email..."} type={"text"} />
 				<Textarea value={values.message} onChange={onChange} id={'message'} name={"message"} label={'Message'} placeholder={"Enter your Message..."} />
