@@ -60,11 +60,11 @@ export default function Header() {
 						<VscTools />
 					</IconContext.Provider>
 				</Link>
-				<Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider  hover:bg-pritxt hover:dark:bg-secbg' href={'/repos'}>
+				{/* <Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider  hover:bg-pritxt hover:dark:bg-secbg' href={'/repos'}>
 					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 						<CiFolderOn />
 					</IconContext.Provider>
-				</Link>
+				</Link> */}
 				{/* <Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider  hover:bg-pritxt hover:dark:bg-secbg' href={'/spotify'}>
 					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 						<SlSocialSpotify />

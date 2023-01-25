@@ -19,6 +19,8 @@ const skills = () => {
 				<Certificate name={'Introduction CryptCurrency'} from={"UpGrad Campus"} date={'18 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/CryptoCurrecyIntroduction.png"} />
 				<Certificate name={'Google Cloud Program'} from={"Google Cloud"} date={'18 July 2021'} link={''} imgLink={"/certificates/GoogleCloudCertification.jpg"} />
 				<Certificate name={'Tailwind css v3'} from={"Codedamn Community"} date={'22 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/tailwindcssv3.jpg"} />
+				<Certificate name={'Javascript Basics'} from={"Codedamn Community"} date={'24 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/javascriptBasic.jpg"} />
+				<Certificate name={'Javascript Under the hood'} from={"Codedamn Community"} date={'25 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/javascriptUnderTheHood.jpg"} />
 			</div>
 			
 		</div>

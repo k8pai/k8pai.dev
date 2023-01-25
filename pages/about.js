@@ -42,7 +42,7 @@ function about(){
 					<BsPhone />
 					<span>+91 79946 48190</span>
 				</div>
-				<DownloadPdf link={'../public/certificates/BasicsOfWeb.pdf'} download={'BasicsOfWeb.pdf'} />
+				<DownloadPdf link={'../public/certificates/k8paiResume.pdf'} download={'k8paiResume.pdf'} />
 			</div>
 		</div>
 		<div className='flex-grow space-y-5 dark:bg-secbg bg-tertxt h-fit m-3 rounded-3xl sm:rounded-xl xsm:rounded-md shadow-xl p-8 sm:py-5 xsm:py-3'>
