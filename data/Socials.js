@@ -25,6 +25,17 @@ const socialAccounts = [
 	}
 ]
 
+const studyPlatformLinks = [
+	{
+		name: 'Showwcase',
+		url: 'https://k8pai.showwcase.com/'
+	},
+	{
+		name: 'codedamn',
+		url: 'https://codedamn.com/user/k8pai/'
+	}
+]
+
 
 const socialAccountsProfile = [
 	{
@@ -70,4 +81,4 @@ const socialAccountsProfile = [
 
 ]
 
-export {socialAccounts, socialAccountsProfile}
+export {socialAccounts, socialAccountsProfile, studyPlatformLinks}

@@ -8,7 +8,7 @@ const SkillsBar = () => {
 
 	return (
 		<div>
-			<h1 className="font-semibold text-4xl tracking-wider font-mono capitalize md:text-center sm:text-center xsm:text-center">skills</h1>
+			<h1 className="font-semibold my-4 text-4xl sm:text-2xl xsm:text-2xl tracking-wider font-mono capitalize md:text-center sm:text-center xsm:text-center">skills</h1>
 			<div className='my-px mb-4 rounded w-[80px] h-[3px] bg-terbg shadow-xl md:hidden sm:hidden xsm:hidden'></div>
 			<div className='grid grid-cols-2 sm:grid-cols-1 xsm:grid-cols-1 md:grid-cols-1 gap-6 place-items-center'>
 				{skillinfo.map(data => (
@@ -21,9 +21,9 @@ const SkillsBar = () => {
 								<IconContext.Provider value={{ size:"1.2em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 									<data.component />
 								</IconContext.Provider>
-								<Link href={data.link} className='font-semibold tracking-wider text-lg'>{data.skill}</Link>
+								<Link href={data.link} className='font-semibold tracking-wider text-lg xsm:text-base'>{data.skill}</Link>
 							</div>
-							<h4 className='font-semibold tracking-wide text-base mr-px'>{data.lvl}%</h4>
+							<h4 className='font-semibold tracking-wide text-base xsm:text-sm mr-px'>{data.lvl}%</h4>
 						</div>
 					</motion.div>
 				))}
