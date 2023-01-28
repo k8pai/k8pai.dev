@@ -37,8 +37,4 @@ next-env.d.ts
 
 # 	needs updations
 
-.env
-# pages
-
-pages/sign.js
-pages/api/send.js
+tbupdated
