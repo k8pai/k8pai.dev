@@ -52,7 +52,6 @@ const about = () => {
 						<HiOutlineLink />
 						<Link href={"https://k8pai.showwcase.com"}>showwcase </Link>
 					</div>
-					
 					<div className='flex items-center space-x-2 m-3'>
 						<HiOutlineLink />
 						<Link href={"https://codedamn.com/user/k8pai"}>codedamn</Link>
@@ -64,7 +63,7 @@ const about = () => {
 				<div className='aboutdiv'>
 					<h1 className="font-semibold text-4xl xsm:text-2xl tracking-wider font-mono capitalize">About Me</h1>
 					<div className='my-px mb-4 rounded-full w-[80px] h-[5px] bg-terbg shadow-xl'></div>
-					<div className='font-semibold text-base xsm:text-sm tracking-wide leading-relaxed'>I&apos;m looking for opportunities to use my web development skills to create functional and visually appealing websites and web applications. I have a bachelor&apos;s degree in computer science and have been working as a web developer for the past 2 years. During this time, I have gained extensive experience in HTML, CSS, and JavaScript, as well as frameworks such as ReactJS, NextJs, and also a basic knowledge of angular as well. I have also had the opportunity to work on a variety of projects, ranging from simple websites to complex web applications, and have consistently delivered high-quality work on time.</div>
+					<div className='font-semibold text-base xsm:text-sm tracking-wide leading-relaxed'>I am a web developer with experience in using technologies such as TailwindCSS, Next.js, React.js, Node.js, Java, and C++ for data structures and algorithms. I am a strong communicator and team player with leadership skills and a determination to succeed. I am passionate about constantly upgrading my skills and expanding my knowledge in the field. I am looking forward to taking on new challenges and continuing to grow as a developer.</div>
 				</div>
 				<div className='aboutdiv'>
 					<SkillsBar skills={skillinfo} />

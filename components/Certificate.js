@@ -11,6 +11,7 @@ const Certificate = ({ name, from, date, link, imgLink }) => {
 					className='w-full h-auto p-3 aspect-video rounded-xl transition duration-300'
 					src={imgLink}
 					fill='layout'
+					alt={name}
 				/>
 			</Link>
 		</div>
