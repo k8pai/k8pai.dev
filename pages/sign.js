@@ -5,7 +5,6 @@ import { useState } from "react";
 
 const prisma = new PrismaClient();
 
-
 const checkLogin = async (session) => {
 
 	if (session) {
