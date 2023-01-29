@@ -22,7 +22,6 @@ const skills = () => {
 				<Certificate name={'Javascript Basics'} from={"Codedamn Community"} date={'24 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/javascriptBasic.jpg"} />
 				<Certificate name={'Javascript Under the hood'} from={"Codedamn Community"} date={'25 Jan 2023'} link={'https://codedamn.com/user/k8pai'} imgLink={"/certificates/javascriptUnderTheHood.jpg"} />
 			</div>
-			
 		</div>
 	</div>
   )
