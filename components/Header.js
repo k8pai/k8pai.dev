@@ -6,6 +6,7 @@ import { BsSunFill, BsMoonStarsFill } from 'react-icons/bs'
 import { TbSignature } from 'react-icons/tb'
 import '../styles/header.module.css'
 import { SiAboutdotme, SiHomeadvisor } from 'react-icons/si'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import { SlSocialSpotify } from 'react-icons/sl'
 import { VscTools } from 'react-icons/vsc'
 import { CiFolderOn } from 'react-icons/ci'
@@ -43,8 +44,13 @@ export default function Header() {
 		}
 	}
 	return (
-		<div className='main-section flex justify-center items-center p-6 font-semibold transition duration-300'>
-			<ul className='flex justify-center style-none bg-tertxt dark:bg-terbg rounded-full p-2 space-x-3'>
+		<div className='main-section h-screen font-semibold transition duration-300'>
+			<ul className='h-full flex flex-col items-center space-y-5 mx-auto style-none bg-tertxt dark:bg-terbg p-2'>
+				<Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider hover:bg-pritxt hover:dark:bg-secbg' href={''}>
+					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+						<GiHamburgerMenu />
+					</IconContext.Provider>
+				</Link>
 				<Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider hover:bg-pritxt hover:dark:bg-secbg' href={'/'}>
 					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 						<SiHomeadvisor />
@@ -55,7 +61,7 @@ export default function Header() {
 						<SiAboutdotme />
 					</IconContext.Provider>
 				</Link>
-				<Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider  hover:bg-pritxt hover:dark:bg-secbg' href={'/skills'}>
+				<Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider hover:bg-pritxt hover:dark:bg-secbg' href={'/skills'}>
 					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 						<VscTools />
 					</IconContext.Provider>
