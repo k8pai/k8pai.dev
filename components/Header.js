@@ -27,45 +27,64 @@ export default function Header() {
 
 		if(currTheme == "dark"){
 			return(
-				<button className='transition duration-200 hover:shadow-xl p-3 rounded-full rotate-[-90deg] hover:bg-secbg' onClick={() => { setTheme('light') }}>
-					<IconContext.Provider value={{ color: "white", size:"1.4em", className: "global-class-name" }}>
-						<BsSunFill />
-					</IconContext.Provider>
-				</button>
+				<div>
+					<button className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' onClick={() => { setTheme('light') }}>
+						<IconContext.Provider value={{ color: "white", size:"1.4em", className: "global-class-name" }}>
+							<BsSunFill />
+						</IconContext.Provider>
+					</button>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>{theme}</p>
+				</div>
 			)
 		}else {
 			return (
-				<button className='transition duration-200 hover:shadow-xl p-3 rounded-full hover:bg-pritxt' onClick={() => { setTheme('dark') }}>
-					<IconContext.Provider value={{ color: "black", size:"1.4em", className: "global-class-name" }}>
-						<BsMoonStarsFill />
-					</IconContext.Provider>
-				</button>
+				<div>
+					<button className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50  menu-shadow' onClick={() => { setTheme('dark') }}>
+						<IconContext.Provider value={{ color: "black", size:"1.4em", className: "global-class-name" }}>
+							<BsMoonStarsFill />
+						</IconContext.Provider>
+					</button>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>{theme}</p>
+				</div>
+
 			)
 		}
 	}
 	return (
-		<div className='main-section h-screen font-semibold transition duration-300'>
-			<ul className='h-full flex flex-col items-center space-y-5 mx-auto style-none bg-tertxt dark:bg-terbg p-2'>
-				<Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider hover:bg-pritxt hover:dark:bg-secbg' href={''}>
-					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-						<GiHamburgerMenu />
-					</IconContext.Provider>
-				</Link>
-				<Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider hover:bg-pritxt hover:dark:bg-secbg' href={'/'}>
-					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-						<SiHomeadvisor />
-					</IconContext.Provider>
-				</Link>
-				<Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider hover:bg-pritxt hover:dark:bg-secbg' href={'/about'}>
-					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-						<SiAboutdotme />
-					</IconContext.Provider>
-				</Link>
-				<Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider hover:bg-pritxt hover:dark:bg-secbg' href={'/skills'}>
-					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-						<VscTools />
-					</IconContext.Provider>
-				</Link>
+		<div className='main-section font-semibold transition duration-300 mt-8'>
+			<ul className='h-full flex justify-center w-fit items-center space-x-12 rounded-full mx-auto style-none'>
+				<div className='relative flex flex-col items-center'>
+					<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={''}>
+						<IconContext.Provider className="group-hover:-translate-y-1" value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+							<GiHamburgerMenu />
+						</IconContext.Provider>
+					</Link>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>menu</p>
+				</div>
+				<div className='group relative flex flex-col items-center'>
+					<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/'}>
+						<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+							<SiHomeadvisor />
+						</IconContext.Provider>
+					</Link>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>Home</p>
+				</div>
+				<div className='group relative flex flex-col items-center'>
+					<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/about'}>
+						<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+							<SiAboutdotme />
+						</IconContext.Provider>
+					</Link>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>about</p>
+				</div>
+				<div className='group relative flex flex-col items-center'>
+					<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/skills'}>
+						<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+							<VscTools />
+						</IconContext.Provider>
+					</Link>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>skills</p>
+				</div>
 				{/* <Link className='p-3 rounded-full transition duration-300 hover:shadow-xl tracking-wider  hover:bg-pritxt hover:dark:bg-secbg' href={'/repos'}>
 					<IconContext.Provider value={{ size:"1.4em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 						<CiFolderOn />
