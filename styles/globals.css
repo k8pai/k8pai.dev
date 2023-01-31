@@ -6,6 +6,10 @@
 
 
 @layer base {
+	.link-hover:hover{
+		@apply translate-y-[-2px] scale-125;
+	}
+
 	.link-hover:hover ~ .sibling-element {
 		@apply translate-y-3 opacity-100;
 	}

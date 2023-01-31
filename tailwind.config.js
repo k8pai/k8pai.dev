@@ -25,12 +25,6 @@ module.exports = {
 			'2xl': {'min': '1536px'},
 		},
 		extend: {
-			styles: {
-			  '.link:hover ~ .sibling-element': {
-					transform: 'translateY(6px)',
-					opacity: 1,
-				},
-			},
 			fontFamily: {
 				fjalla: "'Fjalla One', sans-serif",
 			},

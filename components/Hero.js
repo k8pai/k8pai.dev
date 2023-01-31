@@ -46,7 +46,7 @@ export default function Hero({socials}) {
 	}, [])
 
 	return (
-		<div className='w-full h-[90vh] flex justify-evenly items-center'>
+		<div className='w-full h-[80vh] flex justify-evenly items-center'>
 			<div className='flex flex-col justify-center text-center w-full mx-4 mx-auto'>
 				<div className='min-h-[20vh] h-fit w-full'>
 					<h1 className="font-semibold text-4xl tracking-wider font-mono capitalize"><span ref={el}>Frontend</span></h1>
@@ -56,7 +56,7 @@ export default function Hero({socials}) {
 				</div>
 				<div className='flex justify-center sm:my-[50px] xsm:my-[50px]'>
 					{socials.map((data, ind) => (
-						<Link key={ind} className='p-2 mx-3 xsm:mx-2 xsm:p-1' href={data.url}>
+						<Link key={ind} className='transition duration-200 hover:translate-y-[-4px] hover:rotate-12 p-2 mx-3 xsm:mx-2 xsm:p-1' href={data.url}>
 							<IconContext.Provider value={{ size:"2.5em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 								<data.component />
 							</IconContext.Provider>
