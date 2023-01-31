@@ -16,13 +16,44 @@ export default function Header() {
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
-		console.log(showNav);
+		console.log(theme);
 	}, [showNav])
 	
 	useEffect(() => {
 		setMounted(true);
 	}, [])
 	const renderThemeSystem = () => {
+		if(!mounted) return null;
+
+		const currTheme = theme  === 'system' ? systemTheme : theme;
+
+		if(currTheme == "dark"){
+			return(
+				<div>
+					<button className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' onClick={() => { setTheme('light') }}>
+						<IconContext.Provider value={{ color: "white", size:"1.4em", className: "global-class-name" }}>
+							<BsSunFill />
+						</IconContext.Provider>
+					</button>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>Home</p>
+				</div>
+			)
+		}else {
+			return (
+				<div>
+					<button className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50  menu-shadow' onClick={() => { setTheme('dark') }}>
+						<IconContext.Provider value={{ color: "black", size:"1.4em", className: "global-class-name" }}>
+							<BsMoonStarsFill />
+						</IconContext.Provider>
+					</button>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>Home</p>
+				</div>
+			)
+		}
+	}
+
+	
+	const renderThemeSystemMobile = () => {
 		if(!mounted) return null;
 
 		const currTheme = theme  === 'system' ? systemTheme : theme;
@@ -53,40 +84,13 @@ export default function Header() {
 	}
 	return (
 		<div>
-			<div className='main-section sticky top-0 left-0 w-full mx-auto bg-slate-300 dark:bg-pribg font-semibold transition duration-300 py-6'>
+			<div className='mobile-verion-navigation-bar lg:hidden xl:hidden 2xl:hidden  w-full mx-auto bg-slate-300 dark:bg-secbg font-semibold transition duration-300 py-6'>
 				<ul className='h-full flex flex-col justify-between items-center rounded-full mx-4 space-y-6 style-none'>
 					<div className='w-full flex justify-between items-center'>
 						<div className='group relative flex items-center space-x-3 px-2'>
-							<Logok8pai />
+							<Logok8pai color={theme === 'dark'? true: false}/>
 						</div>
-						<div className='flex-grow space-x-6 flex justify-center items-center w-full'>
-							<div className='group relative flex flex-col items-center'>
-								<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/'}>
-									<IconContext.Provider value={{ size:"1.46em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-										<SiHomeadvisor />
-									</IconContext.Provider>
-								</Link>
-								<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>Home</p>
-							</div>
-							<div className='group relative flex flex-col items-center'>
-								<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/about'}>
-									<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-										<SiAboutdotme />
-									</IconContext.Provider>
-								</Link>
-								<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>about</p>
-							</div>
-							<div className='group relative flex flex-col items-center'>
-								<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/skills'}>
-									<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-										<VscTools />
-									</IconContext.Provider>
-								</Link>
-								<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>skills</p>
-							</div>
-							{renderThemeSystem()}
-						</div>
-						<button onClick={() => setShowNav(value => !value)} className='transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={''}>
+						<button onClick={() => setShowNav(value => !value)} className='lg:hidden xl:hidden 2xl:hidden transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={''}>
 							<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 								{showNav? <AiOutlineClose />: <AiOutlineMenu />}
 							</IconContext.Provider>
@@ -112,11 +116,54 @@ export default function Header() {
 							</IconContext.Provider>
 							<span>Skills</span>
 						</Link>
-						{renderThemeSystem()}
+						{renderThemeSystemMobile()}
 					</div>: null}
 				</ul>
 			</div>
 
+
+			<div className='desktop-verion-navigation-bar xsm:hidden sm:hidden md:hidden w-full mx-auto font-semibold transition duration-300 py-6'>
+				<ul className='h-full flex flex-col justify-between items-center rounded-full mx-4 space-y-6 style-none'>
+					<div className='flex-grow space-x-6 flex justify-center items-center w-full'>
+						<div className='group relative flex flex-col items-center'>
+							<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/'}>
+								<IconContext.Provider value={{ size:"1.46em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+									<SiHomeadvisor />
+								</IconContext.Provider>
+							</Link>
+							<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>Home</p>
+						</div>
+						<div className='group relative flex flex-col items-center'>
+							<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/about'}>
+								<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+									<SiAboutdotme />
+								</IconContext.Provider>
+							</Link>
+							<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>about</p>
+						</div>
+						<div className='group relative flex flex-col items-center'>
+							<Logok8pai className={'mx-6'} color={theme === 'dark'? true: false}/>
+							<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>skills</p>
+						</div>
+						<div className='group relative flex flex-col items-center'>
+							<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/skills'}>
+								<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+									<VscTools />
+								</IconContext.Provider>
+							</Link>
+							<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>skills</p>
+						</div>
+						{renderThemeSystem()}
+					</div>
+				</ul>
+			</div>
+
+
+
+			<div>
+				
+			
+			</div>
 		</div>
 	)
 }
