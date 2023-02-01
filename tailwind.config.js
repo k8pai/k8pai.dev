@@ -25,6 +25,19 @@ module.exports = {
 			'2xl': {'min': '1536px'},
 		},
 		extend: {
+			animation: {
+				wiggle: 'wiggle 0.5s ease-in-out 1',
+			},
+			keyframes: {
+				wiggle: {
+					'0%': { transform: 'rotate(0deg)' },
+					'20%': { transform: 'rotate(-22deg)' },
+					'40%': { transform: 'rotate(22deg)' },
+					'60%': { transform: 'rotate(-22deg)' },
+					'80%': { transform: 'rotate(22deg)' },
+					'100%': { transform: 'rotate(0deg)' },
+				}
+			},
 			styles: {
 			  '.link:hover ~ .sibling-element': {
 					transform: 'translateY(6px)',
