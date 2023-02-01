@@ -12,7 +12,7 @@ const Layout = ({children}) => {
 			<div className='layoutsection flex flex-col min-h-screen h-full mx-auto'>
 				<Header />
 				{children}
-				{/* <Footer /> */}
+				<Footer />
 			</div>
 		</div>
 	)

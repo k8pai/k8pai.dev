@@ -7,6 +7,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { SiHomeadvisor, SiAboutdotme } from 'react-icons/si'
 import { VscTools } from 'react-icons/vsc'
 import { Logok8pai } from '../components/socialIcons/SocialIcons'
+import { useRouter } from 'next/router'
 
 
 export default function Header() {
@@ -15,9 +16,11 @@ export default function Header() {
 	const [showNav, setShowNav] = useState(false);
 	const [mounted, setMounted] = useState(false);
 
-	useEffect(() => {
-		console.log(theme);
-	}, [showNav])
+	const router = useRouter()
+
+	React.useEffect(() => {
+		setShowNav(false)
+	}, [router.asPath])
 	
 	useEffect(() => {
 		setMounted(true);
@@ -35,7 +38,7 @@ export default function Header() {
 							<BsSunFill />
 						</IconContext.Provider>
 					</button>
-					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>Home</p>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>Light</p>
 				</div>
 			)
 		}else {
@@ -46,7 +49,7 @@ export default function Header() {
 							<BsMoonStarsFill />
 						</IconContext.Provider>
 					</button>
-					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>Home</p>
+					<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>Dark</p>
 				</div>
 			)
 		}
@@ -87,35 +90,42 @@ export default function Header() {
 			<div className='mobile-verion-navigation-bar lg:hidden xl:hidden 2xl:hidden  w-full mx-auto bg-slate-300 dark:bg-secbg font-semibold transition duration-300 py-6'>
 				<ul className='h-full flex flex-col justify-between items-center rounded-full mx-4 space-y-6 style-none'>
 					<div className='w-full flex justify-between items-center'>
-						<div className='group relative flex items-center space-x-3 px-2'>
-							<Logok8pai color={theme === 'dark'? true: false}/>
-						</div>
-						<button onClick={() => setShowNav(value => !value)} className='lg:hidden xl:hidden 2xl:hidden transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={''}>
+						<button onClick={() => setShowNav(value => !value)} className='lg:hidden xl:hidden 2xl:hidden menu-shadow p-2 m-px transition duration-200 rounded-lg tracking-wider z-50 flex items-center space-x-3' href={''}>
 							<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 								{showNav? <AiOutlineClose />: <AiOutlineMenu />}
 							</IconContext.Provider>
+							<span>{showNav? "Close": "Menu"}</span>
 						</button>
+						<Link href={'/'} className='group relative flex items-center space-x-3 px-2'>
+							<Logok8pai color={theme === 'dark'? true: false}/>
+						</Link>
 					</div>
 					{showNav? 
-					<div className='w-full flex flex-col items-start space-y-6'>
-						<Link className='menu-shadow p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/'}>
-							<IconContext.Provider value={{ size:"1.46em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-								<SiHomeadvisor />
-							</IconContext.Provider>
-							<span>Home</span>
-						</Link>
-						<Link className='menu-shadow p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/about'}>
-							<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-								<SiAboutdotme />
-							</IconContext.Provider>
-							<span>About</span>
-						</Link>
-						<Link className='menu-shadow p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/skills'}>
-							<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
-								<VscTools />
-							</IconContext.Provider>
-							<span>Skills</span>
-						</Link>
+					<div className='w-full flex flex-col items-start space-y-6 transition-all duration-200'>
+						<button onClick={() => {setShowNav(false); console.log(showNav);}}>
+							<Link className='menu-shadow transition duration-200 p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/'}>
+								<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+									<SiHomeadvisor />
+								</IconContext.Provider>
+								<span>Home</span>
+							</Link>
+						</button>
+						<button onClick={() => {setShowNav(false); console.log(showNav);}}>
+							<Link className='menu-shadow transition duration-200 p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/about'}>
+								<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+									<SiAboutdotme />
+								</IconContext.Provider>
+								<span>About</span>
+							</Link>
+						</button>
+						<button onClick={() => {setShowNav(false); console.log(showNav);}}>
+							<Link className='menu-shadow transition duration-200 p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/skills'}>
+								<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
+									<VscTools />
+								</IconContext.Provider>
+								<span>Skills</span>
+							</Link>
+						</button>
 						{renderThemeSystemMobile()}
 					</div>: null}
 				</ul>
@@ -141,10 +151,10 @@ export default function Header() {
 							</Link>
 							<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>about</p>
 						</div>
-						<div className='group relative flex flex-col items-center'>
+						<Link href={'/'} className='group relative flex flex-col items-center'>
 							<Logok8pai className={'mx-6'} color={theme === 'dark'? true: false}/>
 							<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>skills</p>
-						</div>
+						</Link>
 						<div className='group relative flex flex-col items-center'>
 							<Link className='link-hover transition duration-300 p-2 m-px rounded-lg tracking-wider z-50 menu-shadow' href={'/skills'}>
 								<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>

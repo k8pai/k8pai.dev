@@ -54,9 +54,9 @@ export default function Hero({socials}) {
 					<br />
 					<h5 className='continous-typing-element h-[10vh] my-6 tracking-wider md:text-center sm:text-center xsm:text-center'><code ref={el1}></code></h5>
 				</div>
-				<div className='flex justify-center sm:my-[50px] xsm:my-[50px]'>
+				<div className='flex justify-center sm:my-[50px] xsm:my-[50px] xsm:grid xsm:grid-cols-3 xsm:place-items-center xsm:gap-6'>
 					{socials.map((data, ind) => (
-						<Link key={ind} className='p-2 mx-3 xsm:mx-2 xsm:p-1' href={data.url}>
+						<Link key={ind} className='p-2 mx-3 xsm:mx-2 xsm:p-1 transition duration-300 ease-in-out hover:animate-wiggle' href={data.url}>
 							<IconContext.Provider value={{ size:"2.5em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 								<data.component />
 							</IconContext.Provider>

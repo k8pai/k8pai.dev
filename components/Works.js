@@ -7,7 +7,7 @@ const Works = (props) => {
 		<div className='recent-works w-full min-h-screen h-full flex flex-col justify-center relative snap-start'>
 			<h1 className='recent works font-fjalla uppercase font-bold tracking-widest text-center text-4xl my-6'>Recent Works</h1>
 			<br /><br />
-			<div className='w-full grid grid-cols-2 md:grid-cols-1 sm:grid-cols-1 xsm:grid-cols-1 grid-flow-rows gap-4 place-items-center'>
+			<div className='w-full px-4 grid grid-cols-2 md:grid-cols-1 sm:grid-cols-1 xsm:grid-cols-1 grid-flow-rows gap-4 place-items-center'>
 				{works.map((data, ind) => 
 					<div key={ind} className='bg-tertxt dark:bg-terbg shadow-xl rounded-md w-full max-w-[560px] md:max-w-[400px] sm:max-w-[400px] xsm:max-w-[300px] flex-col p-3'>
 						<div className='ss-pic aspect-video md:max-w-[500px] xsm:max-w-[300px]'>
