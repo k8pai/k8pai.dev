@@ -9,6 +9,15 @@ const CertificateData = [
 		alt: "Course certificate for the 'Advanced React Hooks Course' course from codedamn"
 	},
 	{
+		name: "useSWR: for data fetching",
+		institutionName: 'codedamn',
+		expiration: "No Expiration",
+		certificationDate: "February 2023",
+		institution: "htttps://codedamn.com/",
+		src: "https://codedamn-user-screenshots.s3.amazonaws.com/b9862e1a5e46b304fff37fcec12aafe3a5c9ce36/1675433873650.png",
+		alt: "Course certificate for the 'Learn useSWR: React hooks for data fetching' course from codedamn"
+	},
+	{
 		name: "React 18",
 		institutionName: 'codedamn',
 		expiration: "No Expiration",
