@@ -29,6 +29,7 @@ export default function Header() {
 		if(!mounted) return null;
 
 		const currTheme = theme  === 'system' ? systemTheme : theme;
+		console.log(theme);
 
 		if(currTheme == "dark"){
 			return(
@@ -60,11 +61,12 @@ export default function Header() {
 		if(!mounted) return null;
 
 		const currTheme = theme  === 'system' ? systemTheme : theme;
+		console.log(theme);
 
 		if(currTheme == "dark"){
 			return(
 				<div className='group relative flex justify-center items-center -space-x-3'>
-					{showNav? <button className='menu-shadow p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' onClick={() => { setTheme('light') }}>
+					{showNav? <button className='shadow-slate-500 dark:shadow-[#02040F] shadow-lg p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' onClick={() => { setTheme('light') }}>
 						<IconContext.Provider value={{ color: "white", size:"1.6em", className: "global-class-name" }}>
 							<BsSunFill />
 						</IconContext.Provider>
@@ -75,7 +77,7 @@ export default function Header() {
 		}else {
 			return (
 				<div className='group relative flex justify-center items-center -space-x-3'>
-					{showNav? <button className='menu-shadow p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' onClick={() => { setTheme('dark') }}>
+					{showNav? <button className='shadow-slate-500 dark:shadow-[#02040F] shadow-lg p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' onClick={() => { setTheme('dark') }}>
 						<IconContext.Provider value={{ color: "black", size:"1.6em", className: "global-class-name" }}>
 							<BsMoonStarsFill />
 						</IconContext.Provider>
@@ -90,20 +92,20 @@ export default function Header() {
 			<div className='mobile-verion-navigation-bar lg:hidden xl:hidden 2xl:hidden  w-full mx-auto bg-slate-300 dark:bg-secbg font-semibold transition duration-300 py-6'>
 				<ul className='h-full flex flex-col justify-between items-center rounded-full mx-4 space-y-6 style-none'>
 					<div className='w-full flex justify-between items-center'>
-						<button onClick={() => setShowNav(value => !value)} className='lg:hidden xl:hidden 2xl:hidden menu-shadow p-2 m-px transition duration-200 rounded-lg tracking-wider z-50 flex items-center space-x-3' href={''}>
+						<button onClick={() => setShowNav(value => !value)} className='lg:hidden xl:hidden 2xl:hidden shadow-slate-500 dark:shadow-[#02040F] shadow-lg p-2 m-px transition duration-200 rounded-lg tracking-wider z-50 flex items-center space-x-3' href={''}>
 							<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 								{showNav? <AiOutlineClose />: <AiOutlineMenu />}
 							</IconContext.Provider>
 							<span>{showNav? "Close": "Menu"}</span>
 						</button>
 						<Link href={'/'} className='group relative flex items-center space-x-3 px-2'>
-							<Logok8pai color={theme === 'dark'? true: false}/>
+							<Logok8pai className={'mx-6'} theme={theme==='dark'}/>
 						</Link>
 					</div>
 					{showNav? 
-					<div className='w-full flex flex-col items-start space-y-6 transition-all duration-200'>
+					<div className='w-full flex flex-col items-start space-y-6'>
 						<button onClick={() => {setShowNav(false); console.log(showNav);}}>
-							<Link className='menu-shadow transition duration-200 p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/'}>
+							<Link className='shadow-slate-500 dark:shadow-[#02040F] shadow-lg p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/'}>
 								<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 									<SiHomeadvisor />
 								</IconContext.Provider>
@@ -111,7 +113,7 @@ export default function Header() {
 							</Link>
 						</button>
 						<button onClick={() => {setShowNav(false); console.log(showNav);}}>
-							<Link className='menu-shadow transition duration-200 p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/about'}>
+							<Link className='shadow-slate-500 dark:shadow-[#02040F] shadow-lg p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/about'}>
 								<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 									<SiAboutdotme />
 								</IconContext.Provider>
@@ -119,7 +121,7 @@ export default function Header() {
 							</Link>
 						</button>
 						<button onClick={() => {setShowNav(false); console.log(showNav);}}>
-							<Link className='menu-shadow transition duration-200 p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/skills'}>
+							<Link className='shadow-slate-500 dark:shadow-[#02040F] shadow-lg p-2 m-px rounded-lg tracking-wider z-50 flex items-center space-x-3' href={'/skills'}>
 								<IconContext.Provider value={{ size:"1.6em", className: "global-class-name text-pribg dark:text-pritxt" }}>
 									<VscTools />
 								</IconContext.Provider>
@@ -152,7 +154,7 @@ export default function Header() {
 							<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>about</p>
 						</div>
 						<Link href={'/'} className='group relative flex flex-col items-center'>
-							<Logok8pai className={'mx-6'} color={theme === 'dark'? true: false}/>
+							<Logok8pai className={'mx-6'} theme={theme==='dark'} />
 							<p className='sibling-element capitalize opacity-0 transition duration-200 select-none'>skills</p>
 						</Link>
 						<div className='group relative flex flex-col items-center'>

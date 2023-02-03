@@ -53,7 +53,7 @@ module.exports = {
 				'terbg': '#3A3B3C',
 				'pritxt': '#E4E6E8',
 				'sectxt': '#B0B3B8',
-				'tertxt': '#CCDBDC'
+				'tertxt': '#ECF0F1'
 			},
 		},
 	},

@@ -4,7 +4,7 @@ import eduinfo from '../data/Eduinfo';
 
 const EducationResume = () => {
   return (
-	<div>
+	<div className='mt-8'>
 		<h1 className="my-4 text-4xl sm:text-2xl xsm:text-2xl tracking-wider font-mono capitalize md:text-center sm:text-center xsm:text-center">Education</h1>
 		<div className='my-px mb-4 rounded w-[80px] h-[3px] bg-terbg shadow-xl md:hidden sm:hidden xsm:hidden'></div>
 		<section className="grid grid-cols-2 sm:grid-cols-1 xsm:grid-cols-1 md:grid-cols-1 gap-4 place-items-center">
