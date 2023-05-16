@@ -17,9 +17,6 @@ export default function Sidenav() {
 		'/solutions': {
 			name: 'Solutions',
 		},
-		// '/resume': {
-		// 	name: 'Cristiano ronaldo is the best',
-		// },
 	};
 
 	return (
