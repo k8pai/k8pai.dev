@@ -11,8 +11,8 @@ export default function Sidenav() {
 		'/': {
 			name: 'Home',
 		},
-		'/me': {
-			name: 'Me',
+		'/about': {
+			name: 'About',
 		},
 		'/solutions': {
 			name: 'Solutions',
