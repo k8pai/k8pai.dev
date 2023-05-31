@@ -3,24 +3,22 @@ import React from 'react';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../pages/api/auth/[...nextauth]';
 import { SignIn, SignOut } from './actions';
+import Form from '../../components/Form';
+import { getComments } from '../../lib/prisma/guestbook';
+import Comments from '../../components/Comments';
 
-// export const dynamic = 'force-dynamic';
 export default async function page() {
+	const { data, error: err } = await getComments();
+	if (err) throw new Error('Error occured');
+	let comments = data;
 	let session;
 	try {
-		console.log('before sessionResponse is declared.');
-		const sessionResponse = await getServerSession(authOptions);
-		console.log('after sessionResponse is declared.');
-		console.log(sessionResponse);
-		session = sessionResponse;
-
-		// if (sessionResponse) {
-		// 	console.log('sessionResponse is fulfilled.');
-		// 	console.log(sessionResponse);
-		// 	session = sessionResponse;
-		// } else {
-		// 	console.log('error occured');
-		// }
+		const [sessionResponse] = await Promise.allSettled([
+			getServerSession(authOptions),
+		]);
+		if (sessionResponse.status === 'fulfilled') {
+			session = sessionResponse.value;
+		}
 	} catch (error) {
 		console.error('Error: ', error);
 	}
@@ -29,12 +27,15 @@ export default async function page() {
 		<div>
 			{session?.user ? (
 				<div>
+					<Form />
 					<SignOut />
 				</div>
 			) : (
 				<SignIn />
 			)}
-			<div>comments goes here</div>
+			{comments?.map((el) => (
+				<Comments key={el.id} comment={el} />
+			))}
 		</div>
 	);
 }
