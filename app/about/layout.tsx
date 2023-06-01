@@ -72,6 +72,19 @@ export default function RootLayout({
 		},
 	];
 
+	const downloadResume = () => {
+		// Replace 'path/to/your/file.pdf' with the actual path to your PDF file
+		const pdfURL = 'Resume_k8pai.pdf';
+
+		// Create a new anchor element
+		const link = document.createElement('a');
+		link.href = pdfURL;
+		link.download = 'Resume_k8pai.pdf';
+
+		// Dispatch a click event on the anchor element
+		link.dispatchEvent(new MouseEvent('click'));
+	};
+
 	return (
 		<div className="space-y-5">
 			<div className="py-2 px-3 rounded-lg flex items-start">
@@ -150,15 +163,16 @@ export default function RootLayout({
 					})}
 					<span className={'flex-grow'}></span>
 					<button
-						className={`group relative hover:shadow-md ${
+						className={`group relative bg-[#181818] p-2 rounded-md hover:shadow-md ${
 							selected === 'resume' ? 'block' : 'hidden'
 						}`}
+						onClick={downloadResume}
 					>
 						<IconContext.Provider
 							value={{
 								size: '1.5em',
 								className:
-									'relative tracking-wider capitalize bg-[#181818] rounded-md font-semibold m-2',
+									'relative tracking-wider capitalize rounded-md font-semibold',
 							}}
 						>
 							<ImDownload />

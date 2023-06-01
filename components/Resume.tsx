@@ -154,7 +154,7 @@ export default function Resume() {
 			</div>
 
 			{/* Tech skills section */}
-			<div className="education mt-10">
+			<div className="Tech-skills mt-10">
 				<h1 className=" font-bold tracking-wide text-2xl capitalize">
 					Tech Skills
 				</h1>
@@ -174,7 +174,7 @@ export default function Resume() {
 			</div>
 
 			{/* Languages section */}
-			<div className="education mt-10">
+			<div className="Languages mt-10">
 				<h1 className=" font-bold tracking-wide text-2xl capitalize">
 					Languages
 				</h1>
