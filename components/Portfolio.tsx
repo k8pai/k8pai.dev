@@ -1,37 +1,43 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { IconContext } from 'react-icons/lib';
-import { IoLogoJavascript } from 'react-icons/io';
-import { SiGithub, SiNextdotjs, SiReact, SiTailwindcss } from 'react-icons/si';
+import { SiGithub } from 'react-icons/si';
 import Link from 'next/link';
 import ProjectCard from './ProjectCard';
 import CertificateCard from './CertificateCard';
 import { CiGrid41, CiGrid2H } from 'react-icons/ci';
-import { certificatesInfo, certificatesInfoType } from '../lib/info';
+import {
+	projectsInfo,
+	certificatesInfo,
+	projectsInfoType,
+	certificatesInfoType,
+} from '../lib/info';
 
 export default function Portfolio() {
 	const [isGrid, setIsGrid] = useState<boolean>(true);
 	const [showFullCertificates, setShowFullCertficates] =
 		useState<boolean>(false);
-	const [certificate, setCertificate] = useState<certificatesInfoType[]>(
+	const [certificates, setCertificates] = useState<certificatesInfoType[]>(
 		certificatesInfo.slice(0, 4),
 	);
 
+	const [projects, setProjects] = useState<projectsInfoType[]>(projectsInfo);
+
 	const handleShowCertificates = () => {
-		if (certificate.length === 4) {
+		if (certificates.length === 4) {
 			setShowFullCertficates(true);
-			setCertificate(certificatesInfo);
+			setCertificates(certificatesInfo);
 		} else {
 			setShowFullCertficates(false);
-			setCertificate(certificatesInfo.slice(0, 4));
+			setCertificates(certificatesInfo.slice(0, 4));
 		}
 	};
 
 	return (
 		<div className="">
 			{/* Projects section */}
-			<div className="education mt-10">
+			<div className="Projects mt-10">
 				<div className="flex items-center justify-between p-3">
 					<h1 className=" font-bold tracking-wide text-2xl capitalize">
 						Projects
@@ -54,29 +60,14 @@ export default function Portfolio() {
 					</Link>
 				</div>
 				<div className="grid gap-4 grid-cols-1 lg:grid-cols-2 place-items-center p-3">
-					{Array.from({ length: 4 }, (_, id) => {
-						return (
-							<ProjectCard
-								key={id}
-								name={'Portfolio'}
-								Components={[
-									{
-										Component: SiTailwindcss,
-										color: '#06B6D4',
-									},
-									{
-										Component: SiNextdotjs,
-										color: '#ffffff',
-									},
-								]}
-							/>
-						);
+					{projects.map((project, id) => {
+						return <ProjectCard key={id} project={project} />;
 					})}
 				</div>
 			</div>
 
 			{/* Certificates section */}
-			<div className="education mt-10">
+			<div className="Certificates mt-10">
 				<div className="flex items-center justify-between p-3 space-x-3">
 					<h1 className=" font-bold tracking-wide text-2xl capitalize">
 						Certificates
@@ -98,18 +89,10 @@ export default function Portfolio() {
 					</button>
 					<button
 						type="button"
-						className="transition-all md:text-blue-400 md:hover:text-cyan-400 bg-[#181818] p-2 md:bg-transparent md:p-0 rounded-md"
+						className="transition-all bg-[#202020] hover:bg-[#181818] p-2 rounded-md hover:shadow-md"
 						onClick={handleShowCertificates}
 					>
-						<IconContext.Provider
-							value={{
-								size: '1.5em',
-								className: 'block md:hidden',
-							}}
-						>
-							<SiGithub />
-						</IconContext.Provider>
-						<span className="hidden md:block md:font-semibold">
+						<span className="block md:font-semibold">
 							{showFullCertificates ? 'Show Less' : 'Show More'}
 						</span>
 					</button>
@@ -121,14 +104,12 @@ export default function Portfolio() {
 							: 'w-full flex flex-col space-y-4'
 					} p-3`}
 				>
-					{certificate.map((el, elXid) => {
-						const { data, Component } = el;
+					{certificates.map((certificate, elXid) => {
 						return (
 							<CertificateCard
 								key={elXid}
 								isGrid={isGrid}
-								data={data}
-								Component={Component}
+								certificate={certificate}
 							/>
 						);
 					})}
