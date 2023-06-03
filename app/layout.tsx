@@ -58,9 +58,9 @@ export default function RootLayout({
 			lang="en"
 			className={'text-black bg-white dark:text-white dark:bg-[#111010]'}
 		>
-			<body className=" max-w-5xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
+			<body className="max-w-5xl flex flex-col md:flex-row mx-4 min-h-screen lg:mx-auto">
 				<Sidenav />
-				<main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 lg:px-0">
+				<main className="flex-auto min-w-0 my-6 md:my-20 flex flex-col px-2 lg:px-0">
 					{children}
 				</main>
 			</body>
