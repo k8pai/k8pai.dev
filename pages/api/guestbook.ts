@@ -27,6 +27,13 @@ export default async function handler(
 	if (req.method === 'POST') {
 		const user = req.body;
 		try {
+			if (user.body === '') {
+				return res
+					.status(422)
+					.send(
+						`Your message is Empty, Provide some message to submit.`,
+					);
+			}
 			user.created_by = name;
 			user.email = email;
 			user.updated_at = new Date();
