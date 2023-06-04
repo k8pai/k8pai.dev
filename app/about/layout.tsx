@@ -42,6 +42,7 @@ export default function RootLayout({
 	const options = {
 		portfolio: { name: 'portfolio' },
 		resume: { name: 'resume' },
+		contact: { name: 'contact' },
 	};
 
 	const socialLinks: socialLinksType[] = [
