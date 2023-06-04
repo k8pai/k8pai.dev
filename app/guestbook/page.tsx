@@ -8,9 +8,7 @@ import { getComments } from '../../lib/prisma/guestbook';
 import Comments from '../../components/Comments';
 
 export default async function page() {
-	const { data, error: err } = await getComments();
-	if (err) throw new Error('Error occured');
-	let comments = data;
+	let comments;
 	let session;
 	try {
 		const [sessionResponse] = await Promise.allSettled([
@@ -18,17 +16,20 @@ export default async function page() {
 		]);
 		if (sessionResponse.status === 'fulfilled') {
 			session = sessionResponse.value;
+			console.log(session);
 		}
+		const { data, error: err } = await getComments();
+		if (err) throw new Error('Error occured');
+		comments = data;
 	} catch (error) {
 		console.error('Error: ', error);
 	}
 
 	return (
-		<div>
+		<div className="mx-3 my-2">
 			{session?.user ? (
 				<div>
 					<Form />
-					<SignOut />
 				</div>
 			) : (
 				<SignIn />
