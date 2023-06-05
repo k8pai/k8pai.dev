@@ -1,13 +1,10 @@
 'use client';
 
-import React, { Component, createContext, useState } from 'react';
-import { motion } from 'framer-motion';
-import { MdAdd, MdLocationPin } from 'react-icons/md';
-import TechSkills from '../../components/TechSkills';
+import React from 'react';
+import { MdLocationPin } from 'react-icons/md';
 import Image from 'next/image';
 import profilePhoto from '../../public/developer.png';
 import { IconContext, IconType } from 'react-icons';
-import { ImDownload } from 'react-icons/im';
 import {
 	SiDiscord,
 	SiGithub,
@@ -17,34 +14,17 @@ import {
 } from 'react-icons/si';
 import Link from 'next/link';
 
-interface meContextType {
-	selected: String;
-}
-
 interface socialLinksType {
 	color: string;
 	Component: IconType;
 	href: string;
 }
 
-export const meContext = createContext<meContextType>({
-	selected: '',
-});
-
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	const [selected, setSelected] = useState<String>('portfolio');
-	const [showSocials, setShowSocials] = useState<boolean>(false);
-
-	const options = {
-		portfolio: { name: 'portfolio' },
-		resume: { name: 'resume' },
-		contact: { name: 'contact' },
-	};
-
 	const socialLinks: socialLinksType[] = [
 		{
 			Component: SiInstagram,
@@ -72,20 +52,6 @@ export default function RootLayout({
 			href: 'https://discord.com/users/898949804024012850',
 		},
 	];
-
-	const downloadResume = () => {
-		// Replace 'path/to/your/file.pdf' with the actual path to your PDF file
-		const pdfURL = 'Resume_k8pai.pdf';
-
-		// Create a new anchor element
-		const link = document.createElement('a');
-		link.href = pdfURL;
-		link.download = 'Resume_k8pai.pdf';
-
-		// Dispatch a click event on the anchor element
-		link.dispatchEvent(new MouseEvent('click'));
-	};
-
 	return (
 		<div className="space-y-5">
 			<div className="py-2 px-3 rounded-lg flex items-start">
@@ -136,52 +102,7 @@ export default function RootLayout({
 					</div>
 				</div>
 			</div>
-			<meContext.Provider value={{ selected: selected }}>
-				<div className="flex space-x-7 p-2 rounded-md">
-					{Object.entries(options).map(([el, { name }], elXid) => {
-						return (
-							<button
-								key={elXid}
-								className={`relative py-2 shadow-md ${
-									name === selected ? 'selected' : ''
-								}`}
-								onClick={() => setSelected(name)}
-							>
-								<span
-									className={`relative px-3 py-2 tracking-wider capitalize font-semibold`}
-								>
-									<motion.div className="absolute inset-0 bg-[#181818] rounded-md z-[-5]" />
-									{name === selected ? (
-										<motion.div
-											className="absolute inset-0 bg-[#4338CA] bg-opacity-50 rounded-md z-[-1]"
-											layoutId="underline"
-										/>
-									) : null}
-									{name}
-								</span>
-							</button>
-						);
-					})}
-					<span className={'flex-grow'}></span>
-					<button
-						className={`group relative bg-[#181818] p-2 rounded-md hover:shadow-md ${
-							selected === 'resume' ? 'block' : 'hidden'
-						}`}
-						onClick={downloadResume}
-					>
-						<IconContext.Provider
-							value={{
-								size: '1.5em',
-								className:
-									'relative tracking-wider capitalize rounded-md font-semibold',
-							}}
-						>
-							<ImDownload />
-						</IconContext.Provider>
-					</button>
-				</div>
-				{children}
-			</meContext.Provider>
+			{children}
 		</div>
 	);
 }
