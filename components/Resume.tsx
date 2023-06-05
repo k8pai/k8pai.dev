@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { FcGraduationCap } from 'react-icons/fc';
 import { IconContext } from 'react-icons/lib';
@@ -20,8 +22,9 @@ import {
 	SiTailwindcss,
 	SiTypescript,
 } from 'react-icons/si';
+import { Session } from 'next-auth';
 
-export default function Resume() {
+export default function Resume({ session }: { session?: Session }) {
 	const [showAbout, setShowAbout] = useState<boolean>(false);
 
 	const languages = ['English', 'Hindi', 'Malayalam', 'Konkani', 'Sanskrit'];
