@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../pages/api/auth/[...nextauth]';
-import { SignIn, SignOut } from './actions';
+import { SignIn } from './actions';
 import Form from '../../components/Form';
 import { getComments } from '../../lib/prisma/guestbook';
 import Comments from '../../components/Comments';
@@ -16,7 +16,6 @@ export default async function page() {
 		]);
 		if (sessionResponse.status === 'fulfilled') {
 			session = sessionResponse.value;
-			console.log(session);
 		}
 		const { data, error: err } = await getComments();
 		if (err) throw new Error('Error occured');
