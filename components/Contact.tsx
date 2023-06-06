@@ -3,6 +3,7 @@
 import { Session } from 'next-auth';
 import React, { FormEvent, useState } from 'react';
 import { IconContext } from 'react-icons';
+import { MdOutlineClear } from 'react-icons/md';
 import { TbSend } from 'react-icons/tb';
 
 export default function Contact({ session }: { session?: Session }) {
@@ -46,10 +47,10 @@ export default function Contact({ session }: { session?: Session }) {
 					<h1 className="text-3xl font-bold mb-6 capitalize text-slate-200">
 						Reach Out To Me
 					</h1>
-					<div className="flex flex-wrap -mx-3 mb-4">
-						<div className="w-full px-3">
+					<div className="flex flex-wrap -mx-3 px-3 mb-4">
+						<div className="w-full mb-3 relative">
 							<input
-								className="appearance-none block w-full bg-[#181818] text-slate-300 border border-transparent rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
+								className="appearance-none block w-full bg-[#181818] text-slate-300 border border-transparent rounded py-3 px-4 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
 								id="nick"
 								type="text"
 								placeholder="Your Name"
@@ -57,12 +58,32 @@ export default function Contact({ session }: { session?: Session }) {
 								value={state.name}
 								onChange={handleChange}
 							/>
+							{state.name && (
+								<button
+									className="absolute inset-y-0 right-0 mx-2"
+									onClick={() =>
+										setState((ref) => ({
+											...ref,
+											name: '',
+										}))
+									}
+								>
+									<IconContext.Provider
+										value={{
+											size: '1.2em',
+											className: 'global-class-name',
+										}}
+									>
+										<MdOutlineClear />
+									</IconContext.Provider>
+								</button>
+							)}
 						</div>
 					</div>
-					<div className="flex flex-wrap -mx-3 mb-4">
-						<div className="w-full px-3">
+					<div className="flex flex-wrap -mx-3 px-3 mb-4">
+						<div className="w-full mb-3 relative">
 							<input
-								className="appearance-none block w-full bg-[#181818] text-slate-300 border border-transparent rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
+								className="appearance-none block w-full bg-[#181818] text-slate-300 border border-transparent rounded py-3 px-4 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
 								id="email"
 								type="email"
 								name="email"
@@ -70,6 +91,26 @@ export default function Contact({ session }: { session?: Session }) {
 								value={state.email}
 								onChange={handleChange}
 							/>
+							{state.email && (
+								<button
+									className="absolute inset-y-0 right-0 mx-2"
+									onClick={() =>
+										setState((ref) => ({
+											...ref,
+											email: '',
+										}))
+									}
+								>
+									<IconContext.Provider
+										value={{
+											size: '1.2em',
+											className: 'global-class-name',
+										}}
+									>
+										<MdOutlineClear />
+									</IconContext.Provider>
+								</button>
+							)}
 						</div>
 					</div>
 					<div className="flex flex-wrap -mx-3 mb-4">
