@@ -1,14 +1,39 @@
-import React from 'react';
+'use client';
 
-const Comments = ({ comment: { created_by, body } }: { comment: any }) => {
+import Link from 'next/link';
+import React from 'react';
+import { getDomainName } from '../lib/helper';
+import { CiLink } from 'react-icons/ci';
+
+const Comments = ({
+	comment: { created_by, body, links },
+}: {
+	comment: any;
+}) => {
 	return (
-		<div className="px-1 py-2">
+		<div className="group mx-1 my-2 md:max-w-lg w-full">
 			<div className="font-semibold py-1 text-neutral-500">
 				{created_by}
 			</div>
-			<div className="text-sm font-semibold text-neutral-300 ">
+			<div className="text-sm mb-2 font-semibold text-neutral-300 ">
 				{body}
 			</div>
+			{links.length ? (
+				<div className="flex items-center space-x-2 flex-wrap">
+					{links?.map((el: string, ind: number) => {
+						return (
+							<Link
+								key={ind}
+								href={el}
+								className="text-xs w-fit flex items-center space-x-2 px-2 py-1 font-mono bg-[#242526] rounded-md text-neutral-300 hover:text-neutral-400 transition-all duration-200"
+							>
+								<span>{getDomainName(el)}</span>
+								<CiLink />
+							</Link>
+						);
+					})}
+				</div>
+			) : null}
 		</div>
 	);
 };
