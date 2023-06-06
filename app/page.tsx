@@ -15,7 +15,7 @@ export default function page() {
 					Sudarsan K Pai
 				</h1>
 				<p className="tracking-wider mt-4">
-					Hey there, I'm Sudarsan K Pai, a 21-year-old based in
+					Hey there, I&apos;m Sudarsan K Pai, a 21-year-old based in
 					Bangalore, India. Constantly striving for perfection and
 					passionate on understanding new techs.
 				</p>

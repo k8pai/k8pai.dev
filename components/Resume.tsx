@@ -118,7 +118,7 @@ export default function Resume({ session }: { session?: Session }) {
 						</IconContext.Provider>
 						<div className="flex-grow space-y-2">
 							<h1 className="text-2xl font-bold capitalize">
-								St Mary's HSS, Pattom.
+								St Mary&apos;s HSS, Pattom.
 							</h1>
 							<div className="flex flex-col md:flex-row md:justify-between md:items-center">
 								<h1 className="tracking-wide flex items-center text-slate-200">
