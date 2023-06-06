@@ -2,7 +2,7 @@ import { createComments, getComments } from '../../lib/prisma/guestbook';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { authOptions } from './auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
-import { getSession } from 'next-auth/react';
+import { checkPossibleLinks, cleanText } from '../../lib/helper';
 
 export default async function handler(
 	req: NextApiRequest,
@@ -34,6 +34,8 @@ export default async function handler(
 						`Your message is Empty, Provide some message to submit.`,
 					);
 			}
+			user.links = checkPossibleLinks(user.body);
+			user.body = cleanText(user.body);
 			user.created_by = name;
 			user.email = email;
 			user.updated_at = new Date();
@@ -44,6 +46,6 @@ export default async function handler(
 			return res.status(403).json({ error: err });
 		}
 	}
-	res.setHeader('Allow', '[GET, POST]');
+	res.setHeader('Allow', '[GET, POST, DELETE]');
 	res.status(200).end('All done');
 }
