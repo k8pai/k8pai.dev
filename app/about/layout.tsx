@@ -84,6 +84,7 @@ export default function RootLayout({
 							const { color, Component, href } = el;
 							return (
 								<Link
+									target="_blank"
 									key={elXid}
 									href={href}
 									className="p-2 transition-all duration-200 bg-[#181818] hover:scale-110 hover:shadow-md rounded-md"
