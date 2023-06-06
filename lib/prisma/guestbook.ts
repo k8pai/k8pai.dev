@@ -17,6 +17,7 @@ interface userType {
 	id: string;
 	email: string;
 	body: string;
+	link: string[];
 	created_by: string;
 	updated_at?: any;
 }
