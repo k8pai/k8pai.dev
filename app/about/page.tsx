@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { Session, getServerSession } from 'next-auth';
+import { getServerSession } from 'next-auth';
 import { authOptions } from '../../pages/api/auth/[...nextauth]';
 import Container from './container';
 
@@ -22,9 +22,5 @@ export default async function page() {
 	} catch (error) {
 		console.log('Error : ', error);
 	}
-	return (
-		<div>
-			<Container session={session} />
-		</div>
-	);
+	return <Container session={session} />;
 }
