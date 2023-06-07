@@ -5,22 +5,16 @@ import './globals.css';
 
 export const metadata: Metadata = {
 	title: {
-		default: 'Sudarsan k pai',
-		template: '%s | Lee Robinson',
+		default: 'k8pai',
+		template: '%s | k8pai',
 	},
-	description: 'Developer, writer, and creator.',
+	description: 'Student | Web Developer | Cloud Enthusiast',
 	openGraph: {
-		title: 'Lee Robinson',
-		description: 'Developer, writer, and creator.',
-		url: 'https://leerob.io',
-		siteName: 'Lee Robinson',
-		images: [
-			{
-				url: 'https://leerob.io/og.jpg',
-				width: 1920,
-				height: 1080,
-			},
-		],
+		title: 'k8pai',
+		description: 'Student | Web Developer | Cloud Enthusiast',
+		url: 'https://k8pai.dev',
+		siteName: 'k8pai',
+		images: [],
 		locale: 'en-US',
 		type: 'website',
 	},
@@ -36,15 +30,14 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: 'Lee Robinson',
+		title: 'k8pai',
 		card: 'summary_large_image',
 	},
 	icons: {
 		shortcut: '/favicon.ico',
 	},
 	verification: {
-		google: 'eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw',
-		yandex: '14d2e73487fa6c71',
+		google: 'm5DNrwa3wn0qG80NDKoa2yMZqJeYHopoeci6t5u8unc',
 	},
 };
 
