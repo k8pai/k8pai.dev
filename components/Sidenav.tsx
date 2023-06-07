@@ -77,17 +77,17 @@ export default function Sidenav() {
 		'/about': {
 			name: 'About',
 		},
-		'/solutions': {
-			name: 'Solutions',
-		},
+		// '/solutions': {
+		// 	name: 'Solutions',
+		// },
 		'/guestbook': {
 			name: 'Guestbook',
 		},
 	};
 
 	return (
-		<aside className="md:w-fit md:flex-shrink-0 -mx-4 md:mx-0 md:px-0 font-serif">
-			<div className="lg:sticky lg:top-20">
+		<aside className="md:w-fit lg:sticky lg:top-0 -mx-4 md:mx-0 md:px-0 font-serif flex flex-row md:flex-col md:min-h-screen md:max-h-full lg:h-full md:p-20">
+			<div className="md:sticky md:top-5">
 				<LayoutGroup>
 					<nav
 						className="w-full flex flex-row md:flex-col items-start relative px-4 md:px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
