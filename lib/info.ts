@@ -10,6 +10,9 @@ import {
 	SiNodedotjs,
 	SiTypescript,
 	SiTailwindcss,
+	SiMongodb,
+	SiPrisma,
+	SiFramer,
 } from 'react-icons/si';
 
 // Certificates info
@@ -155,6 +158,7 @@ export interface ProjectComponents {
 export interface projectsInfoType {
 	name: string;
 	imageUrl: StaticImageData;
+	projectUrl: string;
 	Components: ProjectComponents[];
 }
 
@@ -162,42 +166,57 @@ export const projectsInfo: projectsInfoType[] = [
 	{
 		name: 'Portfolio',
 		imageUrl: todolist,
+		projectUrl: 'https://k8pai-dev.vercel.app',
 		Components: [
+			{
+				Component: SiNextdotjs,
+				color: '#ffffff',
+			},
 			{
 				Component: SiTailwindcss,
 				color: '#06B6D4',
 			},
 			{
-				Component: SiNextdotjs,
-				color: '#ffffff',
+				Component: SiMongodb,
+				color: '#47A248',
+			},
+			{
+				Component: SiPrisma,
+				color: '#2D3748',
+			},
+			{
+				Component: SiFramer,
+				color: '#0055FF',
 			},
 		],
 	},
 	{
 		name: 'Spiritwolf',
 		imageUrl: spiritwolf,
+		projectUrl: 'https://spiritwolf.vercel.app',
 		Components: [
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
 			{
 				Component: SiNextdotjs,
 				color: '#ffffff',
+			},
+			{
+				Component: SiTailwindcss,
+				color: '#06B6D4',
 			},
 		],
 	},
 	{
 		name: 'Todolist',
 		imageUrl: todolist,
+		projectUrl: 'https://todolist-k8pai.vercel.app',
 		Components: [
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
 			{
 				Component: SiNextdotjs,
 				color: '#ffffff',
+			},
+			{
+				Component: SiTailwindcss,
+				color: '#06B6D4',
 			},
 		],
 	},
