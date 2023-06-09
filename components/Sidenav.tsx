@@ -77,9 +77,9 @@ export default function Sidenav() {
 		'/about': {
 			name: 'About',
 		},
-		// '/solutions': {
-		// 	name: 'Solutions',
-		// },
+		'/solutions': {
+			name: 'Solutions',
+		},
 		'/guestbook': {
 			name: 'Guestbook',
 		},

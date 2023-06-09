@@ -20,6 +20,7 @@ export default function ProjectCard({
 					<span>{name}</span>
 					{projectUrl && (
 						<Link
+							target="_blank"
 							href={projectUrl}
 							className="space-x-2 flex transition duration-200 ease-in opacity-0 group-hover:opacity-100 font-mono text-xs"
 						>
