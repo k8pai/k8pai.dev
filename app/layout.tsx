@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 		card: 'summary_large_image',
 	},
 	icons: {
-		shortcut: '/favicon.ico',
+		shortcut: '/logo.svg',
 	},
 	verification: {
 		google: 'm5DNrwa3wn0qG80NDKoa2yMZqJeYHopoeci6t5u8unc',

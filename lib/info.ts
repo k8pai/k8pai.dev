@@ -3,6 +3,7 @@ import { StaticImageData } from 'next/image';
 import { IoLogoJavascript } from 'react-icons/io';
 import todolist from '../public/todolist_thumb.png';
 import spiritwolf from '../public/spiritwolf_thumb.png';
+import tailwindInputs from '../public/tailwind_inputs_thumb.png';
 import {
 	SiGit,
 	SiReact,
@@ -191,6 +192,25 @@ export const projectsInfo: projectsInfoType[] = [
 		],
 	},
 	{
+		name: 'Tailwind Inputs',
+		imageUrl: tailwindInputs,
+		projectUrl: 'https://tailwind-inputs.vercel.app',
+		Components: [
+			{
+				Component: SiNextdotjs,
+				color: '#ffffff',
+			},
+			{
+				Component: SiTailwindcss,
+				color: '#06B6D4',
+			},
+			{
+				Component: SiFramer,
+				color: '#0055FF',
+			},
+		],
+	},
+	{
 		name: 'Spiritwolf',
 		imageUrl: spiritwolf,
 		projectUrl: 'https://spiritwolf.vercel.app',
@@ -219,5 +239,35 @@ export const projectsInfo: projectsInfoType[] = [
 				color: '#06B6D4',
 			},
 		],
+	},
+];
+
+export const solutionsInfo = [
+	{
+		name: 'cristiano ronaldo is the best in the world.',
+		description:
+			'cristiano ronaldo is considered as the best player in the world, inspite of the fact that leo messi won more than what is said to be the greatest achievement one could ever have achieved, ronaldo did his part, and will always remain as one of the fans favorite over a long period of time.',
+		dateAndTime: 'Jan 13 2023',
+	},
+
+	{
+		name: 'cristiano ronaldo is the best in the world.',
+		description:
+			'cristiano ronaldo is considered as the best player in the world, inspite of the fact that leo messi won more than what is said to be the greatest achievement one could ever have achieved, ronaldo did his part, and will always remain as one of the fans favorite over a long period of time.',
+		dateAndTime: 'Jan 13 2023',
+	},
+
+	{
+		name: 'cristiano ronaldo is the best in the world.',
+		description:
+			'cristiano ronaldo is considered as the best player in the world, inspite of the fact that leo messi won more than what is said to be the greatest achievement one could ever have achieved, ronaldo did his part, and will always remain as one of the fans favorite over a long period of time.',
+		dateAndTime: 'Jan 13 2023',
+	},
+
+	{
+		name: 'cristiano ronaldo is the best in the world.',
+		description:
+			'cristiano ronaldo is considered as the best player in the world, inspite of the fact that leo messi won more than what is said to be the greatest achievement one could ever have achieved, ronaldo did his part, and will always remain as one of the fans favorite over a long period of time.',
+		dateAndTime: 'Jan 13 2023',
 	},
 ];
