@@ -25,7 +25,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"lib/nodemailer.js"
+		"lib/nodemailer.js",
+		"lib/github/index.ts"
 	],
 	"exclude": ["node_modules"]
 }
