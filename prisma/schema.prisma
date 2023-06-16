@@ -16,6 +16,12 @@ model Guestbook {
   updated_at DateTime?
 }
 
+model Interactions {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String
+  liked Boolean
+}
+
 model Views {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   count Int
