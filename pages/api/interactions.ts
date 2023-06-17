@@ -27,7 +27,9 @@ export default async function handler(
 		try {
 			const { data, error } = await showSupport(email);
 			if (error) throw new Error('Error Occured');
-			return res.status(200).json({ data });
+			const { data: response, error: err } = await getInteractions();
+			if (err) throw new Error(`Error: ${err}`);
+			return res.status(200).json(response);
 		} catch (err) {
 			return res.status(403).json({ error: err });
 		}
