@@ -160,6 +160,7 @@ export interface projectsInfoType {
 	name: string;
 	imageUrl: StaticImageData;
 	projectUrl: string;
+	githubUrl?: string;
 	Components: ProjectComponents[];
 }
 
@@ -168,6 +169,7 @@ export const projectsInfo: projectsInfoType[] = [
 		name: 'Portfolio',
 		imageUrl: todolist,
 		projectUrl: 'https://k8pai-dev.vercel.app',
+		githubUrl: 'https://github.com/k8pai/k8pai.dev',
 		Components: [
 			{
 				Component: SiNextdotjs,
