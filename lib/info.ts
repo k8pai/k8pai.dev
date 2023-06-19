@@ -14,6 +14,7 @@ import {
 	SiMongodb,
 	SiPrisma,
 	SiFramer,
+	SiGithubactions,
 } from 'react-icons/si';
 
 // Certificates info
@@ -147,6 +148,19 @@ export const certificatesInfo: certificatesInfoType[] = [
 		Component: {
 			Component: SiNodedotjs,
 			color: '#339933',
+		},
+	},
+	{
+		data: {
+			name: 'Node.js',
+			issueDate: 'On June 19, 2023',
+			issuerUrl: 'https://codedamn.com',
+			issuer: 'Codedamn',
+			href: 'https://codedamn-user-screenshots.s3.amazonaws.com/90c91ad5b91c8ecbb105cc2ce21ab7f1f6f4f14e/1687183187089.png',
+		},
+		Component: {
+			Component: SiGithubactions,
+			color: '#2088FF',
 		},
 	},
 ];
