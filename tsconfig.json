@@ -18,7 +18,11 @@
 			{
 				"name": "next"
 			}
-		]
+		],
+		"baseUrl": ".",
+		"paths": {
+			"contentlayer/generated": ["./.contentlayer/generated"]
+		}
 	},
 	"include": [
 		"next-env.d.ts",
@@ -26,7 +30,8 @@
 		"**/*.tsx",
 		".next/types/**/*.ts",
 		"lib/nodemailer.js",
-		"lib/github/index.ts"
+		"lib/github/index.js",
+		".contentlayer/generated"
 	],
 	"exclude": ["node_modules"]
 }
