@@ -1,0 +1,67 @@
+---
+title: this in javascript.
+date: 2023-06-02
+---
+
+## 'this' Keyword in JavaScript
+
+**Definition**: In JavaScript, the 'this' keyword refers to the context within which a function is executed. It is a special identifier that allows functions to access and manipulate properties and methods of the object it belongs to.
+
+The value of 'this' is determined dynamically based on how a function is called. It can have different values depending on the invocation context:
+
+- When a function is called as a method of an object, 'this' refers to the object itself.
+- When a function is called as a standalone function, 'this' refers to the global object (usually the 'window' object in a browser environment).
+- When a function is called with the 'new' keyword as a constructor, 'this' refers to the newly created instance.
+- When a function is called using the 'call', 'apply', or 'bind' methods, 'this' can be explicitly set to any desired object.
+
+### Examples
+
+1. Method Invocation
+
+```js
+const person = {
+	name: 'John',
+	greet: function () {
+		console.log(`Hello, my name is ${this.name}.`);
+	},
+};
+
+person.greet(); // Output: Hello, my name is John.
+```
+
+2. Standalone Function Invocation
+
+```javascript
+function sayHello() {
+	console.log(`Hello, ${this.name}!`);
+}
+
+window.name = 'Alice';
+sayHello(); // Output: Hello, Alice!
+```
+
+3. Constructor Invocation
+
+```javascript
+function Person(name) {
+	this.name = name;
+}
+
+const john = new Person('John');
+console.log(john.name); // Output: John
+```
+
+4. Using 'call' or 'apply' Methods
+
+```javascript
+function greet() {
+	console.log(`Hello, ${this.name}!`);
+}
+
+const person = { name: 'Alice' };
+greet.call(person); // Output: Hello, Alice!
+```
+
+Understanding the context and value of 'this' is crucial for properly accessing and manipulating object properties and achieving the desired behavior in JavaScript applications.
+
+For more in-depth information, you can refer to the [MDN Web Docs on 'this'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this).
