@@ -12,7 +12,7 @@ export function SignIn() {
 			className="my-2 px-3 py-2 bg-[#242526] flex items-center space-x-3 rounded-md shadow-md font-semibold tracking-wider text-sm"
 			onClick={() => signIn('github')}
 		>
-			<span>Connect with </span>
+			<span>Sign in with </span>
 			<IconContext.Provider value={{ size: '1.5em' }}>
 				<SiGithub />
 			</IconContext.Provider>
@@ -26,7 +26,7 @@ export function SignOut() {
 			className="my-2 px-3 py-2 bg-[#242526] flex items-center space-x-2 rounded-md shadow-md font-semibold tracking-wider text-sm"
 			onClick={() => signOut()}
 		>
-			<span>Logout</span>
+			<span>Sign Out</span>
 			<IconContext.Provider value={{ size: '1.5em' }}>
 				<IoLogOutOutline />
 			</IconContext.Provider>
