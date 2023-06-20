@@ -42,11 +42,6 @@ export default function RootLayout({
 			href: 'https://github.com/k8pai',
 		},
 		{
-			Component: SiGmail,
-			color: '#EA4335',
-			href: 'mailto:thek8pai@gmail.com',
-		},
-		{
 			Component: SiDiscord,
 			color: '#5865F2',
 			href: 'https://discord.com/users/898949804024012850',

@@ -8,6 +8,13 @@ import Contact from '../../components/Contact';
 import { IconContext } from 'react-icons';
 import { ImDownload } from 'react-icons/im';
 import { Session } from 'next-auth';
+import { TbCertificate } from 'react-icons/tb';
+import {
+	FcAddressBook,
+	FcBinoculars,
+	FcRules,
+	FcWorkflow,
+} from 'react-icons/fc';
 
 export default function Container({ session }: { session?: Session }) {
 	const [content, setContent] = useState({
@@ -16,9 +23,9 @@ export default function Container({ session }: { session?: Session }) {
 	});
 
 	const options = [
-		{ name: 'portfolio', Component: Portfolio },
-		{ name: 'resume', Component: Resume },
-		{ name: 'contact', Component: Contact },
+		{ name: 'portfolio', Icon: FcWorkflow, Component: Portfolio },
+		{ name: 'resume', Icon: FcBinoculars, Component: Resume },
+		{ name: 'contact', Icon: FcAddressBook, Component: Contact },
 	];
 
 	const downloadResume = () => {
@@ -37,7 +44,7 @@ export default function Container({ session }: { session?: Session }) {
 	return (
 		<div>
 			<div className="flex space-x-7 p-2 rounded-md">
-				{options?.map(({ name, Component }, elXid) => {
+				{options?.map(({ name, Icon, Component }, elXid) => {
 					return (
 						<button
 							key={elXid}
@@ -45,7 +52,7 @@ export default function Container({ session }: { session?: Session }) {
 							onClick={() => setContent({ name, Component })}
 						>
 							<span
-								className={`relative px-3 py-2 tracking-wider capitalize font-semibold`}
+								className={`hidden sm:block relative px-3 py-2 tracking-wider capitalize font-semibold`}
 							>
 								<motion.div className="absolute inset-0 bg-[#181818] rounded-md z-[-5]" />
 								{name === content.name ? (
@@ -56,12 +63,26 @@ export default function Container({ session }: { session?: Session }) {
 								) : null}
 								{name}
 							</span>
+							<span
+								className={`block sm:hidden relative px-3 py-2 tracking-wider capitalize font-semibold`}
+							>
+								<motion.div className="absolute inset-0 bg-[#181818] rounded-md z-[-5]" />
+								{name === content.name ? (
+									<motion.div
+										className="absolute inset-0 bg-[#4338CA] bg-opacity-50 rounded-md z-[-1]"
+										layoutId="underline"
+									/>
+								) : null}
+								<IconContext.Provider value={{ size: '1.5em' }}>
+									<Icon />
+								</IconContext.Provider>
+							</span>
 						</button>
 					);
 				})}
 				<span className={'flex-grow'}></span>
 				<button
-					className={`group relative bg-[#181818] p-2 rounded-md hover:shadow-md ${
+					className={`group relative bg-[#181818] px-3 py-2 my-2 rounded-md hover:shadow-md ${
 						content.name === 'resume' ? 'block' : 'hidden'
 					}`}
 					onClick={downloadResume}
@@ -73,7 +94,7 @@ export default function Container({ session }: { session?: Session }) {
 								'relative tracking-wider capitalize rounded-md font-semibold',
 						}}
 					>
-						<ImDownload />
+						<FcRules />
 					</IconContext.Provider>
 				</button>
 			</div>
