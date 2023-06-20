@@ -18,12 +18,14 @@ const icon = {
 
 function Logo() {
 	return (
-		<Link aria-label="Sudarsan k pai" href="/" className="py-3">
+		<Link
+			aria-label="Sudarsan k pai"
+			href="/"
+			className="py-1 md:py-0 md:pb-1 md:mb-1"
+		>
 			<motion.svg
-				className="text-black dark:text-white h-[30px] md:h-[40px]"
-				width="100"
-				height="100"
-				viewBox="12.6 -65.1 100.84 80.75"
+				className="text-black dark:text-white h-[30px] md:h-[40px] px-3"
+				viewBox="-12.6 -65.1 100.84 80.75"
 				scale={1}
 				xmlns="http://www.w3.org/2000/svg"
 			>
@@ -93,7 +95,7 @@ export default function Sidenav() {
 						className="w-full flex flex-row md:flex-col items-start relative px-4 md:px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
 						id="nav"
 					>
-						<div className="flex flex-row md:flex-col space-x-0 md:pr-10 px-5 mb-2 mt-2 md:mt-0">
+						<div className="flex flex-row md:flex-col space-x-0 md:pr-10 md:pl-5 px-0 my-4 md:mt-0">
 							<Logo />
 							{Object.entries(links).map(([path, { name }]) => {
 								const isActive = path === pathname;
@@ -104,14 +106,18 @@ export default function Sidenav() {
 										className={`transition-all space-y-2 hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle ${
 											!isActive
 												? 'text-neutral-500'
-												: 'scale-105 '
+												: 'scale-105'
+										} ${
+											path === '/'
+												? 'hidden md:flex'
+												: null
 										}`}
 									>
-										<span className="relative py-3 px-2 md:py-2 md:my-1 md:px-5 w-fit">
+										<span className="relative py-2 px-3 md:py-2 md:my-1 md:px-5 w-fit">
 											{name}
 											{path === pathname ? (
 												<motion.div
-													className="absolute w-3/4 h-1 bottom-0 inset-x-0 mx-auto md:mx-0 md:left-1 md:inset-y-0 md:w-1 md:my-auto md:h-3/4 bg-[#4338CA] rounded-tr-lg rounded-br-lg z-[-1]"
+													className="absolute w-3/4 h-px bottom-0 inset-x-0 mx-auto md:mx-0 md:left-1 md:inset-y-0 md:w-1 md:my-auto md:h-3/4 bg-[#4338CA] rounded-tr-lg rounded-br-lg z-[-1]"
 													layoutId="sidebar"
 													transition={{
 														type: 'spring',

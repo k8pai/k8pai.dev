@@ -6,35 +6,22 @@ import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 import { useRouter } from 'next/navigation';
 
-export default function UserSupport({ email }: any) {
+export default function UserSupport({ interactions, email }: any) {
 	const [view, setView] = useState({
-		array: [],
-		isLiked: false,
-		count: '',
+		array: interactions || [],
+		isLiked: interactions?.filter(
+			(el: any) => el.email === email && el.liked,
+		).length
+			? true
+			: false,
+		count: interactions.length || 0,
 	});
-
 	useEffect(() => {
-		(async () => {
-			await fetch('/api/interactions', {
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			})
-				.then((response) => response.json())
-				.then((data) => {
-					const obj = {
-						array: data || [],
-						isLiked: data?.filter(
-							(el: any) => el.email === email && el.liked,
-						).length
-							? true
-							: false,
-						count: data.length || 0,
-					};
-					setView(obj);
-				});
-		})();
+		console.log('view = ', interactions);
+		console.log(
+			'view = ',
+			interactions.filter((el) => el.email === email),
+		);
 	}, []);
 
 	const like = async () => {

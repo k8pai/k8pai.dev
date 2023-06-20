@@ -11,11 +11,13 @@ import {
 	SiCss3,
 	SiExpress,
 	SiFramer,
+	SiGithubactions,
 	SiHtml5,
 	SiJavascript,
 	SiMongodb,
 	SiNextdotjs,
 	SiNodedotjs,
+	SiPython,
 	SiReact,
 	SiRedis,
 	SiRedux,
@@ -37,6 +39,7 @@ export default function Resume({ session }: { session?: Session }) {
 		{ title: 'Java', Component: FaJava, color: '' },
 		{ title: 'C++', Component: SiCplusplus, color: '#00599C' },
 		{ title: 'Objective C', Component: SiC, color: '#A8B9CC' },
+		{ title: 'Python', Component: SiPython, color: '#3776AB' },
 		{ title: 'React', Component: SiReact, color: '#61DAFB' },
 		{ title: 'Redux', Component: SiRedux, color: '#764ABC' },
 		{ title: 'Next JS', Component: SiNextdotjs, color: '#fff' },
@@ -46,6 +49,11 @@ export default function Resume({ session }: { session?: Session }) {
 		{ title: 'Node js', Component: SiNodedotjs, color: '#339933' },
 		{ title: 'Express js', Component: SiExpress, color: '#fff' },
 		{ title: 'Redis', Component: SiRedis, color: '#DC382D' },
+		{
+			title: 'Github Actions',
+			Component: SiGithubactions,
+			color: '#2088FF',
+		},
 	];
 	return (
 		<div>
