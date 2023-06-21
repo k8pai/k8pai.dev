@@ -5,7 +5,7 @@ import { allSolutions, Solutions } from 'contentlayer/generated';
 
 function PostCard(post: Solutions) {
 	return (
-		<div className="mb-8">
+		<div className="mb-6">
 			<h2 className="mb-1 text-xl">
 				<Link
 					href={`/solutions/${post.url}`}
@@ -20,7 +20,6 @@ function PostCard(post: Solutions) {
 			>
 				{format(parseISO(post.date), 'LLLL d, yyyy')}
 			</time>
-			<div className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0" />
 		</div>
 	);
 }
@@ -31,8 +30,10 @@ export default function Home() {
 	);
 
 	return (
-		<div className="max-w-xl py-8">
-			<h1 className="mb-8 text-2xl">Solutions</h1>
+		<div className="max-w-xl">
+			<h1 className="text-3xl font-bold mb-8 capitalize text-slate-200">
+				Solutions
+			</h1>
 			{posts.map((post, idx) => (
 				<PostCard key={idx} {...post} />
 			))}

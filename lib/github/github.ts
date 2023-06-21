@@ -7,7 +7,6 @@ export const getUserInfo = async () => {
 			'X-GitHub-Api-Version': '2022-11-28',
 		},
 	});
-	console.log('data => ', data);
 	return data;
 };
 
@@ -19,6 +18,5 @@ export const getRepo = async (repoName?: string) => {
 			'X-GitHub-Api-Version': '2022-11-28',
 		},
 	});
-	console.log('getRepo => ', data);
 	return data;
 };

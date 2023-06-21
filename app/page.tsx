@@ -13,10 +13,6 @@ export const metadata: Metadata = {
 };
 
 export default async function page() {
-	// const data = await getUserInfo();
-	// const repo = await getRepo();
-	// const view = await getInteractions();
-	// const { avatar_url, name, followers, following, email, bio, blog } = data;
 	let session;
 	try {
 		const [sessionResponse] = await Promise.allSettled([

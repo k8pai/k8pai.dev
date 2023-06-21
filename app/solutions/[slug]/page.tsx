@@ -21,15 +21,18 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
 	if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 
 	return (
-		<article className="max-w-3xl py-8">
+		<article className="max-w-3xl">
 			<div className="mb-8">
-				<time
-					dateTime={post.date}
-					className="mb-1 text-xs text-gray-600"
-				>
-					{format(parseISO(post.date), 'LLLL d, yyyy')}
-				</time>
-				<h1 className="text-3xl font-bold">{post.title}</h1>
+				<h1 className="text-2xl font-bold">{post.title}</h1>
+				<div className="flex items-center justify-between mt-4">
+					<span className="h-px box-border w-full mr-2 text-white bg-white"></span>
+					<time
+						dateTime={post.date}
+						className="text-xs bg-gray-700 p-1 px-2 rounded-md whitespace-nowrap"
+					>
+						{format(parseISO(post.date), 'LLLL d, yyyy')}
+					</time>
+				</div>
 			</div>
 			<Mdx code={post.body.code} />
 		</article>
