@@ -5,13 +5,7 @@ import { MdLocationPin } from 'react-icons/md';
 import Image from 'next/image';
 import profilePhoto from '../../public/developer.png';
 import { IconContext, IconType } from 'react-icons';
-import {
-	SiDiscord,
-	SiGithub,
-	SiGmail,
-	SiInstagram,
-	SiLinkedin,
-} from 'react-icons/si';
+import { SiDiscord, SiGithub, SiInstagram, SiLinkedin } from 'react-icons/si';
 import Link from 'next/link';
 
 interface socialLinksType {

@@ -6,9 +6,7 @@ import Portfolio from '../../components/Portfolio';
 import Resume from '../../components/Resume';
 import Contact from '../../components/Contact';
 import { IconContext } from 'react-icons';
-import { ImDownload } from 'react-icons/im';
 import { Session } from 'next-auth';
-import { TbCertificate } from 'react-icons/tb';
 import {
 	FcAddressBook,
 	FcBinoculars,
@@ -43,7 +41,7 @@ export default function Container({ session }: { session?: Session }) {
 
 	return (
 		<div>
-			<div className="flex space-x-7 p-2 rounded-md">
+			<div className="flex space-x-2 md:space-x-7 p-2 rounded-md">
 				{options?.map(({ name, Icon, Component }, elXid) => {
 					return (
 						<button
@@ -52,7 +50,7 @@ export default function Container({ session }: { session?: Session }) {
 							onClick={() => setContent({ name, Component })}
 						>
 							<span
-								className={`hidden sm:block relative px-3 py-2 tracking-wider capitalize font-semibold`}
+								className={`relative px-3 text-xs sm:text-base py-2 tracking-wider capitalize font-semibold`}
 							>
 								<motion.div className="absolute inset-0 bg-[#181818] rounded-md z-[-5]" />
 								{name === content.name ? (
@@ -63,7 +61,7 @@ export default function Container({ session }: { session?: Session }) {
 								) : null}
 								{name}
 							</span>
-							<span
+							{/* <span
 								className={`block sm:hidden relative px-3 py-2 tracking-wider capitalize font-semibold`}
 							>
 								<motion.div className="absolute inset-0 bg-[#181818] rounded-md z-[-5]" />
@@ -76,7 +74,7 @@ export default function Container({ session }: { session?: Session }) {
 								<IconContext.Provider value={{ size: '1.5em' }}>
 									<Icon />
 								</IconContext.Provider>
-							</span>
+							</span> */}
 						</button>
 					);
 				})}
@@ -89,7 +87,7 @@ export default function Container({ session }: { session?: Session }) {
 				>
 					<IconContext.Provider
 						value={{
-							size: '1.5em',
+							size: '1.3em',
 							className:
 								'relative tracking-wider capitalize rounded-md font-semibold',
 						}}

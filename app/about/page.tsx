@@ -16,7 +16,6 @@ export default async function page() {
 		if (!sessionResult || !sessionResult.user) {
 			console.log('user is not registered');
 		} else {
-			console.log('user is registered as ', sessionResult.user);
 			session = sessionResult;
 		}
 	} catch (error) {
