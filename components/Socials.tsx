@@ -15,6 +15,7 @@ export default function Socials() {
 		<div className="flex flex-wrap items-center mt-5">
 			{devProfiles?.map(({ name, href }) => (
 				<Link
+					key={href}
 					href={href}
 					className="p-1 m-1 mx-1 w-fit flex items-center space-x-1 transition-all rounded-lg shadow-md"
 				>

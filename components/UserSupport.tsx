@@ -16,13 +16,13 @@ export default function UserSupport({ interactions, email }: any) {
 			: false,
 		count: interactions.length || 0,
 	});
-	useEffect(() => {
-		console.log('view = ', interactions);
-		console.log(
-			'view = ',
-			interactions.filter((el) => el.email === email),
-		);
-	}, []);
+	// useEffect(() => {
+	// 	console.log('view = ', interactions);
+	// 	console.log(
+	// 		'view = ',
+	// 		interactions.filter((el) => el.email === email),
+	// 	);
+	// }, []);
 
 	const like = async () => {
 		if (!view.isLiked) {
