@@ -13,11 +13,11 @@ export async function getComments() {
 	}
 }
 
-interface userType {
-	id: string;
+export interface userType {
+	id?: string;
 	email: string;
 	body: string;
-	link: string[];
+	links: string[];
 	created_by: string;
 	updated_at?: any;
 }
