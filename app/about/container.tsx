@@ -80,7 +80,7 @@ export default function Container({ session }: { session?: Session }) {
 				})}
 				<span className={'flex-grow'}></span>
 				<button
-					className={`group relative bg-[#181818] px-3 py-2 my-2 rounded-md hover:shadow-md ${
+					className={`group relative bg-[#181818] px-3 py-2 rounded-md hover:shadow-md ${
 						content.name === 'resume' ? 'block' : 'hidden'
 					}`}
 					onClick={downloadResume}
