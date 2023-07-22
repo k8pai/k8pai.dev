@@ -47,10 +47,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html
-			lang="en"
-			className={'text-black bg-white dark:text-white dark:bg-[#111010]'}
-		>
+		<html lang="en" className={'text-white bg-[#111010]'}>
 			<body className="max-w-5xl flex flex-col md:flex-row mx-4 min-h-screen lg:mx-auto">
 				<Sidenav />
 				<main className="flex-auto min-w-0 my-6 md:my-20 flex flex-col px-2 lg:px-0">

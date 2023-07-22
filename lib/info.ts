@@ -4,6 +4,7 @@ import { IoLogoJavascript } from 'react-icons/io';
 import todolist from '../public/todolist_thumb.png';
 import spiritwolf from '../public/spiritwolf_thumb.png';
 import tailwindInputs from '../public/tailwind_inputs_thumb.png';
+import portfolio from '../public/portfolio_thumb.png';
 import {
 	SiGit,
 	SiReact,
@@ -196,7 +197,7 @@ export interface projectsInfoType {
 export const projectsInfo: projectsInfoType[] = [
 	{
 		name: 'Portfolio',
-		imageUrl: todolist,
+		imageUrl: portfolio,
 		projectUrl: 'https://k8pai-dev.vercel.app',
 		githubUrl: 'https://github.com/k8pai/k8pai.dev',
 		Components: [
@@ -260,6 +261,7 @@ export const projectsInfo: projectsInfoType[] = [
 		name: 'Todolist',
 		imageUrl: todolist,
 		projectUrl: 'https://todolist-k8pai.vercel.app',
+		githubUrl: 'https://github.com/k8pai/todolist',
 		Components: [
 			{
 				Component: SiNextdotjs,
