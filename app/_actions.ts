@@ -2,30 +2,32 @@
 
 import { checkPossibleLinks, cleanText } from 'lib/helper';
 import prisma from 'lib/prisma';
-import { userType } from 'lib/prisma/guestbook';
-import { getServerSession } from 'next-auth';
-import { authOptions } from 'pages/api/auth/[...nextauth]';
+import { createComments, userType } from 'lib/prisma/guestbook';
 import { revalidatePath } from 'next/cache';
+import { messageSchema } from 'lib/schema';
+import { ZodError } from 'zod';
 
-export const guestbookInsert = async (data: any) => {
+export const guestbookInsert = async (data, user) => {
 	const { message } = Object.fromEntries(data);
-	const session = await getServerSession(authOptions);
 
-	// if (!session || !session.user) {
-	// 	throw new Error('Not Authorized');
-	// }
-	const email = session?.user?.email as string;
-	const name = session?.user?.name as string;
-	// try {
-	if (message === '') throw new Error('Message is Empty.');
-	let user: userType = {
+	const { error: zodError } = messageSchema.safeParse(message) as {
+		error: ZodError;
+	};
+	if (zodError) {
+		return { error: zodError.format() };
+	}
+
+	let person: userType = {
 		links: checkPossibleLinks(message),
 		body: cleanText(message),
-		created_by: name,
-		email: email,
+		created_by: user.name,
+		email: user.email,
 		updated_at: new Date(),
 	};
-	await prisma.guestbook.create({ data: user });
-	// if (error) throw new Error('Error Occured');
+	const { data: result, error } = await createComments(person);
+	if (error) {
+		throw new Error('Something went wrong. try again.');
+	}
+
 	revalidatePath('/guestbook');
 };
