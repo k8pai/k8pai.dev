@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import React from 'react';
 import Sidenav from '../components/Sidenav';
 import './globals.css';
+import Footer from 'components/Footer';
 
 export const metadata: Metadata = {
 	title: {
@@ -47,12 +48,18 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className={'text-white bg-[#111010]'}>
-			<body className="max-w-5xl flex flex-col md:flex-row mx-4 min-h-screen lg:mx-auto">
+		<html
+			lang="en"
+			className={
+				'text-[#242526] bg-white dark:text-neutral-100 dark:bg-[#111010]'
+			}
+		>
+			<body className="max-w-5xl flex flex-col mx-4 min-h-screen lg:mx-auto">
 				<Sidenav />
-				<main className="flex-auto min-w-0 my-6 md:my-20 flex flex-col px-2 lg:px-0">
+				<main className="flex-auto min-w-0 my-8 mx-5 flex flex-col px-2 lg:px-0">
 					{children}
 				</main>
+				<Footer />
 			</body>
 		</html>
 	);

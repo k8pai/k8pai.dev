@@ -1,13 +1,16 @@
 'use server';
 
 import { checkPossibleLinks, cleanText } from 'lib/helper';
-import prisma from 'lib/prisma';
 import { createComments, userType } from 'lib/prisma/guestbook';
 import { revalidatePath } from 'next/cache';
 import { messageSchema } from 'lib/schema';
 import { ZodError } from 'zod';
+import { User } from 'next-auth';
 
-export const guestbookInsert = async (data, user) => {
+export const guestbookInsert = async (
+	data: Iterable<readonly [PropertyKey, any]>,
+	user: User,
+) => {
 	const { message } = Object.fromEntries(data);
 
 	const { error: zodError } = messageSchema.safeParse(message) as {
@@ -20,8 +23,8 @@ export const guestbookInsert = async (data, user) => {
 	let person: userType = {
 		links: checkPossibleLinks(message),
 		body: cleanText(message),
-		created_by: user.name,
-		email: user.email,
+		created_by: user?.name as string,
+		email: user?.email as string,
 		updated_at: new Date(),
 	};
 	const { data: result, error } = await createComments(person);
@@ -31,3 +34,19 @@ export const guestbookInsert = async (data, user) => {
 
 	revalidatePath('/guestbook');
 };
+
+// export const incrementViewCount = cache(async (slug: string) => {
+// 	'use server';
+// 	const existingView = await prisma.views.findUnique({ where: { slug } });
+// 	console.log('inside increment view count');
+// 	if (existingView) {
+// 		await prisma.views.update({
+// 			where: { slug },
+// 			data: { count: existingView.count + 1 },
+// 		});
+// 	} else {
+// 		await prisma.views.create({
+// 			data: { slug, count: 1 },
+// 		});
+// 	}
+// });

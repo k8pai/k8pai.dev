@@ -6,6 +6,8 @@ import { authOptions } from '../pages/api/auth/[...nextauth]';
 import Link from 'next/link';
 import { IconContext } from 'react-icons/lib';
 import { MdArrowOutward } from 'react-icons/md';
+import { allSolutions } from 'contentlayer/generated';
+import { compareDesc, format, parseISO } from 'date-fns';
 
 export const metadata: Metadata = {
 	title: 'Sudarsan K Pai | aka k8pai',
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function page() {
-	let session;
+	let session, posts;
 	try {
 		const [sessionResponse] = await Promise.allSettled([
 			getServerSession(authOptions),
@@ -21,6 +23,9 @@ export default async function page() {
 		if (sessionResponse.status === 'fulfilled') {
 			session = sessionResponse.value;
 		}
+		posts = allSolutions
+			.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+			.slice(0, 3);
 	} catch (error) {
 		console.error('Error: ', error);
 	}
@@ -51,6 +56,40 @@ export default async function page() {
 					</Link>{' '}
 					page.
 				</p>
+
+				<div className="connection section.">
+					<p className="tracking-wider leading-loose mt-2">
+						Star this repo or give me a fork. Credits goes to{' '}
+						<Link href={'https://leerob.io'}>lee Robinson</Link> for
+						this modern portfolio design.
+					</p>
+				</div>
+
+				<div>
+					<p className="tracking-wider leading-loose mt-2">
+						Some of my latest posts...
+					</p>
+					{posts &&
+						posts.map(({ url, title, date }, idx) => (
+							<div className="mt-6">
+								<h2 className="mb-1 text-xl">
+									<Link
+										href={`/solutions/${url}`}
+										className="transition-all duration-200 font-semibold "
+									>
+										{title}
+									</Link>
+								</h2>
+								<time
+									dateTime={date}
+									className="mb-2 block text-xs font-semibold text-gray-600"
+								>
+									{format(parseISO(date), 'LLLL d, yyyy')}
+								</time>
+								<hr />
+							</div>
+						))}
+				</div>
 			</div>
 
 			<Socials />
