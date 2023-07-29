@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { MdLocationPin } from 'react-icons/md';
 import Image from 'next/image';
