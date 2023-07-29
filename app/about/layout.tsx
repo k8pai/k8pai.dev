@@ -7,12 +7,27 @@ import profilePhoto from '../../public/developer.png';
 import { IconContext, IconType } from 'react-icons';
 import { SiDiscord, SiGithub, SiInstagram, SiLinkedin } from 'react-icons/si';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
 interface socialLinksType {
 	color: string;
 	Component: IconType;
 	href: string;
 }
+
+export const metadata: Metadata = {
+	metadataBase: new URL('https://k8pai-dev.vercel.io'),
+	title: 'About',
+	description: 'Student | Web developer',
+	openGraph: {
+		title: 'About k8pai',
+		description: 'Student | Developer | Cloud Enthusiast',
+		url: 'https://k8pai-dev.vercel.io/about',
+		siteName: 'Sudarsan k pai',
+		locale: 'en-US',
+		type: 'website',
+	},
+};
 
 export default function RootLayout({
 	children,

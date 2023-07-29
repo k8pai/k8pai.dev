@@ -24,9 +24,9 @@ import {
 	SiTailwindcss,
 	SiTypescript,
 } from 'react-icons/si';
-import { Session } from 'next-auth';
+// import { Session } from 'next-auth';
 
-export default function Resume({ session }: { session?: Session }) {
+export default function Resume() {
 	const [showAbout, setShowAbout] = useState<boolean>(false);
 
 	const languages = ['English', 'Hindi', 'Malayalam', 'Konkani', 'Sanskrit'];

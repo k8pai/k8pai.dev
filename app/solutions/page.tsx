@@ -1,29 +1,28 @@
 // app/page.tsx
 import Link from 'next/link';
 import { compareDesc, format, parseISO } from 'date-fns';
-import { allSolutions, Solutions } from 'contentlayer/generated';
-import { Views } from '@prisma/client';
+import { allSolutions } from 'contentlayer/generated';
 
-export function PostCard({ post: { url, title, date } }: { post: Solutions }) {
-	return (
-		<div className="mb-6">
-			<h2 className="mb-1 text-xl">
-				<Link
-					href={`/solutions/${url}`}
-					className="transition-all duration-200 font-semibold "
-				>
-					{title}
-				</Link>
-			</h2>
-			<time
-				dateTime={date}
-				className="mb-2 block text-xs font-semibold text-gray-600"
-			>
-				{format(parseISO(date), 'LLLL d, yyyy')}
-			</time>
-		</div>
-	);
-}
+// export function PostCard({ post: { url, title, date } }: { post: Solutions }) {
+// 	return (
+// 		<div className="mb-6">
+// 			<h2 className="mb-1 text-xl">
+// 				<Link
+// 					href={`/solutions/${url}`}
+// 					className="transition-all duration-200 font-semibold "
+// 				>
+// 					{title}
+// 				</Link>
+// 			</h2>
+// 			<time
+// 				dateTime={date}
+// 				className="mb-2 block text-xs font-semibold text-gray-600"
+// 			>
+// 				{format(parseISO(date), 'LLLL d, yyyy')}
+// 			</time>
+// 		</div>
+// 	);
+// }
 
 export default async function Page() {
 	const posts = allSolutions.sort((a, b) =>
@@ -42,8 +41,23 @@ export default async function Page() {
 
 				<p className="mt-2">Happy coding!</p>
 			</div>
-			{posts.map((post, idx) => (
-				<PostCard key={idx} post={post} />
+			{posts.map(({ url, title, date }, idx) => (
+				<div key={idx} className="mb-6">
+					<h2 className="mb-1 text-xl">
+						<Link
+							href={`/solutions/${url}`}
+							className="transition-all duration-200 font-semibold "
+						>
+							{title}
+						</Link>
+					</h2>
+					<time
+						dateTime={date}
+						className="mb-2 block text-xs font-semibold text-gray-600"
+					>
+						{format(parseISO(date), 'LLLL d, yyyy')}
+					</time>
+				</div>
 			))}
 		</div>
 	);

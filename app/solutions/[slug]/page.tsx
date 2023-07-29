@@ -3,17 +3,32 @@ import { format, parseISO } from 'date-fns';
 import { allSolutions } from 'contentlayer/generated';
 import Mdx from 'components/Mdx';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
 export const generateStaticParams = async () =>
 	allSolutions.map((post) => ({ slug: post._raw.flattenedPath }));
 
-export const generateMetadata = ({ params }: { params: { slug: string } }) => {
-	const post = allSolutions.find(
-		(post) => post._raw.flattenedPath === params.slug,
-	);
-	if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
-	return { title: post.title };
-};
+export async function generateMetadata({
+	params,
+}: {
+	params: { slug: string };
+}): Promise<Metadata | undefined> {
+	const post = allSolutions.find((post) => post.url === params.slug);
+	if (!post) return;
+
+	const { title, date: publishedTime, url } = post;
+	return {
+		title,
+		description: title,
+		openGraph: {
+			title,
+			description: title,
+			type: 'article',
+			publishedTime,
+			url: `https://k8pai-dev.vercel.io/solutions/${url}`,
+		},
+	};
+}
 
 const PostLayout = async ({ params }: { params: { slug: string } }) => {
 	const post = allSolutions.find(

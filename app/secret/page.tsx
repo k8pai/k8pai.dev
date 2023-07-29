@@ -8,7 +8,7 @@ export default function page() {
 		<div>
 			<section className="secret-sections">
 				<h3 className="font-extrabold text-xl p-1 tracking-wider">
-					What's Coming? 💭
+					What&apos;s Coming? 💭
 				</h3>
 
 				<h3 className="font-bold text-lg font-mono p-1 tracking-wider">

@@ -15,7 +15,7 @@ import {
 } from '../lib/info';
 import { Session } from 'next-auth';
 
-export default function Portfolio({ session }: { session?: Session }) {
+export default function Portfolio() {
 	const [isGrid, setIsGrid] = useState<boolean>(true);
 	const [showFullCertificates, setShowFullCertficates] =
 		useState<boolean>(false);

@@ -10,7 +10,7 @@ import { allSolutions } from 'contentlayer/generated';
 import { compareDesc, format, parseISO } from 'date-fns';
 
 export const metadata: Metadata = {
-	title: 'Sudarsan K Pai | aka k8pai',
+	title: 'Sudarsan K Pai',
 	description: 'Student | Web developer',
 };
 

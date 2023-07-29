@@ -5,6 +5,7 @@ import './globals.css';
 import Footer from 'components/Footer';
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://k8pai-dev.vercel.io'),
 	title: {
 		default: 'k8pai',
 		template: '%s | k8pai',
@@ -13,8 +14,8 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'k8pai',
 		description: 'Student | Web Developer | Cloud Enthusiast',
-		url: 'https://k8pai.dev',
-		siteName: 'k8pai',
+		url: 'https://k8pai-dev.vercel.io',
+		siteName: 'sudarsan k pai',
 		images: [],
 		locale: 'en-US',
 		type: 'website',
@@ -29,10 +30,6 @@ export const metadata: Metadata = {
 			'max-image-preview': 'large',
 			'max-snippet': -1,
 		},
-	},
-	twitter: {
-		title: 'k8pai',
-		card: 'summary_large_image',
 	},
 	icons: {
 		shortcut: '/logo.svg',

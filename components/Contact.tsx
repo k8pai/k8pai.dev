@@ -8,10 +8,10 @@ import { MdOutlineClear } from 'react-icons/md';
 import { SiDiscord, SiGmail, SiWhatsapp } from 'react-icons/si';
 import { TbSend } from 'react-icons/tb';
 
-export default function Contact({ session }: { session?: Session }) {
+export default function Contact() {
 	const [state, setState] = useState({
-		name: session?.user?.name || '',
-		email: session?.user?.email || '',
+		name: '',
+		email: '',
 		message: '',
 	});
 
