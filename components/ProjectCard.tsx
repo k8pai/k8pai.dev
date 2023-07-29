@@ -47,6 +47,7 @@ export default function ProjectCard({
 						const { Component, color, darkColor } = el;
 						return (
 							<Component
+								key={elXid}
 								size="1.3em"
 								className={`fill-[${color}] dark:fill-[${darkColor}]`}
 							/>
