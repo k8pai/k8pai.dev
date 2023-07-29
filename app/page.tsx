@@ -32,7 +32,7 @@ export default async function page() {
 
 	return (
 		<section>
-			<div className="flex-auto max-w-xl">
+			<div className="flex-auto max-w-3xl">
 				<h1 className="font-semibold text-3xl tracking-wider">
 					Sudarsan K Pai
 				</h1>
@@ -45,25 +45,8 @@ export default async function page() {
 				<p className="tracking-wider leading-loose mt-4">
 					Over the past year, I have been relentlessly honing my
 					skills in the MERN stack, driven by a passion for creating
-					impactful web experiences. Discover a collection of quick
-					solutions on JavaScript concepts and some simple projects
-					that add value to the users in the{' '}
-					<Link
-						href={'/solutions'}
-						className=" transition-all duration-200 text-cyan-200 hover:text-cyan-300"
-					>
-						solutions
-					</Link>{' '}
-					page.
+					impactful web experiences.
 				</p>
-
-				<div className="connection section.">
-					<p className="tracking-wider leading-loose mt-2">
-						Star this repo or give me a fork. Credits goes to{' '}
-						<Link href={'https://leerob.io'}>lee Robinson</Link> for
-						this modern portfolio design.
-					</p>
-				</div>
 
 				<div>
 					<p className="tracking-wider leading-loose mt-2">
@@ -71,28 +54,44 @@ export default async function page() {
 					</p>
 					{posts &&
 						posts.map(({ url, title, date }, idx) => (
-							<div className="mt-6">
-								<h2 className="mb-1 text-xl">
-									<Link
-										href={`/solutions/${url}`}
-										className="transition-all duration-200 font-semibold "
+							<Link key={idx} href={`/solutions/${url}`}>
+								<div className="my-3 p-3 bg-[#FFFAF0] dark:bg-neutral-900 rounded-md transition-all shadow hover:shadow-md">
+									<h2 className="text-lg">
+										<span className="transition-all duration-200 font-semibold ">
+											{title}
+										</span>
+									</h2>
+									<time
+										dateTime={date}
+										className="mb-2 block text-xs font-semibold text-gray-600"
 									>
-										{title}
-									</Link>
-								</h2>
-								<time
-									dateTime={date}
-									className="mb-2 block text-xs font-semibold text-gray-600"
-								>
-									{format(parseISO(date), 'LLLL d, yyyy')}
-								</time>
-								<hr />
-							</div>
+										{format(parseISO(date), 'LLLL d, yyyy')}
+									</time>
+								</div>
+							</Link>
 						))}
+
+					<p className="tracking-wider leading-loose mt-2">
+						Visit{' '}
+						<Link
+							href={'/solutions'}
+							className="transition-all duration-200 text-blue-800 hover:text-blue-700/90 dark:text-sky-400 hover:dark:text-sky-400/70 tracking-wider p-1 font-semibold"
+						>
+							/solutions
+						</Link>{' '}
+						for the list of blog posts.
+					</p>
 				</div>
+				{/* <div className="connection section. mt-6">
+					<p className="tracking-wider leading-loose mt-2">
+						Star this repo or give me a fork. Credits goes to{' '}
+						<Link href={'https://leerob.io'}>lee Robinson</Link> for
+						this modern portfolio design.
+					</p>
+				</div> */}
 			</div>
 
-			<Socials />
+			{/* <Socials /> */}
 		</section>
 	);
 }

@@ -25,5 +25,5 @@ model Interactions {
 model Views {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   slug  String @unique
-  count Int
+  count Int    @default(0)
 }

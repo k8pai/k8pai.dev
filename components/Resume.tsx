@@ -63,7 +63,7 @@ export default function Resume({ session }: { session?: Session }) {
 					about me
 				</h1>
 
-				<div className="mt-6 rounded-lg shadow-md bg-[#181818] p-4 font-semibold">
+				<div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4 font-semibold">
 					<p>
 						A self-driven, versatile, reliable, diligent individual
 						who is calm and cheerful with a team-minded approach to
@@ -85,7 +85,7 @@ export default function Resume({ session }: { session?: Session }) {
 					<button
 						type="button"
 						onClick={() => setShowAbout((ref) => !ref)}
-						className="block rounded-lg transition-all bg-[#242424] hover:bg-[#202020] px-3 py-2 font-semibold text-white whitespace-nowrap hover:text-[#fafafa]"
+						className="block rounded-lg transition-all bg-stone-100 dark:bg-[#242424] hover:dark:bg-[#202020] px-3 py-2 font-semibold whitespace-nowrap shadow-md"
 					>
 						{showAbout ? 'Read Less' : 'Read More'}
 					</button>
@@ -98,17 +98,17 @@ export default function Resume({ session }: { session?: Session }) {
 					Education
 				</h1>
 
-				<div className="mt-6 rounded-lg shadow-md bg-[#181818] p-4">
+				<div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4">
 					<div className="flex items-start space-x-4 p-2">
 						<IconContext.Provider value={{ size: '2em' }}>
 							<FcGraduationCap />
 						</IconContext.Provider>
-						<div className="flex-grow space-y-2">
+						<div className="flex-grow space-y-1">
 							<h1 className="text-2xl font-bold capitalize">
 								Mahatma Gandhi University
 							</h1>
 							<div className="flex flex-col md:flex-row md:justify-between md:items-center">
-								<h1 className="tracking-wide flex items-center text-slate-200">
+								<h1 className="tracking-wide flex items-center text-neutral-800 dark:text-slate-200">
 									Bachelor degree, Computer Applications
 								</h1>
 								<h4 className="font-semibold tracking-wide">
@@ -119,17 +119,17 @@ export default function Resume({ session }: { session?: Session }) {
 					</div>
 				</div>
 
-				<div className="mt-6 rounded-lg shadow-md bg-[#181818] p-4">
+				<div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4">
 					<div className="flex items-start space-x-4 p-2">
 						<IconContext.Provider value={{ size: '2em' }}>
 							<FcGraduationCap />
 						</IconContext.Provider>
-						<div className="flex-grow space-y-2">
+						<div className="flex-grow space-y-1">
 							<h1 className="text-2xl font-bold capitalize">
 								St Mary&apos;s HSS, Pattom.
 							</h1>
 							<div className="flex flex-col md:flex-row md:justify-between md:items-center">
-								<h1 className="tracking-wide flex items-center text-slate-200">
+								<h1 className="tracking-wide flex items-center text-neutral-800 dark:text-slate-200">
 									<span>
 										Higher Secondary, Computer Science
 									</span>
@@ -142,17 +142,17 @@ export default function Resume({ session }: { session?: Session }) {
 					</div>
 				</div>
 
-				<div className="mt-6 rounded-lg shadow-md bg-[#181818] p-4">
+				<div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4">
 					<div className="flex items-start space-x-4 p-2">
 						<IconContext.Provider value={{ size: '2em' }}>
 							<FcGraduationCap />
 						</IconContext.Provider>
-						<div className="flex-grow space-y-2">
+						<div className="flex-grow space-y-1">
 							<h1 className="text-2xl font-bold capitalize">
 								TDHS, Kochi.
 							</h1>
 							<div className="flex flex-col md:flex-row md:justify-between md:items-center">
-								<h1 className="tracking-wide flex items-center text-slate-200">
+								<h1 className="tracking-wide flex items-center text-neutral-800 dark:text-slate-200">
 									<span>Matriculation</span>
 								</h1>
 								<h4 className="font-semibold tracking-wide">

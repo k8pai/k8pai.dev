@@ -12,8 +12,8 @@ export default function ProjectCard({
 	project: projectsInfoType;
 }) {
 	return (
-		<div className="rounded-md group bg-[#181818] p-3 w-full">
-			<div className="imageSection relative aspect-video bg-[#111010] rounded-md">
+		<div className="rounded-md group bg-slate-200 dark:bg-[#181818] p-3 w-full">
+			<div className="imageSection relative aspect-video bg-slate-300 dark:bg-[#111010] rounded-md">
 				<Image src={imageUrl} alt={`${name} preview`} />
 			</div>
 			<div className="content-section">
@@ -50,16 +50,15 @@ export default function ProjectCard({
 						</Link>
 					)}
 				</div>
-				<div className="projectdetails p-1 md:mt-2 flex items-start md:items-center space-x-3">
+				<div className="projectdetails p-1 mt-2 flex items-start md:items-center space-x-3">
 					{Components?.map((el, elXid) => {
-						const { Component, color } = el;
+						const { Component, color, darkColor } = el;
 						return (
 							<IconContext.Provider
 								key={elXid}
 								value={{
 									size: '1.3em',
-									color: color,
-									className: 'react-icons',
+									className: `fill-[${color}] dark:fill-[${darkColor}]`,
 								}}
 							>
 								<Component />

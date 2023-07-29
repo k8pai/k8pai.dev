@@ -2,23 +2,15 @@
 import Link from 'next/link';
 import { compareDesc, format, parseISO } from 'date-fns';
 import { allSolutions, Solutions } from 'contentlayer/generated';
-import { getViews } from 'lib/prisma/views';
-import ViewCounter from './view_counter';
+import { Views } from '@prisma/client';
 
-function PostCard({
-	post: { url, title, date },
-	views = [],
-}: {
-	post: Solutions;
-	views: string[];
-}) {
-	console.log('views => ', views);
+export function PostCard({ post: { url, title, date } }: { post: Solutions }) {
 	return (
 		<div className="mb-6">
 			<h2 className="mb-1 text-xl">
 				<Link
 					href={`/solutions/${url}`}
-					className="text-slate-200 hover:text-slate-300 transition-all duration-200 font-semibold "
+					className="transition-all duration-200 font-semibold "
 				>
 					{title}
 				</Link>
@@ -29,25 +21,29 @@ function PostCard({
 			>
 				{format(parseISO(date), 'LLLL d, yyyy')}
 			</time>
-			<ViewCounter slug={url} allviews={views} />
 		</div>
 	);
 }
 
-export default async function Home() {
+export default async function Page() {
 	const posts = allSolutions.sort((a, b) =>
 		compareDesc(new Date(a.date), new Date(b.date)),
 	);
-
-	const views = await getViews();
-	console.log(views);
 	return (
-		<div className="max-w-xl">
-			<h1 className="text-3xl font-bold mb-8 capitalize text-slate-200">
-				Solutions
-			</h1>
+		<div className="max-w-3xl">
+			<div className="mb-10 tracking-wider leading-loose">
+				{/* <h1 className="text-3xl capitalize">Solutions</h1> */}
+
+				<p className="mt-2">
+					Each blog post is like deconstructing my learning process,
+					unraveling the mysteries of programming, one line of code at
+					a time.
+				</p>
+
+				<p className="mt-2">Happy coding!</p>
+			</div>
 			{posts.map((post, idx) => (
-				<PostCard key={idx} post={post} views={views.data} />
+				<PostCard key={idx} post={post} />
 			))}
 		</div>
 	);

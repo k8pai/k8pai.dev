@@ -4,7 +4,6 @@ const nextConfig = {
 	experimental: {
 		serverActions: true,
 	},
-	reactStrictMode: true,
 	images: {
 		domains: ['github.com', 'avatars.githubusercontent.com'],
 	},

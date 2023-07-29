@@ -17,7 +17,7 @@ export default function TechSkills({
 				Component
 					? 'flex items-center space-x-3'
 					: 'font-semibold font-mono'
-			} px-3 py-1 w-fit m-1 border border-slate-500/40 rounded-lg bg-[#181818] text-slate-200`}
+			} px-3 py-1 w-fit m-1 border border-slate-500/40 rounded-lg bg-stone-300 dark:bg-[#181818]`}
 		>
 			{Component ? (
 				<IconContext.Provider value={{ color: color }}>

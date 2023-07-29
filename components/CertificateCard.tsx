@@ -20,12 +20,12 @@ export default function CertificateCard({
 				!isGrid
 					? 'flex flex-col md:flex-row md:items-start space-x-3'
 					: null
-			} rounded-md bg-[#181818] p-3 w-full`}
+			} rounded-md bg-slate-300 dark:bg-[#181818] p-3 w-full`}
 		>
-			<div className="imageSection p-3">
+			<div className="imageSection p-2 w-fit">
 				<IconContext.Provider
 					value={{
-						size: '3em',
+						size: '2em',
 						color: color,
 						className: 'react-icons mr-2',
 					}}
@@ -35,17 +35,17 @@ export default function CertificateCard({
 			</div>
 			<div className="ml-2">
 				<h1
-					className={`font-semibold tracking-wider text-2xl ${
-						!isGrid ? 'py-1' : 'py-2'
+					className={`font-semibold tracking-wider text-lg ${
+						!isGrid ? 'py-px' : 'py-1'
 					}`}
 				>
 					{name}
 				</h1>
-				<div className={`py-0 flex items-center`}>
+				<div className={`py-0 flex items-center text-xs`}>
 					<span>{issueDate}</span>
 					<IconContext.Provider
 						value={{
-							size: '1.5em',
+							size: '1em',
 							className: 'global-class-name',
 						}}
 					>
@@ -60,7 +60,7 @@ export default function CertificateCard({
 				</div>
 				<Link
 					href={href}
-					className="font-semibold text-gray-400 mt-3 flex items-start md:items-center md:space-x-1"
+					className="font-semibold text-sm text-zinc-500 dark:text-neutral-400 mt-1 flex items-start md:items-center md:space-x-1"
 				>
 					See Credentials
 				</Link>

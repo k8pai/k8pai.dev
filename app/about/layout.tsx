@@ -58,12 +58,12 @@ export default function RootLayout({
 						</h1>
 					</div>
 					<div className="status mt-2">
-						<div className="flex text-slate-200">
+						<div className="flex">
 							<span className="text-lg">
 								Student | Web Developer
 							</span>
 						</div>
-						<div className="flex items-center space-x-1 text-slate-400">
+						<div className="flex items-center space-x-1 text-zinc-600 dark:text-slate-400">
 							<MdLocationPin />
 							<span className="text-lg">Banglore, India</span>
 						</div>
@@ -76,7 +76,7 @@ export default function RootLayout({
 									target="_blank"
 									key={elXid}
 									href={href}
-									className="p-2 transition-all duration-200 bg-[#181818] hover:scale-110 hover:shadow-md rounded-md"
+									className="p-2 transition-all duration-200 bg-neutral-200 dark:bg-neutral-800 hover:scale-110 hover:shadow-md rounded-md"
 								>
 									<IconContext.Provider
 										value={{

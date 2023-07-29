@@ -15,9 +15,9 @@ export default function Sidenav() {
 		'/about': {
 			name: 'About',
 		},
-		'/solutions': {
-			name: 'Solutions',
-		},
+		// '/solutions': {
+		// 	name: 'Solutions',
+		// },
 		'/guestbook': {
 			name: 'Guestbook',
 		},
@@ -43,7 +43,7 @@ export default function Sidenav() {
 										!isActive
 											? 'text-neutral-500'
 											: 'scale-105'
-									} ${path === '/' ? 'hidden' : null}`}
+									}`}
 								>
 									<span className="relative py-2 px-3 w-fit">
 										{name}

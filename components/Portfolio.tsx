@@ -75,7 +75,7 @@ export default function Portfolio({ session }: { session?: Session }) {
 					</h1>
 					<span className={'flex-grow'}></span>
 					<button
-						className={`group relative bg-[#202020] rounded-md hover:shadow-md hidden lg:block`}
+						className={`group relative bg-neutral-200 dark:bg-[#202020] rounded-md hover:shadow-md hidden lg:block`}
 						onClick={() => setIsGrid(!isGrid)}
 					>
 						<IconContext.Provider
@@ -90,7 +90,7 @@ export default function Portfolio({ session }: { session?: Session }) {
 					</button>
 					<button
 						type="button"
-						className="transition-all bg-[#202020] hover:bg-[#181818] p-2 rounded-md hover:shadow-md"
+						className="transition-all bg-neutral-200 dark:bg-[#202020] hover:dark:bg-[#181818] p-2 rounded-md hover:shadow-md"
 						onClick={handleShowCertificates}
 					>
 						<span className="block md:font-semibold">

@@ -19,13 +19,13 @@ const Comments = ({
 				{body}
 			</div>
 			{links.length ? (
-				<div className="flex items-center space-x-2 flex-wrap">
+				<div className="flex items-center flex-wrap">
 					{links?.map((el: string, ind: number) => {
 						return (
 							<Link
 								key={ind}
 								href={el}
-								className="text-xs w-fit flex items-center space-x-2 px-2 py-1 font-mono bg-[#242526] rounded-md text-neutral-300 hover:text-neutral-400 transition-all duration-200"
+								className="text-xs w-fit m-2 flex items-center space-x-2 px-2 py-1 font-mono bg-[#242526] rounded-md text-neutral-300 hover:text-neutral-400 transition-all duration-200"
 							>
 								<span>{getDomainName(el)}</span>
 								<CiLink />

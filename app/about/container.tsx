@@ -46,16 +46,16 @@ export default function Container({ session }: { session?: Session }) {
 					return (
 						<button
 							key={elXid}
-							className={`relative py-2 shadow-md`}
+							className={`relative py-2`}
 							onClick={() => setContent({ name, Component })}
 						>
 							<span
 								className={`relative px-3 text-xs sm:text-base py-2 tracking-wider capitalize font-semibold`}
 							>
-								<motion.div className="absolute inset-0 bg-[#181818] rounded-md z-[-5]" />
+								<motion.div className="absolute inset-0 bg-slate-200 dark:bg-[#181818] rounded-md shadow-md z-[-5]" />
 								{name === content.name ? (
 									<motion.div
-										className="absolute inset-0 bg-[#4338CA] bg-opacity-50 rounded-md z-[-1]"
+										className="absolute inset-0 bg-[#4338CA] bg-opacity-50 rounded-md shadow-md z-[-1]"
 										layoutId="underline"
 									/>
 								) : null}
@@ -66,7 +66,7 @@ export default function Container({ session }: { session?: Session }) {
 				})}
 				<span className={'flex-grow'}></span>
 				<button
-					className={`group relative bg-[#181818] px-3 py-2 rounded-md hover:shadow-md ${
+					className={`group relative bg-slate-200 dark:bg-[#181818] px-3 py-2 rounded-md shadow-md ${
 						content.name === 'resume' ? 'block' : 'hidden'
 					}`}
 					onClick={downloadResume}

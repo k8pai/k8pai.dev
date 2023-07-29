@@ -42,11 +42,11 @@ export default function Contact({ session }: { session?: Session }) {
 
 	return (
 		<div className="aboutme mt-10">
-			<form className="w-full max-w-xl" onSubmit={handleSubmit}>
-				<h1 className="text-3xl font-bold mb-3 capitalize text-slate-200">
+			<form className="w-full max-w-2xl" onSubmit={handleSubmit}>
+				<h1 className="text-3xl font-bold mb-3 capitalize">
 					Connect with me
 				</h1>
-				<p className="text-sm tracking-wide font-semibold mb-6 text-slate-400">
+				<p className="text-sm tracking-wide font-semibold mb-6 text-neutral-800 dark:text-slate-400">
 					If you want to know more about me or my work, or if you
 					would just like to say hello, send me a message. I&apos;d
 					love to hear from you.
@@ -54,7 +54,7 @@ export default function Contact({ session }: { session?: Session }) {
 				<div className="flex flex-col md:flex-row -mx-3 px-3 md:mb-6">
 					<div className="relative mr-0 mb-5 md:mb-0 md:mr-2">
 						<input
-							className="appearance-none block w-full bg-[#181818] text-slate-300 border border-transparent rounded py-3 px-4 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
+							className="appearance-none block w-full bg-slate-200 dark:bg-[#181818] dark:text-slate-300 border border-transparent rounded py-3 px-4 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
 							id="nick"
 							type="text"
 							placeholder="Name"
@@ -86,7 +86,7 @@ export default function Contact({ session }: { session?: Session }) {
 					</div>
 					<div className="flex-grow relative ml-0 mb-5 md:mb-0 md:ml-2">
 						<input
-							className="appearance-none block w-full bg-[#181818] text-slate-300 border border-transparent rounded py-3 px-4 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
+							className="appearance-none block w-full bg-slate-200 dark:bg-[#181818] dark:text-slate-300 border border-transparent rounded py-3 px-4 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
 							id="email"
 							type="email"
 							name="email"
@@ -120,7 +120,7 @@ export default function Contact({ session }: { session?: Session }) {
 				<div className="flex flex-wrap -mx-3 mb-4">
 					<div className="w-full px-3">
 						<textarea
-							className="no-resize appearance-none block w-full bg-[#181818] text-slate-300 border border-transparent rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-[#4338ca]  font-semibold tracking-wider h-48 resize-none"
+							className="no-resize appearance-none block w-full bg-slate-200 dark:bg-[#181818] dark:text-slate-300 border border-transparent rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-[#4338ca]  font-semibold tracking-wider h-48 resize-none"
 							id="message"
 							name="message"
 							placeholder={`Leave me a message...`}
@@ -131,7 +131,7 @@ export default function Contact({ session }: { session?: Session }) {
 				</div>
 				<div className="flex items-center justify-between mb-4">
 					<button
-						className="shadow-md flex items-center space-x-2 tracking-wider transition-all bg-[#181818] hover:bg-[#202020] focus:shadow-outline focus:outline-none text-slate-200 font-semibold py-2 px-4 rounded-lg"
+						className="shadow-md flex items-center space-x-2 tracking-wider transition-all  bg-slate-200 dark:bg-[#181818] hover:dark:bg-[#202020] focus:shadow-outline focus:outline-none font-semibold py-2 px-4 rounded-lg border-gray-200"
 						type="submit"
 					>
 						<span>Send</span>
@@ -140,16 +140,16 @@ export default function Contact({ session }: { session?: Session }) {
 						</IconContext.Provider>
 					</button>
 				</div>
-				<h1 className="text-sm text-center font-bold mb-3 capitalize text-slate-200">
+				<h1 className="text-sm text-center font-bold mb-3 capitalize">
 					OR
 				</h1>
-				<p className="text-sm tracking-wide font-semibold mb-6 text-slate-400">
+				<p className="text-sm tracking-wide font-semibold mb-6 text-neutral-800 dark:text-slate-400">
 					Reach out to some of my most active platforms.
 				</p>
 				<div className="flex flex-wrap items-center">
 					<Link
 						href={'mailto:thek8pai@gmail.com'}
-						className="text-sm flex items-center mr-3 my-2 space-x-3 tracking-wide bg-[#181818] font-semibold py-2 px-3 rounded-md"
+						className="text-sm flex items-center mr-3 my-2 space-x-3 tracking-wide  bg-slate-200 dark:bg-[#181818] font-semibold py-2 px-3 rounded-md"
 					>
 						<IconContext.Provider
 							value={{
@@ -163,7 +163,7 @@ export default function Contact({ session }: { session?: Session }) {
 					</Link>
 					<Link
 						href={'https://wa.me/+917994648190'}
-						className="text-sm flex items-center mr-3 my-2 space-x-3 tracking-wide bg-[#181818] font-semibold py-2 px-3 rounded-md"
+						className="text-sm flex items-center mr-3 my-2 space-x-3 tracking-wide  bg-slate-200 dark:bg-[#181818] font-semibold py-2 px-3 rounded-md"
 					>
 						<IconContext.Provider
 							value={{
@@ -179,7 +179,7 @@ export default function Contact({ session }: { session?: Session }) {
 
 					<Link
 						href={'https://discord.com/users/898949804024012850'}
-						className="text-sm flex items-center mr-3 my-2 space-x-3 tracking-wide bg-[#181818] font-semibold py-2 px-3 rounded-md"
+						className="text-sm flex items-center mr-3 my-2 space-x-3 tracking-wide  bg-slate-200 dark:bg-[#181818] font-semibold py-2 px-3 rounded-md"
 					>
 						<IconContext.Provider
 							value={{

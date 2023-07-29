@@ -51,7 +51,7 @@ export default function RootLayout({
 		<html
 			lang="en"
 			className={
-				'text-[#242526] bg-white dark:text-neutral-100 dark:bg-[#111010]'
+				'text-[#242526] bg-[#F5F5F5] dark:text-neutral-100 dark:bg-[#111010]'
 			}
 		>
 			<body className="max-w-5xl flex flex-col mx-4 min-h-screen lg:mx-auto">
