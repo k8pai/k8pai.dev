@@ -1,11 +1,8 @@
 import { Metadata } from 'next';
 import React from 'react';
-import Socials from '../components/Socials';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../pages/api/auth/[...nextauth]';
 import Link from 'next/link';
-import { IconContext } from 'react-icons/lib';
-import { MdArrowOutward } from 'react-icons/md';
 import { allSolutions } from 'contentlayer/generated';
 import { compareDesc, format, parseISO } from 'date-fns';
 

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import type { Metadata } from 'next';
 import {
 	FcAddressBook,
 	FcBinoculars,
@@ -11,7 +10,6 @@ import {
 import { motion } from 'framer-motion';
 import Resume from '../../components/Resume';
 import Contact from '../../components/Contact';
-import { IconContext } from 'react-icons';
 import Portfolio from '../../components/Portfolio';
 // import { Session } from 'next-auth';
 // import { getServerSession } from 'next-auth';
@@ -80,15 +78,10 @@ export default function Page() {
 					}`}
 					onClick={downloadResume}
 				>
-					<IconContext.Provider
-						value={{
-							size: '1.3em',
-							className:
-								'relative tracking-wider capitalize rounded-md font-semibold',
-						}}
-					>
-						<FcRules />
-					</IconContext.Provider>
+					<FcRules
+						className="relative tracking-wider capitalize rounded-md font-semibold"
+						size={'1.3em'}
+					/>
 				</button>
 			</div>
 			<content.Component />

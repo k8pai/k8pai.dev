@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { FcGraduationCap } from 'react-icons/fc';
-import { IconContext } from 'react-icons/lib';
 import TechSkills from './TechSkills';
 import { FaJava } from 'react-icons/fa';
 import {
@@ -100,9 +99,7 @@ export default function Resume() {
 
 				<div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4">
 					<div className="flex items-start space-x-4 p-2">
-						<IconContext.Provider value={{ size: '2em' }}>
-							<FcGraduationCap />
-						</IconContext.Provider>
+						<FcGraduationCap size={'2em'} />
 						<div className="flex-grow space-y-1">
 							<h1 className="text-2xl font-bold capitalize">
 								Mahatma Gandhi University
@@ -121,9 +118,7 @@ export default function Resume() {
 
 				<div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4">
 					<div className="flex items-start space-x-4 p-2">
-						<IconContext.Provider value={{ size: '2em' }}>
-							<FcGraduationCap />
-						</IconContext.Provider>
+						<FcGraduationCap size={'2em'} />
 						<div className="flex-grow space-y-1">
 							<h1 className="text-2xl font-bold capitalize">
 								St Mary&apos;s HSS, Pattom.
@@ -144,9 +139,7 @@ export default function Resume() {
 
 				<div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4">
 					<div className="flex items-start space-x-4 p-2">
-						<IconContext.Provider value={{ size: '2em' }}>
-							<FcGraduationCap />
-						</IconContext.Provider>
+						<FcGraduationCap size={'2em'} />
 						<div className="flex-grow space-y-1">
 							<h1 className="text-2xl font-bold capitalize">
 								TDHS, Kochi.

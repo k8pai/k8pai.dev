@@ -2,7 +2,7 @@ import React from 'react';
 import { MdLocationPin } from 'react-icons/md';
 import Image from 'next/image';
 import profilePhoto from '../../public/developer.png';
-import { IconContext, IconType } from 'react-icons';
+import { IconType } from 'react-icons';
 import { SiDiscord, SiGithub, SiInstagram, SiLinkedin } from 'react-icons/si';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -91,14 +91,7 @@ export default function RootLayout({
 									href={href}
 									className="p-2 transition-all duration-200 bg-neutral-200 dark:bg-neutral-800 hover:scale-110 hover:shadow-md rounded-md"
 								>
-									<IconContext.Provider
-										value={{
-											size: '1.5em',
-											color: color,
-										}}
-									>
-										<Component />
-									</IconContext.Provider>
+									<Component color={color} size={'1.5em'} />
 								</Link>
 							);
 						})}

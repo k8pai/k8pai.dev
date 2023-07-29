@@ -1,5 +1,4 @@
 import React from 'react';
-import { IconContext } from 'react-icons/lib';
 import { projectsInfoType } from '../lib/info';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,15 +24,10 @@ export default function ProjectCard({
 							className="space-x-2 flex items-center font-semibold tracking-wider text-base md:text-2xl"
 						>
 							<span>{name}</span>
-							<IconContext.Provider
-								value={{
-									size: '1.5em',
-									className:
-										'transition duration-200 ease-in opacity-0 group-hover:opacity-100 text-sm font-mono',
-								}}
-							>
-								<CiLink />
-							</IconContext.Provider>
+							<CiLink
+								size="1.5em"
+								className="transition duration-200 ease-in opacity-0 group-hover:opacity-100 text-sm font-mono"
+							/>
 						</Link>
 					) : (
 						<span>{name}</span>
@@ -44,9 +38,7 @@ export default function ProjectCard({
 							href={githubUrl}
 							className="space-x-2 flex transition duration-200 ease-in opacity-0 group-hover:opacity-100 font-mono text-xs"
 						>
-							<IconContext.Provider value={{ size: '1.5em' }}>
-								<SiGithub />
-							</IconContext.Provider>
+							<SiGithub size="1.5em" />
 						</Link>
 					)}
 				</div>
@@ -54,15 +46,10 @@ export default function ProjectCard({
 					{Components?.map((el, elXid) => {
 						const { Component, color, darkColor } = el;
 						return (
-							<IconContext.Provider
-								key={elXid}
-								value={{
-									size: '1.3em',
-									className: `fill-[${color}] dark:fill-[${darkColor}]`,
-								}}
-							>
-								<Component />
-							</IconContext.Provider>
+							<Component
+								size="1.3em"
+								className={`fill-[${color}] dark:fill-[${darkColor}]`}
+							/>
 						);
 					})}
 				</div>

@@ -19,9 +19,7 @@ export default function Projects() {
 							{project.components.map(
 								({ Component, color }, componentIndex) => (
 									<span key={componentIndex} className="mr-2">
-										<Component
-											className={`fill-[${color}]`}
-										/>
+										<Component color={color} />
 									</span>
 								),
 							)}

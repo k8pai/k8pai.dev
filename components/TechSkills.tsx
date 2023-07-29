@@ -1,6 +1,6 @@
 import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
 import React from 'react';
-import { IconContext, IconType } from 'react-icons/lib';
+import { IconType } from 'react-icons/lib';
 
 export default function TechSkills({
 	Component,
@@ -19,11 +19,7 @@ export default function TechSkills({
 					: 'font-semibold font-mono'
 			} px-3 py-1 w-fit m-1 border border-slate-500/40 rounded-lg bg-stone-300 dark:bg-[#181818]`}
 		>
-			{Component ? (
-				<IconContext.Provider value={{ color: color }}>
-					<Component />
-				</IconContext.Provider>
-			) : null}
+			{Component ? <Component color={color} /> : null}
 			<span>{children}</span>
 		</div>
 	);

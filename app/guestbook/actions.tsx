@@ -3,7 +3,6 @@
 import React from 'react';
 import { signIn, signOut } from 'next-auth/react';
 import { IoLogOutOutline } from 'react-icons/io5';
-import { IconContext } from 'react-icons';
 import { SiGithub } from 'react-icons/si';
 
 export function SignIn() {
@@ -13,9 +12,7 @@ export function SignIn() {
 			onClick={() => signIn('github')}
 		>
 			<span>Sign in with </span>
-			<IconContext.Provider value={{ size: '1.5em' }}>
-				<SiGithub />
-			</IconContext.Provider>
+			<SiGithub size={'1.5em'} />
 		</button>
 	);
 }
@@ -27,9 +24,7 @@ export function SignOut() {
 			onClick={() => signOut()}
 		>
 			<span>Sign Out</span>
-			<IconContext.Provider value={{ size: '1.5em' }}>
-				<IoLogOutOutline />
-			</IconContext.Provider>
+			<IoLogOutOutline size={'1.5em'} />
 		</button>
 	);
 }

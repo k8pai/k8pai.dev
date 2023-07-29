@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { IconContext } from 'react-icons/lib';
 import { SiGithub } from 'react-icons/si';
 import Link from 'next/link';
 import ProjectCard from './ProjectCard';
@@ -13,7 +12,7 @@ import {
 	projectsInfoType,
 	certificatesInfoType,
 } from '../lib/info';
-import { Session } from 'next-auth';
+// import { Session } from 'next-auth';
 
 export default function Portfolio() {
 	const [isGrid, setIsGrid] = useState<boolean>(true);
@@ -47,14 +46,7 @@ export default function Portfolio() {
 						href={'https://github.com/k8pai'}
 						className="transition-all md:text-blue-400 md:hover:text-cyan-400 bg-[#181818] p-2 md:bg-transparent md:p-0 rounded-md"
 					>
-						<IconContext.Provider
-							value={{
-								size: '1.5em',
-								className: 'block md:hidden',
-							}}
-						>
-							<SiGithub />
-						</IconContext.Provider>
+						<SiGithub size="1.5em" className="block md:hidden" />
 						<span className="hidden md:block md:font-semibold">
 							Show More
 						</span>
@@ -78,15 +70,17 @@ export default function Portfolio() {
 						className={`group relative bg-neutral-200 dark:bg-[#202020] rounded-md hover:shadow-md hidden lg:block`}
 						onClick={() => setIsGrid(!isGrid)}
 					>
-						<IconContext.Provider
-							value={{
-								size: '1.5em',
-								className:
-									'relative tracking-wider capitalize font-semibold m-2',
-							}}
-						>
-							{isGrid ? <CiGrid2H /> : <CiGrid41 />}
-						</IconContext.Provider>
+						{isGrid ? (
+							<CiGrid2H
+								size="1.5em"
+								className="relative tracking-wider capitalize font-semibold m-2"
+							/>
+						) : (
+							<CiGrid41
+								size="1.5em"
+								className="relative tracking-wider capitalize font-semibold m-2"
+							/>
+						)}
 					</button>
 					<button
 						type="button"

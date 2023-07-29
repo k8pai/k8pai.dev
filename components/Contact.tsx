@@ -3,7 +3,6 @@
 import { Session } from 'next-auth';
 import Link from 'next/link';
 import React, { FormEvent, useState } from 'react';
-import { IconContext } from 'react-icons';
 import { MdOutlineClear } from 'react-icons/md';
 import { SiDiscord, SiGmail, SiWhatsapp } from 'react-icons/si';
 import { TbSend } from 'react-icons/tb';
@@ -73,14 +72,7 @@ export default function Contact() {
 									}))
 								}
 							>
-								<IconContext.Provider
-									value={{
-										size: '1.2em',
-										className: 'global-class-name',
-									}}
-								>
-									<MdOutlineClear />
-								</IconContext.Provider>
+								<MdOutlineClear size="1.2em" />
 							</button>
 						)}
 					</div>
@@ -105,14 +97,7 @@ export default function Contact() {
 									}))
 								}
 							>
-								<IconContext.Provider
-									value={{
-										size: '1.2em',
-										className: 'global-class-name',
-									}}
-								>
-									<MdOutlineClear />
-								</IconContext.Provider>
+								<MdOutlineClear size={'1.2em'} />
 							</button>
 						)}
 					</div>
@@ -135,9 +120,7 @@ export default function Contact() {
 						type="submit"
 					>
 						<span>Send</span>
-						<IconContext.Provider value={{ size: '1.2em' }}>
-							<TbSend />
-						</IconContext.Provider>
+						<TbSend size={'1.2em'} />
 					</button>
 				</div>
 				<h1 className="text-sm text-center font-bold mb-3 capitalize">
@@ -151,29 +134,14 @@ export default function Contact() {
 						href={'mailto:thek8pai@gmail.com'}
 						className="text-sm flex items-center mr-3 my-2 space-x-3 tracking-wide  bg-slate-200 dark:bg-[#181818] font-semibold py-2 px-3 rounded-md"
 					>
-						<IconContext.Provider
-							value={{
-								size: '1.5em',
-								color: '#EA4335',
-							}}
-						>
-							<SiGmail />
-						</IconContext.Provider>
+						<SiGmail size={'1.5em'} color={'#EA4335'} />
 						<span>thek8pai@gmail.com</span>
 					</Link>
 					<Link
 						href={'https://wa.me/+917994648190'}
 						className="text-sm flex items-center mr-3 my-2 space-x-3 tracking-wide  bg-slate-200 dark:bg-[#181818] font-semibold py-2 px-3 rounded-md"
 					>
-						<IconContext.Provider
-							value={{
-								size: '1.5em',
-								color: '#25D366',
-							}}
-						>
-							<SiWhatsapp />
-						</IconContext.Provider>
-
+						<SiWhatsapp size={'1.5em'} color={'#25D366'} />
 						<span>k8pai</span>
 					</Link>
 
@@ -181,15 +149,7 @@ export default function Contact() {
 						href={'https://discord.com/users/898949804024012850'}
 						className="text-sm flex items-center mr-3 my-2 space-x-3 tracking-wide  bg-slate-200 dark:bg-[#181818] font-semibold py-2 px-3 rounded-md"
 					>
-						<IconContext.Provider
-							value={{
-								size: '1.5em',
-								color: '#5865F2',
-							}}
-						>
-							<SiDiscord />
-						</IconContext.Provider>
-
+						<SiDiscord size={'1.5em'} color={'#5865F2'} />
 						<span>_k8pai</span>
 					</Link>
 				</div>
