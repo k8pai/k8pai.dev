@@ -5,11 +5,11 @@ import { createComments, userType } from 'lib/prisma/guestbook';
 import { revalidatePath } from 'next/cache';
 import { messageSchema } from 'lib/schema';
 import { ZodError } from 'zod';
-import { User } from 'next-auth';
+import { DefaultSession, DefaultUser } from 'next-auth';
 
 export const guestbookInsert = async (
 	data: Iterable<readonly [PropertyKey, any]>,
-	user: User,
+	user: DefaultSession['user'],
 ) => {
 	const { message } = Object.fromEntries(data);
 

@@ -5,10 +5,10 @@ import { FaSignature } from 'react-icons/fa';
 import { guestbookInsert } from 'app/_actions';
 import { SignOut } from 'app/guestbook/actions';
 import { userType } from 'lib/prisma/guestbook';
-import { User } from 'next-auth';
+import { DefaultSession, DefaultUser, User } from 'next-auth';
 import { userAgent } from 'next/server';
 
-const Form = ({ user }: { user: User }) => {
+const Form = ({ user }: { user: DefaultSession['user'] }) => {
 	const formRef = useRef<HTMLFormElement>(null);
 	const [validationError, setValidationError] = useState<Record<
 		string,
