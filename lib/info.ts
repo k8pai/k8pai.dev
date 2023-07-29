@@ -185,6 +185,7 @@ export const certificatesInfo: certificatesInfoType[] = [
 export interface ProjectComponents {
 	Component: IconType;
 	color: string;
+	darkColor?: string;
 }
 export interface projectsInfoType {
 	name: string;
@@ -204,6 +205,7 @@ export const projectsInfo: projectsInfoType[] = [
 			{
 				Component: SiNextdotjs,
 				color: '#ffffff',
+				darkColor: '#000000',
 			},
 			{
 				Component: SiTailwindcss,

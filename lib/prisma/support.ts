@@ -1,13 +1,13 @@
 import prisma from '.';
 
-export const getViews = async () => {
-	try {
-		const response = await prisma.views.findMany({});
-		return { data: response };
-	} catch (error) {
-		return { error };
-	}
-};
+// export const getViews = async () => {
+// 	try {
+// 		const response = await prisma.views.findMany({});
+// 		return { data: response };
+// 	} catch (error) {
+// 		return { error };
+// 	}
+// };
 
 export const getInteractions = async () => {
 	try {
