@@ -7,11 +7,7 @@ export default function page() {
 	return (
 		<div>
 			<section className="secret-sections">
-				<h3 className="font-extrabold text-xl p-1 tracking-wider">
-					What&apos;s Coming? 💭
-				</h3>
-
-				<h3 className="font-bold text-lg font-mono p-1 tracking-wider">
+				<h3 className="font-bold text-xl font-mono p-1 tracking-wider">
 					Upcomging Blogs 📰
 				</h3>
 				<div>
@@ -29,7 +25,7 @@ export default function page() {
 			<div className="flex flex-col flex-wrap lg:flex-row">
 				<section className="secret-sections flex-1">
 					<h3 className="font-bold text-lg font-mono p-1 tracking-wider">
-						Upcoming Projects.
+						Upcoming Builds ⚒️
 					</h3>
 					<Projects />
 				</section>

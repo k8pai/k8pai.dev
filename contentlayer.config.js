@@ -14,6 +14,10 @@ export const SolutionPosts = defineDocumentType(() => ({
 			type: 'string',
 			required: true,
 		},
+		summary: {
+			type: 'string',
+			required: false,
+		},
 		date: {
 			type: 'date',
 			required: true,

@@ -19,6 +19,14 @@ import {
 	SiPython,
 } from 'react-icons/si';
 
+export const aboutMe = [
+	'I am a self-driven, versatile, and reliable individual, always approaching work with a team-minded spirit to get things done efficiently. My calm and cheerful demeanor helps me tackle challenges with a positive attitude, ensuring a smooth workflow.',
+
+	'As a student, my passion for design is evident in my keen eye for aesthetics and user experience. I find joy in exploring, contributing, and building new technologies and libraries that can make a difference in the digital world.',
+
+	"With a strong commitment to personal growth and professional development, I am constantly seeking opportunities to learn and expand my knowledge. Embracing new technologies is not just a task for me; it's a thrilling adventure.",
+];
+
 // Certificates info
 export interface certificatesInfoType {
 	data: {

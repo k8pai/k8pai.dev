@@ -16,16 +16,16 @@ export async function generateMetadata({
 	const post = allSolutions.find((post) => post.url === params.slug);
 	if (!post) return;
 
-	const { title, date: publishedTime, url } = post;
+	const { title, summary, date: publishedTime, url } = post;
 	return {
 		title,
-		description: title,
+		description: summary ?? title,
 		openGraph: {
 			title,
-			description: title,
+			description: summary ?? title,
 			type: 'article',
 			publishedTime,
-			url: `https://k8pai-dev.vercel.io/solutions/${url}`,
+			url: `https://k8pai-dev.vercel.app/solutions/${url}`,
 		},
 	};
 }
@@ -41,7 +41,12 @@ const PostLayout = async ({ params }: { params: { slug: string } }) => {
 	return (
 		<section className="w-full">
 			<div className="mb-8">
-				<h1 className="text-2xl font-bold">{post.title}</h1>
+				<h1 className="text-3xl font-bold">{post.title}</h1>
+				{post.summary && (
+					<h1 className="text-base tracking-wide mt-3">
+						{post.summary}
+					</h1>
+				)}
 				<div className="flex items-center justify-between mt-4">
 					<span className="h-px box-border w-full mr-2 bg-black dark:bg-white"></span>
 					<time

@@ -34,20 +34,48 @@ export default async function page() {
 					Sudarsan K Pai
 				</h1>
 				<p className="tracking-wider leading-loose mt-4">
-					Hey there, Myself Sudarsan K Pai, a dedicated full stack web
-					developer with a strong commitment to community engagement.
-					I thrive on collaborating with others and delivering
-					innovative solutions that make a positive difference.
+					As a dedicated full-stack web developer with a strong
+					commitment to community engagement, I thrive on
+					collaborating with others and delivering innovative
+					solutions that make a positive difference.
 				</p>
 				<p className="tracking-wider leading-loose mt-4">
-					Over the past year, I have been relentlessly honing my
-					skills in the MERN stack, driven by a passion for creating
-					impactful web experiences.
+					My ultimate goal is to become a well-rounded and skilled
+					full-stack web developer capable of delivering cutting-edge
+					solutions that positively impact the digital world.
 				</p>
 
-				<div>
+				<div className="my-5">
 					<p className="tracking-wider leading-loose mt-2">
-						Some of my latest posts...
+						Uncovering powerful tools, libraries, and frameworks
+						that redefine what's possible! 🚀💡
+					</p>
+					<div className="mt-1">
+						<Link
+							href={'https://discordjs.guide/#before-you-begin'}
+							className="hash"
+						>
+							#discordjs
+						</Link>
+						<Link href={'https://threejs.org/'} className="hash">
+							#threejs
+						</Link>
+						<Link
+							href={'https://soliditylang.org/'}
+							className="hash"
+						>
+							#solidity
+						</Link>
+						<Link href={'https://vuejs.org/'} className="hash">
+							#vuejs
+						</Link>
+						{/* <Link href={''} className="hash">#devOps</Link> */}
+					</div>
+				</div>
+
+				<div className=" mt-8">
+					<p className="tracking-wider leading-loose mt-2">
+						Checkout some of my latest Blog posts...
 					</p>
 					{posts &&
 						posts.map(({ url, title, date }, idx) => (
@@ -69,14 +97,14 @@ export default async function page() {
 						))}
 
 					<p className="tracking-wider leading-loose mt-2">
-						Visit{' '}
+						Discover the abundance of solutions on my{' '}
 						<Link
 							href={'/solutions'}
 							className="transition-all duration-200 text-blue-800 hover:text-blue-700/90 dark:text-sky-400 hover:dark:text-sky-400/70 tracking-wider p-1 font-semibold"
 						>
 							/solutions
 						</Link>{' '}
-						for the list of blog posts.
+						page!
 					</p>
 				</div>
 				{/* <div className="connection section. mt-6">

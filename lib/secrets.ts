@@ -1,7 +1,9 @@
 import {
+	SiDiscord,
 	SiFramer,
 	SiMongodb,
 	SiNextdotjs,
+	SiNodedotjs,
 	SiPrisma,
 	SiTailwindcss,
 } from 'react-icons/si';
@@ -69,8 +71,9 @@ export const articles = [
 
 export const projects = [
 	{
-		title: 'Portfolio',
-		description: 'My personal portfolio website.',
+		id: uuidv4(),
+		title: 'K8pai.com',
+		description: 'Google chrome themed portfolio project',
 		components: [
 			{
 				Component: SiNextdotjs,
@@ -96,8 +99,10 @@ export const projects = [
 		],
 	},
 	{
-		title: 'Portfolio',
-		description: 'My personal portfolio website.',
+		id: uuidv4(),
+		title: 'Discord Bot',
+		description:
+			'Discord Bot project to maintain server profiles and chats.',
 		components: [
 			{
 				Component: SiNextdotjs,
@@ -105,7 +110,11 @@ export const projects = [
 				darkColor: '#000000',
 			},
 			{
-				Component: SiTailwindcss,
+				Component: SiNodedotjs,
+				color: '#0055FF',
+			},
+			{
+				Component: SiDiscord,
 				color: '#06B6D4',
 			},
 			{
@@ -115,10 +124,6 @@ export const projects = [
 			{
 				Component: SiPrisma,
 				color: '#2D3748',
-			},
-			{
-				Component: SiFramer,
-				color: '#0055FF',
 			},
 		],
 	},

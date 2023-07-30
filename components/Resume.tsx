@@ -23,6 +23,8 @@ import {
 	SiTailwindcss,
 	SiTypescript,
 } from 'react-icons/si';
+import Mdx from './Mdx';
+import { aboutMe } from 'lib/info';
 // import { Session } from 'next-auth';
 
 export default function Resume() {
@@ -30,7 +32,7 @@ export default function Resume() {
 
 	const languages = ['English', 'Hindi', 'Malayalam', 'Konkani', 'Sanskrit'];
 
-	const skills = [
+	const techSkills = [
 		{ title: 'HTML', Component: SiHtml5, color: '#E34F26' },
 		{ title: 'CSS', Component: SiCss3, color: '#1572B6' },
 		{ title: 'Javascript', Component: SiJavascript, color: '#F7DF1E' },
@@ -54,40 +56,50 @@ export default function Resume() {
 			color: '#2088FF',
 		},
 	];
+
+	const softSkills = [
+		'Communication',
+		'Collaboration',
+		'Time-Management',
+		'Problem Solving',
+		'Adaptability',
+	];
 	return (
 		<div>
 			{/* about me section  */}
 			<div className="aboutme mt-10">
-				<h1 className="font-bold tracking-wide text-3xl text-center capitalize">
-					about me
+				<h1 className="font-bold tracking-wide text-2xl capitalize">
+					about
 				</h1>
 
-				<div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4 font-semibold">
+				<div className="mt-6 rounded-lg leading-relaxed text-base tracking-wider font-semibold">
 					<p>
-						A self-driven, versatile, reliable, diligent individual
-						who is calm and cheerful with a team-minded approach to
-						work and getting things done.
-						<br />
-						<br />A student who is passionate and with a keen eye
-						for design.
-						{showAbout ? (
-							<span className="transition-all">
-								{' '}
-								Passionate about exploring, contributing and
-								building new technologies and libraries.
-							</span>
-						) : (
-							<span className="transition-all">...</span>
-						)}
+						As a full-stack developer, I have a strong foundation,
+						yet I remain down-to-earth, always acknowledging the
+						potential for improvement and seeking opportunities to
+						grow. I have a genuine passion for acquiring knowledge
+						in areas where I am currently unfamiliar.
 					</p>
-					<br />
-					<button
-						type="button"
-						onClick={() => setShowAbout((ref) => !ref)}
-						className="block rounded-lg transition-all bg-stone-100 dark:bg-[#242424] hover:dark:bg-[#202020] px-3 py-2 font-semibold whitespace-nowrap shadow-md"
-					>
-						{showAbout ? 'Read Less' : 'Read More'}
-					</button>
+					<p className="mt-3">
+						Learning new technologies and exploring different
+						aspects of web development excites me. Moreover, I am
+						determined to enhance my expertise in the MERN (MongoDB,
+						Express.js, React.js, Node.js) stack, which I already
+						have a solid foundation in.
+					</p>
+					<p className="mt-3">
+						I'm enthusiastic about trying out new things and
+						exploring various possibilities to broaden my horizons.
+						Additionally, I'm eager to apply my knowledge and
+						expertise in the MERN stack to create innovative
+						solutions.
+					</p>
+					<p className="mt-3">
+						My ultimate goal is to become a well-rounded and skilled
+						full-stack web developer capable of delivering
+						cutting-edge solutions that positively impact the
+						digital world.
+					</p>
 				</div>
 			</div>
 
@@ -157,13 +169,14 @@ export default function Resume() {
 				</div>
 			</div>
 
+			{/* skills section */}
 			{/* Tech skills section */}
-			<div className="Tech-skills mt-10">
-				<h1 className=" font-bold tracking-wide text-2xl capitalize">
+			<div className="Tech-skills mt-9 flex-1">
+				<h1 className="font-bold tracking-wide text-2xl capitalize">
 					Tech Skills
 				</h1>
-				<div className="mt-6 flex flex-wrap items-center ">
-					{skills.map((el, elXid) => {
+				<div className="mt-3 flex flex-row flex-wrap items-center ">
+					{techSkills.map((el, elXid) => {
 						return (
 							<TechSkills
 								key={elXid}
@@ -176,9 +189,20 @@ export default function Resume() {
 					})}
 				</div>
 			</div>
+			{/* Soft skills section */}
+			<div className="Soft-skills mt-9">
+				<h1 className="font-bold tracking-wide text-2xl capitalize">
+					Soft Skills
+				</h1>
+				<div className="mt-3 flex flex-wrap items-center">
+					{softSkills.map((el, elXid) => {
+						return <TechSkills key={elXid}>{el}</TechSkills>;
+					})}
+				</div>
+			</div>
 
 			{/* Languages section */}
-			<div className="Languages mt-10">
+			<div className="Languages mt-9">
 				<h1 className=" font-bold tracking-wide text-2xl capitalize">
 					Languages
 				</h1>
