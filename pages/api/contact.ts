@@ -16,7 +16,7 @@ export default async function handler(
 				html: htmlContent,
 				subject: `Portfolio`,
 			});
-			res.json({ name, email, message });
+			return res.json({ name, email, message });
 		} catch (error) {
 			console.error('Error sending email:', error);
 		}
