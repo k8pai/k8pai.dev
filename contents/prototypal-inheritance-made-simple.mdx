@@ -1,0 +1,74 @@
+---
+title: 'ES6 Classes: Prototypal Inheritance Made Simple'
+summary: 'Learn about ES6 classes, their role in simplifying prototype-based inheritance, and how they provide a more structured approach to working with objects in JavaScript.'
+date: '2023-08-01'
+---
+
+# ES6 Classes: Prototypal Inheritance Made Simple
+
+## Introduction
+
+ES6 (ECMAScript 2015) brought significant improvements to JavaScript, including the introduction of classes, which provided a more familiar and structured way to define objects and handle inheritance. In this article, we'll explore ES6 classes and how they simplify the creation of objects and prototype-based inheritance.
+
+## What are ES6 Classes?
+
+ES6 classes are syntactical sugar over JavaScript's existing prototype-based inheritance. They provide a more traditional class-oriented syntax, making it easier for developers coming from other programming languages to understand and work with JavaScript objects.
+
+## Declaring a Class
+
+To create a class in ES6, we use the `class` keyword followed by the class name. Inside the class, we can define properties and methods.
+
+```javascript
+class Animal {
+	constructor(name, species) {
+		this.name = name;
+		this.species = species;
+	}
+
+	makeSound() {
+		console.log('Some generic animal sound');
+	}
+}
+```
+
+## Creating Objects
+
+With ES6 classes, we can create objects using the `new` keyword, just like traditional object-oriented languages.
+
+```javascript
+const dog = new Animal('Buddy', 'Dog');
+```
+
+##Inheritance with ES6 Classes
+Inheritance allows one class to inherit properties and methods from another class. ES6 classes support inheritance through the `extends` keyword.
+
+```javascript
+class Dog extends Animal {
+	constructor(name, breed) {
+		super(name, 'Dog');
+		this.breed = breed;
+	}
+
+	makeSound() {
+		console.log('Bark bark!');
+	}
+}
+```
+
+In the example above, the `Dog` class extends the `Animal` class, inheriting the `name` and `species` properties, as well as the `makeSound` method.
+
+## Benefits of ES6 Classes
+
+1 - **Readability:** The class syntax is more intuitive and readable, especially for developers familiar with class-based languages.
+
+2 - **Encapsulation:** ES6 classes promote encapsulation by providing a clear separation between the public interface and private implementation details.
+
+3 - **Inheritance:** Classes simplify the implementation of inheritance, making it easier to create hierarchies of related objects.
+
+## Conclusion
+
+ES6 classes have streamlined the process of creating objects and managing prototype-based inheritance in JavaScript. Their familiar syntax and support for inheritance make it easier for developers to write maintainable and structured code. By leveraging classes, we can build scalable and organized applications in JavaScript.
+
+In your portfolio, you can use this article to demonstrate your understanding of ES6 classes and their role in simplifying prototype-based inheritance.
+
+**Happy coding!**
