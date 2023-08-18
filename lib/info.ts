@@ -5,6 +5,7 @@ import todolist from '../public/todolist_thumb.png';
 import spiritwolf from '../public/spiritwolf_thumb.png';
 import tailwindInputs from '../public/tailwind_inputs_thumb.png';
 import portfolio from '../public/portfolio_thumb.png';
+import linkwrap from '../public/linkwrap_thumb.png';
 import {
 	SiGit,
 	SiReact,
@@ -205,9 +206,38 @@ export interface projectsInfoType {
 
 export const projectsInfo: projectsInfoType[] = [
 	{
+		name: 'Linkwrap',
+		imageUrl: linkwrap,
+		projectUrl: 'https://linkwrap.k8pai.dev',
+		githubUrl: 'https://github.com/k8pai/linkwrap',
+		Components: [
+			{
+				Component: SiNextdotjs,
+				color: '#ffffff',
+				darkColor: '#000000',
+			},
+			{
+				Component: SiTailwindcss,
+				color: '#06B6D4',
+			},
+			{
+				Component: SiMongodb,
+				color: '#47A248',
+			},
+			{
+				Component: SiPrisma,
+				color: '#2D3748',
+			},
+			{
+				Component: SiFramer,
+				color: '#0055FF',
+			},
+		],
+	},
+	{
 		name: 'Portfolio',
 		imageUrl: portfolio,
-		projectUrl: 'https://k8pai-dev.vercel.app',
+		projectUrl: 'https://k8pai.dev',
 		githubUrl: 'https://github.com/k8pai/k8pai.dev',
 		Components: [
 			{
