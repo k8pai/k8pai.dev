@@ -5,7 +5,6 @@ import Form from './Form';
 import { SignIn } from './actions';
 import { getServerSession } from 'next-auth';
 import { getComments } from '../../lib/prisma/guestbook';
-import { getInteractions } from '../../lib/prisma/support';
 import { authOptions } from '../../pages/api/auth/[...nextauth]';
 import { getDomainName } from 'lib/helper';
 import { CiLink } from 'react-icons/ci';
@@ -26,25 +25,21 @@ export const metadata: Metadata = {
 	},
 };
 
-export default async function page() {
-	let comments, session, interactions;
-	try {
-		const [sessionResponse] = await Promise.allSettled([
-			getServerSession(authOptions),
-		]);
-		if (sessionResponse.status === 'fulfilled') {
-			session = sessionResponse.value;
-		}
-		const { data, error: err } = await getComments();
-		if (err) throw new Error('Error occured');
-		comments = data;
-		const { data: obj, error: err1 } = await getInteractions();
-		if (err1) throw new Error('Error Occured ');
-		interactions = obj;
-	} catch (error) {
-		console.error('Error: ', error);
-	}
+// export async function getServerSideProps() {
+// 	// const { data: obj, error: err1 } = await getInteractions();
+// 	// if (err1) throw new Error('Error Occured ');
+// 	// const interactions = obj;
+// 	return { props: { comments } };
+// }
 
+// export default async function page({ comments }: { comments: Guestbook[] })
+
+export default async function page() {
+	let session = await getServerSession(authOptions);
+
+	const { data, error: err } = await getComments();
+	if (err) throw new Error('Error occured');
+	console.log('session => ', session, ' comments => ', data);
 	return (
 		<div className="mx-3 my-2">
 			<h1 className="text-3xl font-bold mb-3 capitalize text-zinc-900 dark:text-slate-200">
@@ -66,38 +61,36 @@ export default async function page() {
 			{session?.user ? <Form user={session?.user} /> : <SignIn />}
 
 			<div className="mt-5">
-				{comments?.map(
-					({ created_by, body, links, updated_at }, idx) => (
-						<div
-							key={idx}
-							className="group mx-1 my-2 md:max-w-lg w-full"
-						>
-							<div className="font-semibold py-1 text-neutral-900 dark:text-neutral-400">
-								{created_by}
-							</div>
-							<div className="text-sm mb-2 font-semibold ">
-								{body}
-							</div>
-							{links.length ? (
-								<div className="flex items-center flex-wrap">
-									{links?.map((el: string, ind: number) => {
-										return (
-											<Link
-												target="_blank"
-												key={ind}
-												href={el}
-												className="text-xs w-fit m-1 flex items-center space-x-2 px-2 py-1 font-mono bg-slate-200 text-neutral-800 dark:bg-[#242526] rounded-md dark:text-neutral-300 hover:dark:text-neutral-400 transition-all duration-200"
-											>
-												<span>{getDomainName(el)}</span>
-												<CiLink />
-											</Link>
-										);
-									})}
-								</div>
-							) : null}
+				{data?.map(({ created_by, body, links, updated_at }, idx) => (
+					<div
+						key={idx}
+						className="group mx-1 my-2 md:max-w-lg w-full"
+					>
+						<div className="font-semibold py-1 text-neutral-900 dark:text-neutral-400">
+							{created_by}
 						</div>
-					),
-				)}
+						<div className="text-sm mb-2 font-semibold ">
+							{body}
+						</div>
+						{links.length ? (
+							<div className="flex items-center flex-wrap">
+								{links?.map((el: string, ind: number) => {
+									return (
+										<Link
+											target="_blank"
+											key={ind}
+											href={el}
+											className="text-xs w-fit m-1 flex items-center space-x-2 px-2 py-1 font-mono bg-slate-200 text-neutral-800 dark:bg-[#242526] rounded-md dark:text-neutral-300 hover:dark:text-neutral-400 transition-all duration-200"
+										>
+											<span>{getDomainName(el)}</span>
+											<CiLink />
+										</Link>
+									);
+								})}
+							</div>
+						) : null}
+					</div>
+				))}
 			</div>
 		</div>
 	);
