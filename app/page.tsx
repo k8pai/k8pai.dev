@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 import React from 'react';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../pages/api/auth/[...nextauth]';
 import Link from 'next/link';
 import { allSolutions } from 'contentlayer/generated';
 import { compareDesc, format, parseISO } from 'date-fns';
@@ -14,12 +12,6 @@ export const metadata: Metadata = {
 export default async function page() {
 	let session, posts;
 	try {
-		const [sessionResponse] = await Promise.allSettled([
-			getServerSession(authOptions),
-		]);
-		if (sessionResponse.status === 'fulfilled') {
-			session = sessionResponse.value;
-		}
 		posts = allSolutions
 			.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 			.slice(0, 3);

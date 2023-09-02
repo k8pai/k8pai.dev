@@ -2,7 +2,7 @@ import { IconType } from 'react-icons';
 import { StaticImageData } from 'next/image';
 import { IoLogoJavascript } from 'react-icons/io';
 import todolist from '../public/todolist_thumb.png';
-import spiritwolf from '../public/spiritwolf_thumb.png';
+import pinit from '../public/pinit_thumb.png';
 import tailwindInputs from '../public/tailwind_inputs_thumb.png';
 import portfolio from '../public/portfolio_thumb.png';
 import linkwrap from '../public/linkwrap_thumb.png';
@@ -18,6 +18,8 @@ import {
 	SiFramer,
 	SiGithubactions,
 	SiPython,
+	SiHtml5,
+	SiJavascript,
 } from 'react-icons/si';
 
 export const aboutMe = [
@@ -199,7 +201,7 @@ export interface ProjectComponents {
 export interface projectsInfoType {
 	name: string;
 	imageUrl: StaticImageData;
-	projectUrl: string;
+	projectUrl?: string;
 	githubUrl?: string;
 	Components: ProjectComponents[];
 }
@@ -235,6 +237,61 @@ export const projectsInfo: projectsInfoType[] = [
 		],
 	},
 	{
+		name: 'Tailwind Inputs',
+		imageUrl: tailwindInputs,
+		projectUrl: 'https://ti-docs-2.vercel.app',
+		Components: [
+			{
+				Component: SiNextdotjs,
+				color: '#ffffff',
+			},
+			{
+				Component: SiTailwindcss,
+				color: '#06B6D4',
+			},
+			{
+				Component: SiFramer,
+				color: '#0055FF',
+			},
+		],
+	},
+	{
+		name: 'Todolist',
+		imageUrl: todolist,
+		projectUrl: 'https://todolist-k8pai.vercel.app',
+		githubUrl: 'https://github.com/k8pai/todolist',
+		Components: [
+			{
+				Component: SiNextdotjs,
+				color: '#ffffff',
+			},
+			{
+				Component: SiTailwindcss,
+				color: '#06B6D4',
+			},
+		],
+	},
+	{
+		name: 'Pinit (Chrome Extention)',
+		imageUrl: pinit,
+		// projectUrl: 'https://todolist-k8pai.vercel.app',
+		githubUrl: 'https://github.com/k8pai/pinit',
+		Components: [
+			{
+				Component: SiHtml5,
+				color: '#ffffff',
+			},
+			{
+				Component: SiTailwindcss,
+				color: '#06B6D4',
+			},
+			{
+				Component: SiJavascript,
+				color: '#06B6D4',
+			},
+		],
+	},
+	{
 		name: 'Portfolio',
 		imageUrl: portfolio,
 		projectUrl: 'https://k8pai.dev',
@@ -262,85 +319,5 @@ export const projectsInfo: projectsInfoType[] = [
 				color: '#0055FF',
 			},
 		],
-	},
-	{
-		name: 'Tailwind Inputs',
-		imageUrl: tailwindInputs,
-		projectUrl: 'https://tailwind-inputs.vercel.app',
-		Components: [
-			{
-				Component: SiNextdotjs,
-				color: '#ffffff',
-			},
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
-			{
-				Component: SiFramer,
-				color: '#0055FF',
-			},
-		],
-	},
-	{
-		name: 'Spiritwolf',
-		imageUrl: spiritwolf,
-		projectUrl: 'https://spiritwolf.vercel.app',
-		Components: [
-			{
-				Component: SiNextdotjs,
-				color: '#ffffff',
-			},
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
-		],
-	},
-	{
-		name: 'Todolist',
-		imageUrl: todolist,
-		projectUrl: 'https://todolist-k8pai.vercel.app',
-		githubUrl: 'https://github.com/k8pai/todolist',
-		Components: [
-			{
-				Component: SiNextdotjs,
-				color: '#ffffff',
-			},
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
-		],
-	},
-];
-
-export const solutionsInfo = [
-	{
-		name: 'cristiano ronaldo is the best in the world.',
-		description:
-			'cristiano ronaldo is considered as the best player in the world, inspite of the fact that leo messi won more than what is said to be the greatest achievement one could ever have achieved, ronaldo did his part, and will always remain as one of the fans favorite over a long period of time.',
-		dateAndTime: 'Jan 13 2023',
-	},
-
-	{
-		name: 'cristiano ronaldo is the best in the world.',
-		description:
-			'cristiano ronaldo is considered as the best player in the world, inspite of the fact that leo messi won more than what is said to be the greatest achievement one could ever have achieved, ronaldo did his part, and will always remain as one of the fans favorite over a long period of time.',
-		dateAndTime: 'Jan 13 2023',
-	},
-
-	{
-		name: 'cristiano ronaldo is the best in the world.',
-		description:
-			'cristiano ronaldo is considered as the best player in the world, inspite of the fact that leo messi won more than what is said to be the greatest achievement one could ever have achieved, ronaldo did his part, and will always remain as one of the fans favorite over a long period of time.',
-		dateAndTime: 'Jan 13 2023',
-	},
-
-	{
-		name: 'cristiano ronaldo is the best in the world.',
-		description:
-			'cristiano ronaldo is considered as the best player in the world, inspite of the fact that leo messi won more than what is said to be the greatest achievement one could ever have achieved, ronaldo did his part, and will always remain as one of the fans favorite over a long period of time.',
-		dateAndTime: 'Jan 13 2023',
 	},
 ];
