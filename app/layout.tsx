@@ -5,20 +5,29 @@ import './globals.css';
 import Footer from 'components/Footer';
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://k8pai-dev.vercel.io'),
+	metadataBase: new URL('https://k8pai.dev'),
 	title: {
-		default: 'k8pai',
+		default: 'Sudarsan K Pai',
 		template: '%s | k8pai',
 	},
-	description: 'Student | Web Developer | Cloud Enthusiast',
+	description:
+		'Software Engineer | Full Stack Developer | Cloud Enthusiast | Student',
+	authors: {
+		name: 'k8pai',
+		url: 'https://k8pai.dev',
+	},
 	openGraph: {
-		title: 'k8pai',
-		description: 'Student | Web Developer | Cloud Enthusiast',
-		url: 'https://k8pai-dev.vercel.io',
-		siteName: 'sudarsan k pai',
-		images: [],
+		title: 'Sudarsan K Pai | k8pai',
+		description:
+			'Software Engineer | Full Stack Developer | Cloud Enthusiast | Student',
+		url: 'https://k8pai.dev',
+		siteName: 'Sudarsan K Pai',
 		locale: 'en-US',
 		type: 'website',
+	},
+	twitter: {
+		title: 'Sudarsan K Pai',
+		card: 'summary_large_image',
 	},
 	robots: {
 		index: true,
@@ -32,6 +41,7 @@ export const metadata: Metadata = {
 		},
 	},
 	icons: {
+		icon: '/logo.svg',
 		shortcut: '/logo.svg',
 	},
 	verification: {
