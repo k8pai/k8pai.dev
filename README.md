@@ -1,6 +1,3 @@
-Got it! Here's the updated `README.md` file for your portfolio website built on the mentioned tech stacks:
-
-````markdown
 # My Portfolio Website
 
 ![Portfolio Screenshot](screenshot.png)
@@ -38,10 +35,10 @@ This repository contains the source code for my personal portfolio website. It s
 ### Installation
 
 1. Clone the repository:
+
     ```bash
     git clone https://github.com/k8pai/k8pai.dev.git
     ```
-````
 
 2. Navigate to the project directory:
     ```bash
@@ -106,8 +103,8 @@ This repository contains the source code for my personal portfolio website. It s
 ## Customization
 
 -   Replace `screenshot.png` with a screenshot of your website.
--   Modify the content in `src/pages` to add your own projects and information.
--   Customize the CSS in `src/styles` to match your design preferences.
+-   Modify the content in `pages/api` to add your own api endpoints.
+-   Update your Stylings with [tailwindcss](https://tailwindcss.com/docs/installation) utility classnames in each pages in `app/*` folder to match your design preferences.
 
 ## Deployment
 
@@ -131,8 +128,3 @@ This project is licensed under the [MIT License](LICENSE).
 -   [Tailwind CSS](https://tailwindcss.com/)
 -   [TypeScript](https://www.typescriptlang.org/)
 -   [Contentlayer](https://contentlayer.dev/)
-
-```
-
-Make sure to replace placeholders (e.g., `your-portfolio-website`, `https://www.your-portfolio-website.com`, `yourusername`, etc.) with your actual information. Additionally, customize the code according to your specific portfolio website structure and design.
-```
