@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Got it! Here's the updated `README.md` file for your portfolio website built on the mentioned tech stacks:
+
+````markdown
+# My Portfolio Website
+
+![Portfolio Screenshot](screenshot.png)
+
+## Overview
+
+This repository contains the source code for my personal portfolio website. It showcases my skills, projects, and experiences in web development. The website is built using the following technologies:
+
+-   Next.js
+-   NextAuth.js
+-   Prisma
+-   MongoDB
+-   Framer Motion
+-   Tailwind CSS
+-   TypeScript
+-   Contentlayer
+
+## Live Demo
+
+[View the live demo](https://k8pai.dev)
+
+## Features
+
+-   Responsive design for various screen sizes
+-   Project showcase with detailed descriptions
+-   Contact form for inquiries and feedback
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
+-   [Node.js](https://nodejs.org/) installed
+-   [npm](https://www.npmjs.com/) package manager
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/k8pai/k8pai.dev.git
+    ```
+````
+
+2. Navigate to the project directory:
+    ```bash
+    cd k8pai.dev
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+## Usage
+
+1. Start the development server:
+    ```bash
+    npm run dev
+    ```
+2. Open your web browser and go to `http://localhost:3000` to view the website locally.
+
+## Folder Structure
+
+```
+|-- app/
+	|-- about
+	|-- guestbook
+	|-- secret
+	|-- solutions/
+	|-- page.tsx
+	|-- ...
+|-- components/
+	|-- Footer.tsx
+	|-- Header.tsx
+	|-- Logo.tsx
+	|-- ProjectCard.tsx
+	|-- ...
+|-- lib/
+	|-- helper.ts
+	|-- nodemailer.js
+	|-- schema.ts
+	|-- ...
+|-- pages/
+	|-- api/
+		|-- auth/
+			|-- [...nextauth].ts
+		|-- contact.ts
+		|-- guestbook.ts
+		|-- interactions.ts
+	|-- ...
+|-- prisma/
+	|-- schema.prisma
+|-- public/
+    |-- Resume_k8pai.pdf
+    |-- ...
+|-- .env.local
+|-- contentlayer.config.js
+|-- next.config.js
+|-- package.json
+|-- tailwind.config.js
+|-- tsconfig.json
+|-- ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Customization
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+-   Replace `screenshot.png` with a screenshot of your website.
+-   Modify the content in `src/pages` to add your own projects and information.
+-   Customize the CSS in `src/styles` to match your design preferences.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Deployment
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To deploy your website, you can use platforms like [Vercel](https://vercel.com/). Follow their respective documentation for detailed instructions.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contributing
 
-## Learn More
+If you'd like to contribute, please fork the repository and create a pull request. You can also open an issue for bug reports or feature requests.
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the [MIT License](LICENSE).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Acknowledgements
 
-## Deploy on Vercel
+-   [Next.js](https://nextjs.org/)
+-   [NextAuth.js](https://next-auth.js.org/)
+-   [Prisma](https://www.prisma.io/)
+-   [MongoDB](https://www.mongodb.com/)
+-   [Framer Motion](https://www.framer.com/motion/)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [Contentlayer](https://contentlayer.dev/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Make sure to replace placeholders (e.g., `your-portfolio-website`, `https://www.your-portfolio-website.com`, `yourusername`, etc.) with your actual information. Additionally, customize the code according to your specific portfolio website structure and design.
+```
