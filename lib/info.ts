@@ -20,6 +20,7 @@ import {
 	SiPython,
 	SiHtml5,
 	SiJavascript,
+	SiAuth0,
 } from 'react-icons/si';
 
 export const aboutMe = [
@@ -207,6 +208,22 @@ export interface projectsInfoType {
 }
 
 export const projectsInfo: projectsInfoType[] = [
+	{
+		name: 'Nextauth-cli',
+		imageUrl: pinit,
+		projectUrl: 'https://www.npmjs.com/package/nextauth-cli',
+		githubUrl: 'https://github.com/k8pai/nextauth-cli',
+		Components: [
+			{
+				Component: SiTypescript,
+				color: '#3178C6',
+			},
+			{
+				Component: SiAuth0,
+				color: '#EB5424',
+			},
+		],
+	},
 	{
 		name: 'Linkwrap',
 		imageUrl: linkwrap,
