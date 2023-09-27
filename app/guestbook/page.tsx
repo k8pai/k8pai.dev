@@ -5,7 +5,7 @@ import Form from './Form';
 import { SignIn } from './actions';
 import { getServerSession } from 'next-auth';
 import { getComments } from '../../lib/prisma/guestbook';
-import { authOptions } from '../../pages/api/auth/[...nextauth]';
+import { authOptions } from '../api/auth/[...nextauth]/route';
 import { getDomainName } from 'lib/helper';
 import { CiLink } from 'react-icons/ci';
 
@@ -25,21 +25,11 @@ export const metadata: Metadata = {
 	},
 };
 
-// export async function getServerSideProps() {
-// 	// const { data: obj, error: err1 } = await getInteractions();
-// 	// if (err1) throw new Error('Error Occured ');
-// 	// const interactions = obj;
-// 	return { props: { comments } };
-// }
-
-// export default async function page({ comments }: { comments: Guestbook[] })
-
 export default async function page() {
 	let session = await getServerSession(authOptions);
 
 	const { data, error: err } = await getComments();
 	if (err) throw new Error('Error occured');
-	console.log('session => ', session, ' comments => ', data);
 	return (
 		<div className="mx-3 my-2">
 			<h1 className="text-3xl font-bold mb-3 capitalize text-zinc-900 dark:text-slate-200">
