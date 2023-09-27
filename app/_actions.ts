@@ -34,19 +34,3 @@ export const guestbookInsert = async (
 
 	revalidatePath('/guestbook');
 };
-
-// export const incrementViewCount = cache(async (slug: string) => {
-// 	'use server';
-// 	const existingView = await prisma.views.findUnique({ where: { slug } });
-// 	console.log('inside increment view count');
-// 	if (existingView) {
-// 		await prisma.views.update({
-// 			where: { slug },
-// 			data: { count: existingView.count + 1 },
-// 		});
-// 	} else {
-// 		await prisma.views.create({
-// 			data: { slug, count: 1 },
-// 		});
-// 	}
-// });
