@@ -30,7 +30,7 @@
 		"**/*.tsx",
 		".next/types/**/*.ts",
 		"lib/nodemailer.js",
-		"lib/github/index.js",
+		"lib/github/index.ts",
 		".contentlayer/generated",
 		"contentlayer.config.js"
 	],

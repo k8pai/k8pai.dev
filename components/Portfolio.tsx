@@ -52,7 +52,7 @@ export default function Portfolio() {
 						</span>
 					</Link>
 				</div>
-				<div className="grid gap-4 grid-cols-1 lg:grid-cols-2 place-items-center p-3">
+				<div className="grid gap-4 grid-cols-1 lg:grid-cols-2 place-items-center py-3">
 					{projects.map((project, id) => {
 						return <ProjectCard key={id} project={project} />;
 					})}

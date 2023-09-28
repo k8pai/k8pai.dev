@@ -11,23 +11,20 @@ export default function ProjectCard({
 	project: projectsInfoType;
 }) {
 	return (
-		<div className="rounded-md group bg-slate-200 dark:bg-[#181818] p-3 w-full">
+		<div className="rounded-md group bg-slate-200 dark:bg-[#181818] p-3 w-full max-w-md md:w-full">
 			<div className="imageSection relative aspect-video bg-slate-300 dark:bg-[#111010] rounded-md">
 				<Image src={imageUrl} alt={`${name} preview`} />
 			</div>
 			<div className="content-section">
-				<div className="projectname flex justify-between items-center md:mt-3">
+				<div className="projectname flex justify-between items-center mt-1 md:mt-3">
 					{projectUrl ? (
 						<Link
 							target="_blank"
 							href={projectUrl}
-							className="space-x-2 flex items-center font-semibold tracking-wider text-base md:text-2xl"
+							className="space-x-2 flex items-center font-semibold tracking-wider text-base lg:text-2xl md:text-lg"
 						>
 							<span>{name}</span>
-							<CiLink
-								size="1.5em"
-								className="transition duration-200 ease-in opacity-0 group-hover:opacity-100 text-sm font-mono"
-							/>
+							<CiLink className="transition duration-200 ease-in opacity-0 group-hover:opacity-100 text-sm md:text-lg lg:text-2xl font-mono" />
 						</Link>
 					) : (
 						<span>{name}</span>
@@ -42,14 +39,13 @@ export default function ProjectCard({
 						</Link>
 					)}
 				</div>
-				<div className="projectdetails p-1 mt-2 flex items-start md:items-center space-x-3">
+				<div className="projectdetails p-1 mt-1 md:mt-2 flex items-start md:items-center space-x-2 lg:space-x-3">
 					{Components?.map((el, elXid) => {
 						const { Component, color, darkColor } = el;
 						return (
 							<Component
 								key={elXid}
-								size="1.3em"
-								className={`fill-[${color}] dark:fill-[${darkColor}]`}
+								className={`fill-[${color}] text-sm md:text-lg lg:text-2xl dark:fill-[${darkColor}]`}
 							/>
 						);
 					})}

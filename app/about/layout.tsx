@@ -56,7 +56,7 @@ export default function RootLayout({
 	];
 	return (
 		<div className="space-y-5">
-			<div className="py-2 px-3 rounded-lg flex items-start">
+			<div className="md:py-2 md:px-3 rounded-lg flex items-start">
 				<div className="relative max-w-[150px] max-h-[150px] p-3 hidden sm:block">
 					<Image
 						src={profilePhoto}

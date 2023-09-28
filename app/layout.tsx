@@ -63,7 +63,7 @@ export default function RootLayout({
 		>
 			<body className="max-w-5xl flex flex-col mx-4 min-h-screen lg:mx-auto">
 				<Sidenav />
-				<main className="flex-auto min-w-0 my-8 mx-5 flex flex-col px-2 lg:px-0">
+				<main className="flex-auto min-w-0 my-4 mx-1 md:my-8 md:mx-5 flex flex-col px-2 lg:px-0">
 					{children}
 				</main>
 				<Footer />
