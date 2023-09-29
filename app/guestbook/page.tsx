@@ -11,7 +11,7 @@ import { CiLink } from 'react-icons/ci';
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://k8pai-dev.vercel.io'),
-	title: 'Guestbook',
+	title: 'Guestbook | k8pai',
 	description:
 		'Guestbook, Inspired by one of the best web developer out there, Lee Robinson.',
 	openGraph: {
@@ -22,6 +22,10 @@ export const metadata: Metadata = {
 		siteName: 'Sudarsan k pai',
 		locale: 'en-US',
 		type: 'website',
+	},
+	twitter: {
+		title: 'Sudarsan K Pai',
+		card: 'summary_large_image',
 	},
 };
 

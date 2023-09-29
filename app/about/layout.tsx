@@ -15,15 +15,21 @@ interface socialLinksType {
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://k8pai-dev.vercel.io'),
-	title: 'About',
-	description: 'Student | Web developer',
+	title: 'About | k8pai',
+	description:
+		'Software Engineer | Full Stack Developer | Cloud Enthusiast | Student',
 	openGraph: {
-		title: 'About k8pai',
-		description: 'Student | Developer | Cloud Enthusiast',
+		title: 'About | k8pai',
+		description:
+			'Software Engineer | Full Stack Developer | Cloud Enthusiast | Student',
 		url: 'https://k8pai-dev.vercel.io/about',
 		siteName: 'Sudarsan k pai',
 		locale: 'en-US',
 		type: 'website',
+	},
+	twitter: {
+		title: 'Sudarsan K Pai',
+		card: 'summary_large_image',
 	},
 };
 
