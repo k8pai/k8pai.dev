@@ -1,19 +1,19 @@
 // app/posts/[slug]/page.tsx
 import { format, parseISO } from 'date-fns';
-import { allSolutions } from 'contentlayer/generated';
+import { allNotes } from 'contentlayer/generated';
 import Mdx from 'components/Mdx';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
 export const generateStaticParams = async () =>
-	allSolutions.map((post) => ({ slug: post._raw.flattenedPath }));
+	allNotes.map((post) => ({ slug: post._raw.flattenedPath }));
 
 export async function generateMetadata({
 	params,
 }: {
 	params: { slug: string };
 }): Promise<Metadata | undefined> {
-	const post = allSolutions.find((post) => post.url === params.slug);
+	const post = allNotes.find((post) => post.url === params.slug);
 	if (!post) return;
 
 	const { title, summary, date: publishedTime, url } = post;
@@ -31,7 +31,7 @@ export async function generateMetadata({
 }
 
 const PostLayout = async ({ params }: { params: { slug: string } }) => {
-	const post = allSolutions.find(
+	const post = allNotes.find(
 		(post) => post._raw.flattenedPath === params.slug,
 	);
 	if (!post) {

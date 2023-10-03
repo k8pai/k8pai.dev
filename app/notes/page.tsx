@@ -1,7 +1,7 @@
 // app/page.tsx
 import Link from 'next/link';
 import { compareDesc, format, parseISO } from 'date-fns';
-import { allSolutions } from 'contentlayer/generated';
+import { allNotes } from 'contentlayer/generated';
 
 // export function PostCard({ post: { url, title, date } }: { post: Solutions }) {
 // 	return (
@@ -25,7 +25,7 @@ import { allSolutions } from 'contentlayer/generated';
 // }
 
 export default async function Page() {
-	const posts = allSolutions.sort((a, b) =>
+	const posts = allNotes.sort((a, b) =>
 		compareDesc(new Date(a.date), new Date(b.date)),
 	);
 	return (
@@ -45,7 +45,7 @@ export default async function Page() {
 				<div key={idx} className="mb-6">
 					<h2 className="mb-1 text-xl">
 						<Link
-							href={`/solutions/${url}`}
+							href={`/notes/${url}`}
 							className="transition-all duration-200 font-semibold "
 						>
 							{title}

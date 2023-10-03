@@ -5,11 +5,15 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
-export const SolutionPosts = defineDocumentType(() => ({
-	name: 'Solutions',
+export const NotePosts = defineDocumentType(() => ({
+	name: 'notes',
 	filePathPattern: `**/*.mdx`,
 	contentType: 'mdx',
 	fields: {
+		header: {
+			type: 'string',
+			required: false,
+		},
 		title: {
 			type: 'string',
 			required: true,
@@ -33,7 +37,7 @@ export const SolutionPosts = defineDocumentType(() => ({
 
 export default makeSource({
 	contentDirPath: 'contents',
-	documentTypes: [SolutionPosts],
+	documentTypes: [NotePosts],
 	mdx: {
 		remarkPlugins: [remarkGfm],
 		rehypePlugins: [
