@@ -9,6 +9,12 @@ import { authOptions } from '../api/auth/[...nextauth]/route';
 import { getDomainName } from 'lib/helper';
 import { CiLink } from 'react-icons/ci';
 
+const getGuestbook = async () => {
+	const { data, error: err } = await getComments();
+
+	return data;
+};
+
 export const metadata: Metadata = {
 	metadataBase: new URL('https://k8pai-dev.vercel.io'),
 	title: 'Guestbook | k8pai',
@@ -29,11 +35,36 @@ export const metadata: Metadata = {
 	},
 };
 
-export default async function page() {
-	let session = await getServerSession(authOptions);
+export const dynamic = 'force-dynamic';
 
-	const { data, error: err } = await getComments();
-	if (err) throw new Error('Error occured');
+export default async function page() {
+	let data;
+	let session;
+
+	try {
+		const [guestbookRes, sessionRes] = await Promise.allSettled([
+			getGuestbook(),
+			getServerSession(authOptions),
+		]);
+
+		if (
+			guestbookRes.status === 'fulfilled' &&
+			guestbookRes.value &&
+			guestbookRes.value[0]
+		) {
+			data = guestbookRes.value;
+		} else {
+			console.error(guestbookRes);
+		}
+
+		if (sessionRes.status === 'fulfilled') {
+			session = sessionRes.value;
+		} else {
+			console.error(sessionRes);
+		}
+	} catch (error) {
+		console.error(error);
+	}
 	return (
 		<div className="mx-3 my-2">
 			<h1 className="text-3xl font-bold mb-3 capitalize text-zinc-900 dark:text-slate-200">
