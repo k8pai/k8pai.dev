@@ -1,5 +1,3 @@
-# My Portfolio Website
-
 ![Portfolio Screenshot](screenshot.png)
 
 ## Overview
@@ -17,7 +15,7 @@ This repository contains the source code for my personal portfolio website. It s
 
 ## Live Demo
 
-[View the live demo](https://k8pai.dev)
+[View website](https://k8pai.dev)
 
 ## Features
 
