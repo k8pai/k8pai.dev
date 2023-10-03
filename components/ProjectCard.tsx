@@ -21,13 +21,17 @@ export default function ProjectCard({
 						<Link
 							target="_blank"
 							href={projectUrl}
-							className="space-x-2 flex items-center font-semibold tracking-wider text-base lg:text-2xl md:text-lg"
+							className="space-x-2 flex items-center"
 						>
-							<span>{name}</span>
+							<span className="font-semibold tracking-wider text-base lg:text-2xl md:text-lg">
+								{name}
+							</span>
 							<CiLink className="transition duration-200 ease-in opacity-0 group-hover:opacity-100 text-sm md:text-lg lg:text-2xl font-mono" />
 						</Link>
 					) : (
-						<span>{name}</span>
+						<span className="font-semibold tracking-wider text-base lg:text-2xl md:text-lg">
+							{name}
+						</span>
 					)}
 					{githubUrl && (
 						<Link

@@ -8,6 +8,7 @@ import {
 	SiC,
 	SiCplusplus,
 	SiCss3,
+	SiDocker,
 	SiExpress,
 	SiFramer,
 	SiGithubactions,
@@ -54,6 +55,11 @@ export default function Resume() {
 			title: 'Github Actions',
 			Component: SiGithubactions,
 			color: '#2088FF',
+		},
+		{
+			title: 'Docker',
+			Component: SiDocker,
+			color: '#2496ED',
 		},
 	];
 

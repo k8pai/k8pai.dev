@@ -7,6 +7,7 @@ export default function CertificateCard({
 	isGrid,
 	certificate: {
 		data: { name, issuer, issueDate, issuerUrl, href },
+		details,
 		Component: { Component, color },
 	},
 }: {
@@ -46,8 +47,22 @@ export default function CertificateCard({
 						{issuer}
 					</Link>
 				</div>
+				{/* {details &&
+					details.length > 0 &&
+					details.map(({ feature, url }, _) => {
+						return url ? (
+							<Link
+								className="text-cyan-500 hover:text-cyan-400 transition-all text-xs"
+								href={url}
+								key={_}
+							>
+								{feature}
+							</Link>
+						) : null;
+					})} */}
 				<Link
 					href={href}
+					target="_blank"
 					className="font-semibold text-sm text-zinc-500 dark:text-neutral-400 mt-1 flex items-start md:items-center md:space-x-1"
 				>
 					See Credentials

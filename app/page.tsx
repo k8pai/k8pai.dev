@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
-import { allSolutions } from 'contentlayer/generated';
+import { allNotes } from 'contentlayer/generated';
 import { compareDesc, format, parseISO } from 'date-fns';
 
 export const metadata: Metadata = {
@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default async function page() {
-	let session, posts;
+	let posts;
 	try {
-		posts = allSolutions
+		posts = allNotes
 			.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 			.slice(0, 3);
 	} catch (error) {
@@ -65,39 +65,50 @@ export default async function page() {
 					</div>
 				</div>
 
-				<div className=" mt-8">
-					<p className="tracking-wider leading-loose mt-2">
-						Checkout some of my latest Blog posts...
-					</p>
+				<div className="mt-12">
+					<h1 className="tracking-wider leading-loose text-3xl font-bold">
+						Recent Notes
+					</h1>
 					{posts &&
-						posts.map(({ url, title, date }, idx) => (
-							<Link key={idx} href={`/solutions/${url}`}>
-								<div className="my-3 p-3 bg-[#FFFAF0] dark:bg-neutral-900 rounded-md transition-all shadow hover:shadow-md">
-									<h2 className="text-lg">
-										<span className="transition-all duration-200 font-semibold ">
+						posts.map(({ url, title, date, header }, idx) => (
+							<div
+								key={idx}
+								className="my-5 rounded-md transition-all"
+							>
+								<Link href={`/notes/${url}`}>
+									{header ? (
+										<div className="flex items-center justify-between">
+											<h2 className="transition-all duration-200 font-semibold text-lg">
+												{header}
+											</h2>
+											<time
+												dateTime={date}
+												className="mb-2 block text-xs font-semibold text-gray-600"
+											>
+												{format(
+													parseISO(date),
+													'LLLL d, yyyy',
+												)}
+											</time>
+										</div>
+									) : null}
+									<h2 className="text-base">
+										<span className="transition-all duration-200 text-gray-400">
 											{title}
 										</span>
 									</h2>
-									<time
-										dateTime={date}
-										className="mb-2 block text-xs font-semibold text-gray-600"
-									>
-										{format(parseISO(date), 'LLLL d, yyyy')}
-									</time>
-								</div>
-							</Link>
+								</Link>
+							</div>
 						))}
 
-					<p className="tracking-wider leading-loose mt-2">
-						Discover the abundance of solutions on my{' '}
+					<div className="mt-7">
 						<Link
-							href={'/solutions'}
-							className="transition-all duration-200 text-blue-800 hover:text-blue-700/90 dark:text-sky-400 hover:dark:text-sky-400/70 tracking-wider p-1 font-semibold"
+							href={'/notes'}
+							className="transition-all duration-200 underline underline-offset-4 hover:text-blue-700/90  hover:dark:text-sky-400/70 tracking-wider font-semibold"
 						>
-							/solutions
-						</Link>{' '}
-						page!
-					</p>
+							More Notes
+						</Link>
+					</div>
 				</div>
 				{/* <div className="connection section. mt-6">
 					<p className="tracking-wider leading-loose mt-2">
