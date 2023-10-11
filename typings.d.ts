@@ -27,3 +27,11 @@ export interface certificatesType {
 		color: string;
 	};
 }
+
+// Social Links info
+
+export interface socialLinksType {
+	color: string;
+	Component: IconType;
+	href: string;
+}

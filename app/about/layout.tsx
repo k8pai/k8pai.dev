@@ -2,19 +2,12 @@ import React from 'react';
 import { MdLocationPin } from 'react-icons/md';
 import Image from 'next/image';
 import profilePhoto from '../../public/developer.png';
-import { IconType } from 'react-icons';
-import { SiDiscord, SiGithub, SiInstagram, SiLinkedin } from 'react-icons/si';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-
-interface socialLinksType {
-	color: string;
-	Component: IconType;
-	href: string;
-}
+import { socialLinks } from 'data';
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://k8pai-dev.vercel.io'),
+	metadataBase: new URL('https://k8pai.dev'),
 	title: 'About | k8pai',
 	description:
 		'Software Engineer | Full Stack Developer | Cloud Enthusiast | Student',
@@ -22,7 +15,7 @@ export const metadata: Metadata = {
 		title: 'About | k8pai',
 		description:
 			'Software Engineer | Full Stack Developer | Cloud Enthusiast | Student',
-		url: 'https://k8pai-dev.vercel.io/about',
+		url: 'https://k8pai.dev/about',
 		siteName: 'Sudarsan k pai',
 		locale: 'en-US',
 		type: 'website',
@@ -38,28 +31,6 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const socialLinks: socialLinksType[] = [
-		{
-			Component: SiInstagram,
-			color: '#E4405F',
-			href: 'https://instagram.com/_k8pai',
-		},
-		{
-			Component: SiLinkedin,
-			color: '#0A66C2',
-			href: 'https://linkedin.com/in/k8pai',
-		},
-		{
-			Component: SiGithub,
-			color: '#fff',
-			href: 'https://github.com/k8pai',
-		},
-		{
-			Component: SiDiscord,
-			color: '#5865F2',
-			href: 'https://discord.com/users/898949804024012850',
-		},
-	];
 	return (
 		<div className="space-y-5">
 			<div className="md:py-2 md:px-3 rounded-lg flex items-start">
@@ -89,9 +60,8 @@ export default function RootLayout({
 						</div>
 					</div>
 					<div className="flex mt-3 items-center space-x-3">
-						{socialLinks.map((el, elXid) => {
-							const { color, Component, href } = el;
-							return (
+						{socialLinks.map(
+							({ color, Component, href }, elXid) => (
 								<Link
 									target="_blank"
 									key={elXid}
@@ -100,8 +70,8 @@ export default function RootLayout({
 								>
 									<Component color={color} size={'1.5em'} />
 								</Link>
-							);
-						})}
+							),
+						)}
 					</div>
 				</div>
 			</div>

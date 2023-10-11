@@ -8,6 +8,7 @@ import { getComments } from '../../lib/prisma/guestbook';
 import { authOptions } from 'lib/auth';
 import { getDomainName } from 'lib/helper';
 import { CiLink } from 'react-icons/ci';
+import GuestEntry from 'components/guestbook/GuestEntry';
 
 const getGuestbook = async () => {
 	const { data, error: err } = await getComments();
@@ -86,35 +87,8 @@ export default async function page() {
 			{session?.user ? <Form user={session?.user} /> : <SignIn />}
 
 			<div className="mt-5">
-				{data?.map(({ created_by, body, links, updated_at }, idx) => (
-					<div
-						key={idx}
-						className="group mx-1 my-2 md:max-w-lg w-full"
-					>
-						<div className="font-semibold py-1 text-neutral-900 dark:text-neutral-400">
-							{created_by}
-						</div>
-						<div className="text-sm mb-2 font-semibold ">
-							{body}
-						</div>
-						{links.length ? (
-							<div className="flex items-center flex-wrap">
-								{links?.map((el: string, ind: number) => {
-									return (
-										<Link
-											target="_blank"
-											key={ind}
-											href={el}
-											className="text-xs w-fit m-1 flex items-center space-x-2 px-2 py-1 font-mono bg-slate-200 text-neutral-800 dark:bg-[#242526] rounded-md dark:text-neutral-300 hover:dark:text-neutral-400 transition-all duration-200"
-										>
-											<span>{getDomainName(el)}</span>
-											<CiLink />
-										</Link>
-									);
-								})}
-							</div>
-						) : null}
-					</div>
+				{data?.map((value, idx) => (
+					<GuestEntry key={idx} {...value} />
 				))}
 			</div>
 		</div>
