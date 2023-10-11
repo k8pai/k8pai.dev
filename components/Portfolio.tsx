@@ -7,30 +7,29 @@ import ProjectCard from './ProjectCard';
 import CertificateCard from './CertificateCard';
 import { CiGrid41, CiGrid2H } from 'react-icons/ci';
 import {
-	projectsInfo,
-	certificatesInfo,
-	projectsInfoType,
-	certificatesInfoType,
-} from '../lib/info';
+	projects as projectsData,
+	certificates as certificatesData,
+} from '../data';
+import { projectsType, certificatesType } from 'typings';
 // import { Session } from 'next-auth';
 
 export default function Portfolio() {
 	const [isGrid, setIsGrid] = useState<boolean>(true);
 	const [showFullCertificates, setShowFullCertficates] =
 		useState<boolean>(false);
-	const [certificates, setCertificates] = useState<certificatesInfoType[]>(
-		certificatesInfo.slice(0, 4),
+	const [certificates, setCertificates] = useState<certificatesType[]>(
+		certificatesData.slice(0, 6),
 	);
 
-	const [projects, setProjects] = useState<projectsInfoType[]>(projectsInfo);
+	const [projects, setProjects] = useState<projectsType[]>(projectsData);
 
 	const handleShowCertificates = () => {
-		if (certificates.length === 4) {
+		if (certificates.length === 6) {
 			setShowFullCertficates(true);
-			setCertificates(certificatesInfo);
+			setCertificates(certificates);
 		} else {
 			setShowFullCertficates(false);
-			setCertificates(certificatesInfo.slice(0, 4));
+			setCertificates(certificates.slice(0, 6));
 		}
 	};
 

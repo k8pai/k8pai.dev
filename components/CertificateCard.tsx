@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { BsDot } from 'react-icons/bs';
-import { certificatesInfoType } from '../lib/info';
+import { certificatesType } from 'typings';
 
 export default function CertificateCard({
 	isGrid,
@@ -12,7 +12,7 @@ export default function CertificateCard({
 	},
 }: {
 	isGrid: boolean;
-	certificate: certificatesInfoType;
+	certificate: certificatesType;
 }) {
 	return (
 		<div

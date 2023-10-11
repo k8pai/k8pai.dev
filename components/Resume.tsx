@@ -24,9 +24,6 @@ import {
 	SiTailwindcss,
 	SiTypescript,
 } from 'react-icons/si';
-import Mdx from './Mdx';
-import { aboutMe } from 'lib/info';
-// import { Session } from 'next-auth';
 
 export default function Resume() {
 	const [showAbout, setShowAbout] = useState<boolean>(false);

@@ -1,11 +1,4 @@
-import { IconType } from 'react-icons';
-import { StaticImageData } from 'next/image';
 import { IoLogoJavascript } from 'react-icons/io';
-import todolist from '../public/todolist_thumb.png';
-import pinit from '../public/pinit_thumb.png';
-import tailwindInputs from '../public/tailwind_inputs_thumb.png';
-import portfolio from '../public/portfolio_thumb.png';
-import linkwrap from '../public/linkwrap_thumb.png';
 import {
 	SiGit,
 	SiReact,
@@ -13,42 +6,13 @@ import {
 	SiNodedotjs,
 	SiTypescript,
 	SiTailwindcss,
-	SiMongodb,
-	SiPrisma,
-	SiFramer,
 	SiGithubactions,
 	SiPython,
-	SiHtml5,
-	SiJavascript,
-	SiAuth0,
 	SiDocker,
 } from 'react-icons/si';
+import { certificatesType } from 'typings';
 
-export const aboutMe = [
-	'I am a self-driven, versatile, and reliable individual, always approaching work with a team-minded spirit to get things done efficiently. My calm and cheerful demeanor helps me tackle challenges with a positive attitude, ensuring a smooth workflow.',
-
-	'As a student, my passion for design is evident in my keen eye for aesthetics and user experience. I find joy in exploring, contributing, and building new technologies and libraries that can make a difference in the digital world.',
-
-	"With a strong commitment to personal growth and professional development, I am constantly seeking opportunities to learn and expand my knowledge. Embracing new technologies is not just a task for me; it's a thrilling adventure.",
-];
-
-// Certificates info
-export interface certificatesInfoType {
-	data: {
-		name: string;
-		issueDate: string;
-		issuerUrl: string;
-		issuer: string;
-		href: string;
-	};
-	details?: { feature: string; url?: string }[];
-	Component: {
-		Component: IconType;
-		color: string;
-	};
-}
-
-export const certificatesInfo: certificatesInfoType[] = [
+export const certificates: certificatesType[] = [
 	{
 		data: {
 			name: 'Docker',
@@ -211,151 +175,5 @@ export const certificatesInfo: certificatesInfoType[] = [
 			Component: SiGithubactions,
 			color: '#2088FF',
 		},
-	},
-];
-
-// projects info
-export interface ProjectComponents {
-	Component: IconType;
-	color: string;
-	darkColor?: string;
-}
-export interface projectsInfoType {
-	name: string;
-	imageUrl: StaticImageData;
-	projectUrl?: string;
-	githubUrl?: string;
-	Components: ProjectComponents[];
-}
-
-export const projectsInfo: projectsInfoType[] = [
-	{
-		name: 'Nextauth-cli',
-		imageUrl: pinit,
-		projectUrl: 'https://www.npmjs.com/package/nextauth-cli',
-		githubUrl: 'https://github.com/k8pai/nextauth-cli',
-		Components: [
-			{
-				Component: SiTypescript,
-				color: '#3178C6',
-			},
-			{
-				Component: SiAuth0,
-				color: '#EB5424',
-			},
-		],
-	},
-	{
-		name: 'Linkwrap',
-		imageUrl: linkwrap,
-		projectUrl: 'https://linkwrap.k8pai.dev',
-		githubUrl: 'https://github.com/k8pai/linkwrap',
-		Components: [
-			{
-				Component: SiNextdotjs,
-				color: '#ffffff',
-				darkColor: '#000000',
-			},
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
-			{
-				Component: SiMongodb,
-				color: '#47A248',
-			},
-			{
-				Component: SiPrisma,
-				color: '#2D3748',
-			},
-			{
-				Component: SiFramer,
-				color: '#0055FF',
-			},
-		],
-	},
-	{
-		name: 'Tailwind Inputs',
-		imageUrl: tailwindInputs,
-		projectUrl: 'https://ti-docs-2.vercel.app',
-		Components: [
-			{
-				Component: SiNextdotjs,
-				color: '#ffffff',
-			},
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
-			{
-				Component: SiFramer,
-				color: '#0055FF',
-			},
-		],
-	},
-	{
-		name: 'Todolist',
-		imageUrl: todolist,
-		projectUrl: 'https://todolist-k8pai.vercel.app',
-		githubUrl: 'https://github.com/k8pai/todolist',
-		Components: [
-			{
-				Component: SiNextdotjs,
-				color: '#ffffff',
-			},
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
-		],
-	},
-	{
-		name: 'Pinit (Chrome Extention)',
-		imageUrl: pinit,
-		// projectUrl: 'https://todolist-k8pai.vercel.app',
-		githubUrl: 'https://github.com/k8pai/pinit',
-		Components: [
-			{
-				Component: SiHtml5,
-				color: '#ffffff',
-			},
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
-			{
-				Component: SiJavascript,
-				color: '#06B6D4',
-			},
-		],
-	},
-	{
-		name: 'Portfolio',
-		imageUrl: portfolio,
-		projectUrl: 'https://k8pai.dev',
-		githubUrl: 'https://github.com/k8pai/k8pai.dev',
-		Components: [
-			{
-				Component: SiNextdotjs,
-				color: '#ffffff',
-				darkColor: '#000000',
-			},
-			{
-				Component: SiTailwindcss,
-				color: '#06B6D4',
-			},
-			{
-				Component: SiMongodb,
-				color: '#47A248',
-			},
-			{
-				Component: SiPrisma,
-				color: '#2D3748',
-			},
-			{
-				Component: SiFramer,
-				color: '#0055FF',
-			},
-		],
 	},
 ];

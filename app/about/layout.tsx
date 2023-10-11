@@ -79,7 +79,8 @@ export default function RootLayout({
 					<div className="status mt-2">
 						<div className="flex">
 							<span className="text-lg">
-								Student | Web Developer
+								Full Stack Developer | Cloud Enthusiast |
+								Student
 							</span>
 						</div>
 						<div className="flex items-center space-x-1 text-zinc-600 dark:text-slate-400">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { projectsInfoType } from '../lib/info';
+import { projectsType } from 'typings';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CiLink } from 'react-icons/ci';
@@ -8,7 +8,7 @@ import { SiGithub } from 'react-icons/si';
 export default function ProjectCard({
 	project: { name, imageUrl, projectUrl, githubUrl, Components },
 }: {
-	project: projectsInfoType;
+	project: projectsType;
 }) {
 	return (
 		<div className="rounded-md group bg-slate-200 dark:bg-[#181818] p-3 w-full max-w-md md:w-full">
