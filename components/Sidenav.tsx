@@ -5,23 +5,10 @@ import React from 'react';
 import { LayoutGroup, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
+import { navLinks } from 'data';
 
 export default function Sidenav() {
 	const pathname = usePathname();
-	const links = {
-		'/': {
-			name: 'Home',
-		},
-		'/about': {
-			name: 'About',
-		},
-		'/notes': {
-			name: 'Notes',
-		},
-		'/guestbook': {
-			name: 'Guestbook',
-		},
-	};
 
 	return (
 		<section className="mt-8 font-serif flex flex-row">
@@ -33,12 +20,12 @@ export default function Sidenav() {
 					<div className="flex flex-row space-x-0 px-0 my-4">
 						{/* <Logo /> */}
 
-						{Object.entries(links).map(([path, { name }]) => {
-							const isActive = path === pathname;
+						{navLinks.map(({ route, name }, _) => {
+							const isActive = route === pathname;
 							return (
 								<Link
-									key={path}
-									href={path}
+									key={route}
+									href={route}
 									className={`transition-all space-y-2 hover:text-neutral-400 dark:hover:text-neutral-200 flex align-middle ${
 										!isActive
 											? 'text-neutral-500'
@@ -47,7 +34,7 @@ export default function Sidenav() {
 								>
 									<span className="relative py-2 px-3 w-fit">
 										{name}
-										{path === pathname ? (
+										{isActive ? (
 											<motion.div
 												className="absolute w-3/4 h-px bottom-0 inset-x-0 mx-auto bg-[#4338CA] rounded-tr-lg rounded-br-lg z-[-1]"
 												layoutId="sidebar"

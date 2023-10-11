@@ -1,4 +1,5 @@
-import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
+'use client';
+
 import React from 'react';
 import { IconType } from 'react-icons/lib';
 

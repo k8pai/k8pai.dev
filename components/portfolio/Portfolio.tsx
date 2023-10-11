@@ -9,8 +9,8 @@ import { CiGrid41, CiGrid2H } from 'react-icons/ci';
 import {
 	projects as projectsData,
 	certificates as certificatesData,
-} from '../data';
-import { projectsType, certificatesType } from 'typings';
+} from '../../data';
+import { certificatesType } from 'typings';
 
 export default function Portfolio() {
 	const [isGrid, setIsGrid] = useState<boolean>(true);
@@ -20,7 +20,7 @@ export default function Portfolio() {
 		certificatesData.slice(0, 6),
 	);
 
-	const [projects, setProjects] = useState<projectsType[]>(projectsData);
+	// const [projects, setProjects] = useState<projectsType[]>(projectsData);
 
 	const handleShowCertificates = () => {
 		if (certificates.length === 6) {
@@ -51,7 +51,7 @@ export default function Portfolio() {
 					</Link>
 				</div>
 				<div className="grid gap-4 grid-cols-1 lg:grid-cols-2 place-items-center py-3">
-					{projects.map((project, id) => {
+					{projectsData.map((project, id) => {
 						return <ProjectCard key={id} project={project} />;
 					})}
 				</div>
