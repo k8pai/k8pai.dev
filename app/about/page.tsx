@@ -11,10 +11,6 @@ import { motion } from 'framer-motion';
 import Resume from '../../components/Resume';
 import Contact from '../../components/Contact';
 import Portfolio from '../../components/Portfolio';
-// import { Session } from 'next-auth';
-// import { getServerSession } from 'next-auth';
-// import { authOptions } from '../../pages/api/auth/[...nextauth]';
-// import Container from './container';
 
 type ContentType = {
 	name: string;

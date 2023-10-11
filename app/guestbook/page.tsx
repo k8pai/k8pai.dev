@@ -5,7 +5,7 @@ import Form from './Form';
 import { SignIn } from './actions';
 import { getServerSession } from 'next-auth';
 import { getComments } from '../../lib/prisma/guestbook';
-import { authOptions } from '../api/auth/[...nextauth]/route';
+import { authOptions } from 'lib/auth';
 import { getDomainName } from 'lib/helper';
 import { CiLink } from 'react-icons/ci';
 
@@ -16,7 +16,7 @@ const getGuestbook = async () => {
 };
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://k8pai-dev.vercel.io'),
+	metadataBase: new URL('https://k8pai.dev'),
 	title: 'Guestbook | k8pai',
 	description:
 		'Guestbook, Inspired by one of the best web developer out there, Lee Robinson.',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 		title: 'Guestbook',
 		description:
 			'Guestbook, Inspired by one of the best web developer out there, Lee Robinson.',
-		url: 'https://k8pai-dev.vercel.io/guestbook',
+		url: 'https://k8pai.dev/guestbook',
 		siteName: 'Sudarsan k pai',
 		locale: 'en-US',
 		type: 'website',

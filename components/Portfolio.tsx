@@ -11,7 +11,6 @@ import {
 	certificates as certificatesData,
 } from '../data';
 import { projectsType, certificatesType } from 'typings';
-// import { Session } from 'next-auth';
 
 export default function Portfolio() {
 	const [isGrid, setIsGrid] = useState<boolean>(true);

@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../auth/[...nextauth]/route';
+import { authOptions } from 'lib/auth';
 import { checkPossibleLinks, cleanText } from '../../../lib/helper';
 import { createComments, getComments } from '../../../lib/prisma/guestbook';
 import { NextResponse } from 'next/server';
