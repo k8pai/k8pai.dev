@@ -25,7 +25,7 @@ export async function generateMetadata({
 			description: summary ?? title,
 			type: 'article',
 			publishedTime,
-			url: `https://k8pai-dev.vercel.app/solutions/${url}`,
+			url: `https://k8pai.dev/notes/${url}`,
 		},
 	};
 }
