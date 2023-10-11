@@ -6,7 +6,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 export const NotePosts = defineDocumentType(() => ({
-	name: 'notes',
+	name: 'Notes',
 	filePathPattern: `**/*.mdx`,
 	contentType: 'mdx',
 	fields: {
