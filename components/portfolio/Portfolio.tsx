@@ -25,10 +25,10 @@ export default function Portfolio() {
 	const handleShowCertificates = () => {
 		if (certificates.length === 6) {
 			setShowFullCertficates(true);
-			setCertificates(certificates);
+			setCertificates(certificatesData);
 		} else {
 			setShowFullCertficates(false);
-			setCertificates(certificates.slice(0, 6));
+			setCertificates(certificatesData.slice(0, 6));
 		}
 	};
 
