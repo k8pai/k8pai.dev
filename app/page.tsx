@@ -110,16 +110,7 @@ export default async function page() {
 						</Link>
 					</div>
 				</div>
-				{/* <div className="connection section. mt-6">
-					<p className="tracking-wider leading-loose mt-2">
-						Star this repo or give me a fork. Credits goes to{' '}
-						<Link href={'https://leerob.io'}>lee Robinson</Link> for
-						this modern portfolio design.
-					</p>
-				</div> */}
 			</div>
-
-			{/* <Socials /> */}
 		</section>
 	);
 }

@@ -4,7 +4,6 @@ import Link from 'next/link';
 import React from 'react';
 import { LayoutGroup, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import Logo from './Logo';
 import { navLinks } from 'data';
 
 export default function Sidenav() {

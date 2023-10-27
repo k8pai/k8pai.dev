@@ -1,6 +1,6 @@
 'use client';
 
-import { LayoutGroup, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const icon = {

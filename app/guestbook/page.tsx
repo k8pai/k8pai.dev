@@ -6,8 +6,6 @@ import { SignIn } from './actions';
 import { getServerSession } from 'next-auth';
 import { getComments } from '../../lib/prisma/guestbook';
 import { authOptions } from 'lib/auth';
-import { getDomainName } from 'lib/helper';
-import { CiLink } from 'react-icons/ci';
 import GuestEntry from 'components/guestbook/GuestEntry';
 
 const getGuestbook = async () => {

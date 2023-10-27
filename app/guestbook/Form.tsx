@@ -4,9 +4,7 @@ import React, { useRef, useState } from 'react';
 import { FaSignature } from 'react-icons/fa';
 import { guestbookInsert } from 'app/_actions';
 import { SignOut } from 'app/guestbook/actions';
-import { userType } from 'lib/prisma/guestbook';
-import { DefaultSession, DefaultUser, User } from 'next-auth';
-import { userAgent } from 'next/server';
+import { DefaultSession } from 'next-auth';
 
 const Form = ({ user }: { user: DefaultSession['user'] }) => {
 	const formRef = useRef<HTMLFormElement>(null);

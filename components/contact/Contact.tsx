@@ -1,6 +1,5 @@
 'use client';
 
-import { Session } from 'next-auth';
 import Link from 'next/link';
 import React, { FormEvent, useState } from 'react';
 import { MdOutlineClear } from 'react-icons/md';
@@ -30,7 +29,6 @@ export default function Contact() {
 				body: JSON.stringify(state),
 			});
 			if (!response.ok) {
-				// set sme kind of error and don't try anythng again.
 				return;
 			}
 			setState({ name: '', email: '', message: '' });

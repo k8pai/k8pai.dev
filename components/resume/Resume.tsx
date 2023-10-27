@@ -26,8 +26,6 @@ import {
 } from 'react-icons/si';
 
 export default function Resume() {
-	const [showAbout, setShowAbout] = useState<boolean>(false);
-
 	const languages = ['English', 'Hindi', 'Malayalam', 'Konkani', 'Sanskrit'];
 
 	const techSkills = [

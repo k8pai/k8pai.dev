@@ -25,15 +25,12 @@ const AboutLayout = () => {
 	];
 
 	const downloadResume = () => {
-		// Replace 'path/to/your/file.pdf' with the actual path to your PDF file
 		const pdfURL = 'Resume_k8pai.pdf';
 
-		// Create a new anchor element
 		const link = document.createElement('a');
 		link.href = pdfURL;
 		link.download = 'Resume_k8pai.pdf';
 
-		// Dispatch a click event on the anchor element
 		link.dispatchEvent(new MouseEvent('click'));
 	};
 
