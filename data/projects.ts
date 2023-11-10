@@ -12,10 +12,41 @@ import {
 	SiHtml5,
 	SiJavascript,
 	SiAuth0,
+	SiNodedotjs,
+	SiGmail,
+	SiGoogle,
 } from 'react-icons/si';
 import { projectsType } from 'typings';
 
 export const projects: projectsType[] = [
+	{
+		name: 'Gmail-Automation',
+		imageUrl: pinit,
+		projectUrl: '',
+		githubUrl: 'https://github.com/k8pai/gmail-automation',
+		Components: [
+			{
+				Component: SiJavascript,
+				color: '#3178C6',
+			},
+			{
+				Component: SiNodedotjs,
+				color: '#339933',
+			},
+			{
+				Component: SiGmail,
+				color: '#EA4335',
+			},
+			{
+				Component: SiGoogle,
+				color: '#4285F4',
+			},
+			{
+				Component: SiAuth0,
+				color: '#EB5424',
+			},
+		],
+	},
 	{
 		name: 'Nextauth-cli',
 		imageUrl: pinit,
