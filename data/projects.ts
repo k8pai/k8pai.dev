@@ -1,7 +1,7 @@
-import todolist from '../public/todolist_thumb.png';
-import pinit from '../public/pinit_thumb.png';
-import tailwindInputs from '../public/tailwind_inputs_thumb.png';
-import linkwrap from '../public/linkwrap_thumb.png';
+import todolist from 'public/todolist_thumb.png';
+import pinit from 'public/pinit_thumb.png';
+import tailwindInputs from 'public/tailwind_inputs_thumb.png';
+import linkwrap from 'public/linkwrap_thumb.png';
 import {
 	SiNextdotjs,
 	SiTypescript,

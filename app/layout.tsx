@@ -3,6 +3,8 @@ import React from 'react';
 import Sidenav from '../components/Sidenav';
 import './globals.css';
 import Footer from 'components/Footer';
+import { ThemeProvider } from 'components/ThemeProvider';
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://k8pai.dev'),
@@ -55,18 +57,28 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html
-			lang="en"
-			className={
-				'text-[#242526] bg-[#F5F5F5] dark:text-neutral-100 dark:bg-[#111010]'
-			}
-		>
-			<body className="max-w-5xl flex flex-col mx-4 min-h-screen lg:mx-auto">
-				<Sidenav />
-				<main className="flex-auto min-w-0 my-4 mx-1 md:my-8 md:mx-5 flex flex-col px-2 lg:px-0">
-					{children}
-				</main>
-				<Footer />
+		<html lang="en" suppressHydrationWarning>
+			<body>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="dark"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<div className="max-w-5xl flex flex-col mx-4 min-h-screen lg:mx-auto">
+						<Sidenav />
+						<main className="flex-auto min-w-0 my-4 mx-1 md:my-8 md:mx-5 flex flex-col px-2 lg:px-0">
+							{children}
+						</main>
+						<Footer />
+					</div>
+					<Toaster
+						position="bottom-right"
+						richColors
+						expand
+						closeButton
+					/>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

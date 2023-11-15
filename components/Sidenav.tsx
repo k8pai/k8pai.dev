@@ -5,6 +5,7 @@ import React from 'react';
 import { LayoutGroup, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { navLinks } from 'data';
+import { ModeToggle } from './ThemeProvider';
 
 export default function Sidenav() {
 	const pathname = usePathname();
@@ -17,8 +18,6 @@ export default function Sidenav() {
 					id="nav"
 				>
 					<div className="flex flex-row space-x-0 px-0 my-4">
-						{/* <Logo /> */}
-
 						{navLinks.map(({ route, name }, _) => {
 							const isActive = route === pathname;
 							return (

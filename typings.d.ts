@@ -1,3 +1,6 @@
+import { ContactFormSchema } from 'lib/schema';
+import { TypeOf, infer } from 'zod';
+
 // projects info
 export interface ProjectComponents {
 	Component: IconType;
