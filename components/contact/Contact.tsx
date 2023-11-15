@@ -1,45 +1,18 @@
 'use client';
 
 import Link from 'next/link';
-import React, { FormEvent, useState } from 'react';
-import { MdOutlineClear } from 'react-icons/md';
+import React from 'react';
 import { SiDiscord, SiGmail, SiWhatsapp } from 'react-icons/si';
-import { TbSend } from 'react-icons/tb';
+import z from 'zod';
+import { ContactFormSchema } from 'lib/schema';
+import { SendMailForm } from './Form';
+
+export type contactFormType = z.infer<typeof ContactFormSchema>;
 
 export default function Contact() {
-	const [state, setState] = useState({
-		name: '',
-		email: '',
-		message: '',
-	});
-
-	const handleChange = (event: FormEvent) => {
-		const { name, value } = event.target as any;
-		setState((ref) => ({ ...ref, [name]: value }));
-	};
-
-	const handleSubmit = async (event: FormEvent) => {
-		event?.preventDefault();
-		try {
-			const response = await fetch('/api/contact', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(state),
-			});
-			if (!response.ok) {
-				return;
-			}
-			setState({ name: '', email: '', message: '' });
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
 	return (
 		<div className="aboutme mt-10">
-			<form className="w-full max-w-2xl" onSubmit={handleSubmit}>
+			<div className="w-full max-w-2xl">
 				<h1 className="text-3xl font-bold mb-3 capitalize">
 					Connect with me
 				</h1>
@@ -48,79 +21,7 @@ export default function Contact() {
 					would just like to say hello, send me a message. I&apos;d
 					love to hear from you.
 				</p>
-				<div className="flex flex-col md:flex-row -mx-3 px-3 md:mb-6">
-					<div className="relative mr-0 mb-5 md:mb-0 md:mr-2">
-						<input
-							className="appearance-none block w-full bg-slate-200 dark:bg-[#181818] dark:text-slate-300 border border-transparent rounded py-3 px-4 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
-							id="nick"
-							type="text"
-							placeholder="Name"
-							autoComplete="off"
-							name="name"
-							value={state.name}
-							onChange={handleChange}
-						/>
-						{state.name && (
-							<button
-								className="absolute inset-y-0 right-0 mx-2"
-								onClick={() =>
-									setState((ref) => ({
-										...ref,
-										name: '',
-									}))
-								}
-							>
-								<MdOutlineClear size="1.2em" />
-							</button>
-						)}
-					</div>
-					<div className="flex-grow relative ml-0 mb-5 md:mb-0 md:ml-2">
-						<input
-							className="appearance-none block w-full bg-slate-200 dark:bg-[#181818] dark:text-slate-300 border border-transparent rounded py-3 px-4 leading-tight focus:outline-none focus:border-[#4338ca] font-semibold tracking-wider"
-							id="email"
-							type="email"
-							name="email"
-							placeholder="Email"
-							autoComplete="nope"
-							value={state.email}
-							onChange={handleChange}
-						/>
-						{state.email && (
-							<button
-								className="absolute inset-y-0 right-0 mx-2"
-								onClick={() =>
-									setState((ref) => ({
-										...ref,
-										email: '',
-									}))
-								}
-							>
-								<MdOutlineClear size={'1.2em'} />
-							</button>
-						)}
-					</div>
-				</div>
-				<div className="flex flex-wrap -mx-3 mb-4">
-					<div className="w-full px-3">
-						<textarea
-							className="no-resize appearance-none block w-full bg-slate-200 dark:bg-[#181818] dark:text-slate-300 border border-transparent rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-[#4338ca]  font-semibold tracking-wider h-48 resize-none"
-							id="message"
-							name="message"
-							placeholder={`Leave me a message...`}
-							value={state.message}
-							onChange={handleChange}
-						/>
-					</div>
-				</div>
-				<div className="flex items-center justify-between mb-4">
-					<button
-						className="shadow-md flex items-center space-x-2 tracking-wider transition-all  bg-slate-200 dark:bg-[#181818] hover:dark:bg-[#202020] focus:shadow-outline focus:outline-none font-semibold py-2 px-4 rounded-lg border-gray-200"
-						type="submit"
-					>
-						<span>Send</span>
-						<TbSend size={'1.2em'} />
-					</button>
-				</div>
+				<SendMailForm />
 				<h1 className="text-sm text-center font-bold mb-3 capitalize">
 					OR
 				</h1>
@@ -151,7 +52,9 @@ export default function Contact() {
 						<span>_k8pai</span>
 					</Link>
 				</div>
-			</form>
+			</div>
+
+			{/* <SendMailForm /> */}
 		</div>
 	);
 }
