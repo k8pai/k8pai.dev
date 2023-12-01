@@ -66,7 +66,7 @@ export default function RootLayout({
 									target="_blank"
 									key={elXid}
 									href={href}
-									className="p-2 transition-all duration-200 bg-neutral-200 dark:bg-neutral-800 hover:scale-110 hover:shadow-md rounded-md"
+									className="p-1 transition-all duration-200  hover:scale-110 hover:shadow-md rounded-md"
 								>
 									<Component color={color} size={'1.5em'} />
 								</Link>
