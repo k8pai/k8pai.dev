@@ -1,71 +1,66 @@
-import { Metadata } from 'next';
-import React from 'react';
-import Link from 'next/link';
-import { allNotes } from 'contentlayer/generated';
-import { compareDesc, format, parseISO } from 'date-fns';
+import { Metadata } from 'next'
+import React, { Suspense } from 'react'
+import Link from 'next/link'
+import { allNotes } from 'contentlayer/generated'
+import { compareDesc, format, parseISO } from 'date-fns'
+import RecentPosts from 'components/RecentPosts'
 
 export const metadata: Metadata = {
-	title: 'Sudarsan K Pai',
-	description: 'Student | Web developer',
-};
+    title: 'Sudarsan K Pai',
+    description: 'Student | Web developer',
+}
 
-export default async function page() {
-	let posts;
-	try {
-		posts = allNotes
-			.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-			.slice(0, 3);
-	} catch (error) {
-		console.error('Error: ', error);
-	}
+export default function page() {
+    return (
+        <section>
+            <div className="flex-auto max-w-3xl">
+                <h1 className="font-semibold text-3xl tracking-wider">
+                    Sudarsan K Pai
+                </h1>
+                <p className="tracking-wider leading-loose mt-4">
+                    As a dedicated full-stack web developer with a strong
+                    commitment to community engagement, I thrive on
+                    collaborating with others and delivering innovative
+                    solutions that make a positive difference.
+                </p>
+                <p className="tracking-wider leading-loose mt-4">
+                    My ultimate goal is to become a well-rounded and skilled
+                    full-stack web developer capable of delivering cutting-edge
+                    solutions that positively impact the digital world.
+                </p>
 
-	return (
-		<section>
-			<div className="flex-auto max-w-3xl">
-				<h1 className="font-semibold text-3xl tracking-wider">
-					Sudarsan K Pai
-				</h1>
-				<p className="tracking-wider leading-loose mt-4">
-					As a dedicated full-stack web developer with a strong
-					commitment to community engagement, I thrive on
-					collaborating with others and delivering innovative
-					solutions that make a positive difference.
-				</p>
-				<p className="tracking-wider leading-loose mt-4">
-					My ultimate goal is to become a well-rounded and skilled
-					full-stack web developer capable of delivering cutting-edge
-					solutions that positively impact the digital world.
-				</p>
+                <div className="my-5">
+                    <p className="tracking-wider leading-loose mt-2">
+                        Uncovering powerful tools, libraries, and frameworks
+                        that redefine what's possible! 🚀💡
+                    </p>
+                    <div className="mt-1">
+                        <Link
+                            href={'https://discordjs.guide/#before-you-begin'}
+                            className="hash"
+                        >
+                            #discordjs
+                        </Link>
+                        <Link href={'https://threejs.org/'} className="hash">
+                            #threejs
+                        </Link>
+                        <Link
+                            href={'https://soliditylang.org/'}
+                            className="hash"
+                        >
+                            #solidity
+                        </Link>
+                        <Link href={'https://vuejs.org/'} className="hash">
+                            #vuejs
+                        </Link>
+                        {/* <Link href={''} className="hash">#devOps</Link> */}
+                    </div>
+                </div>
 
-				<div className="my-5">
-					<p className="tracking-wider leading-loose mt-2">
-						Uncovering powerful tools, libraries, and frameworks
-						that redefine what's possible! 🚀💡
-					</p>
-					<div className="mt-1">
-						<Link
-							href={'https://discordjs.guide/#before-you-begin'}
-							className="hash"
-						>
-							#discordjs
-						</Link>
-						<Link href={'https://threejs.org/'} className="hash">
-							#threejs
-						</Link>
-						<Link
-							href={'https://soliditylang.org/'}
-							className="hash"
-						>
-							#solidity
-						</Link>
-						<Link href={'https://vuejs.org/'} className="hash">
-							#vuejs
-						</Link>
-						{/* <Link href={''} className="hash">#devOps</Link> */}
-					</div>
-				</div>
-
-				<div className="mt-12">
+                <Suspense fallback="loading...">
+                    <RecentPosts />
+                </Suspense>
+                {/* <div className="mt-12">
 					<h1 className="tracking-wider leading-loose text-3xl font-bold">
 						Recent Notes
 					</h1>
@@ -109,8 +104,8 @@ export default async function page() {
 							More Notes
 						</Link>
 					</div>
-				</div>
-			</div>
-		</section>
-	);
+				</div> */}
+            </div>
+        </section>
+    )
 }
