@@ -24,10 +24,10 @@ export default function Sidenav() {
                                 <Link
                                     key={route}
                                     href={route}
-                                    className={`transition-all space-y-2 hover:text-neutral-400 dark:hover:text-neutral-200 flex align-middle ${
+                                    className={`transition-all space-y-2  flex align-middle ${
                                         !isActive
-                                            ? 'text-neutral-300'
-                                            : 'scale-105'
+                                            ? 'hover:text-neutral-400 dark:hover:text-neutral-200'
+                                            : 'scale-105 text-teal-300 '
                                     }`}
                                 >
                                     <span className="relative py-2 px-3 w-fit">

@@ -4,11 +4,6 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import { allNotes } from 'contentlayer/generated'
 
 const PostFeed = () => {
-    let val = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('hey')
-        }, 10000) // Simulate async data fetching
-    })
     const posts = allNotes.sort((a, b) =>
         compareDesc(new Date(a.date), new Date(b.date))
     )
@@ -27,7 +22,7 @@ const PostFeed = () => {
                     </h2>
                     <time
                         dateTime={date}
-                        className="mb-2 block text-xs font-semibold text-slate-400"
+                        className="mb-2 block text-xs font-semibold text-teal-100"
                     >
                         {format(parseISO(date), 'LLLL d, yyyy')}
                     </time>

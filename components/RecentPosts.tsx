@@ -31,14 +31,14 @@ const RecentPosts = () => {
                                     </h2>
                                     <time
                                         dateTime={date}
-                                        className="mb-2 block text-xs font-semibold text-slate-400"
+                                        className="mb-2 block text-xs font-semibold "
                                     >
                                         {format(parseISO(date), 'LLLL d, yyyy')}
                                     </time>
                                 </div>
                             ) : null}
                             <h2 className="text-base">
-                                <span className="transition-all duration-200 text-slate-400">
+                                <span className="transition-all duration-200 text-violet-200">
                                     {title}
                                 </span>
                             </h2>
