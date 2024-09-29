@@ -126,3 +126,4 @@ This project is licensed under the [MIT License](LICENSE).
 -   [Tailwind CSS](https://tailwindcss.com/)
 -   [TypeScript](https://www.typescriptlang.org/)
 -   [Contentlayer](https://contentlayer.dev/)
+-   [svg path editor](https://yqnn.github.io/svg-path-editor/)

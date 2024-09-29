@@ -1,6 +1,25 @@
 import { Suspense } from 'react'
 import PostFeed from './PostFeed'
 import Loading from './loading'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    metadataBase: new URL('https://k8pai.dev'),
+    title: 'Blog post',
+    description: 'Software Engineer | Full Stack Developer | DevOps',
+    openGraph: {
+        title: 'Blogs | k8pai',
+        description: 'Software Engineer | Full Stack Developer | DevOps',
+        url: 'https://k8pai.dev/about',
+        siteName: 'Sudarsan k pai',
+        locale: 'en-US',
+        type: 'website',
+    },
+    twitter: {
+        title: 'Sudarsan K Pai',
+        card: 'summary_large_image',
+    },
+}
 
 export default async function Page() {
     return (
