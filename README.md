@@ -1,3 +1,5 @@
+[Preview](https://k8pai.dev)
+
 ![Portfolio Screenshot](screenshot.png)
 
 ## Overview
@@ -13,9 +15,6 @@ This repository contains the source code for my personal portfolio website. It s
 -   TypeScript
 -   Contentlayer
 
-## Live Demo
-
-[View website](https://k8pai.dev)
 
 ## Features
 
