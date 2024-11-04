@@ -1,15 +1,14 @@
 'use client'
 
-import React from 'react'
 import { FcRules } from 'react-icons/fc'
 
 const DownloadResumeButton = ({ name }: { name: string }) => {
     const downloadResume = () => {
-        const pdfURL = 'Resume_k8pai.pdf'
+        const pdfURL = 'Sudarsan_K_Pai_Resume.pdf'
 
         const link = document.createElement('a')
         link.href = pdfURL
-        link.download = 'Resume_k8pai.pdf'
+        link.download = 'sudarsan_k_pai_resume.pdf'
 
         link.dispatchEvent(new MouseEvent('click'))
     }
