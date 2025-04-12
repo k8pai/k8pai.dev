@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import Logo from './Logo'
 import { SiDiscord, SiGithub, SiLinkedin } from 'react-icons/si'
+import Logo from './Logo'
 
 const Footer = () => {
     return (
