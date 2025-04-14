@@ -1,9 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
-import { FcGraduationCap } from 'react-icons/fc'
-import TechSkills from './TechSkills'
 import { FaJava } from 'react-icons/fa'
+import { FcGraduationCap } from 'react-icons/fc'
 import {
     SiC,
     SiCplusplus,
@@ -17,7 +15,6 @@ import {
     SiMongodb,
     SiNextdotjs,
     SiNodedotjs,
-    SiPowerbi,
     SiPython,
     SiReact,
     SiRedis,
@@ -25,6 +22,7 @@ import {
     SiTailwindcss,
     SiTypescript,
 } from 'react-icons/si'
+import TechSkills from './TechSkills'
 
 export default function Resume() {
     const languages = ['English', 'Hindi', 'Malayalam', 'Konkani', 'Sanskrit']
@@ -57,11 +55,11 @@ export default function Resume() {
             Component: SiDocker,
             color: '#2496ED',
         },
-        {
-            title: 'Power BI',
-            Component: SiPowerbi,
-            color: '#ff0000',
-        },
+        // {
+        //     title: 'Power BI',
+        //     Component: SiPowerbi,
+        //     color: '#ff0000',
+        // },
     ]
 
     const softSkills = [
@@ -91,33 +89,6 @@ export default function Resume() {
                         Dedicated to staying at the forefront of development
                         trends and delivering high-performance solutions.
                     </p>
-                    {/* <p>
-                        As a full-stack developer, I have a strong foundation,
-                        yet I remain down-to-earth, always acknowledging the
-                        potential for improvement and seeking opportunities to
-                        grow. I have a genuine passion for acquiring knowledge
-                        in areas where I am currently unfamiliar.
-                    </p>
-                    <p className="mt-3">
-                        Learning new technologies and exploring different
-                        aspects of web development excites me. Moreover, I am
-                        determined to enhance my expertise in the MERN (MongoDB,
-                        Express.js, React.js, Node.js) stack, which I already
-                        have a solid foundation in.
-                    </p>
-                    <p className="mt-3">
-                        I'm enthusiastic about trying out new things and
-                        exploring various possibilities to broaden my horizons.
-                        Additionally, I'm eager to apply my knowledge and
-                        expertise in the MERN stack to create innovative
-                        solutions.
-                    </p>
-                    <p className="mt-3">
-                        My ultimate goal is to become a well-rounded and skilled
-                        full-stack web developer capable of delivering
-                        cutting-edge solutions that positively impact the
-                        digital world.
-                    </p> */}
                 </div>
             </div>
 
