@@ -1,11 +1,9 @@
 'use client'
 
-import Link from 'next/link'
-import React from 'react'
-import { LayoutGroup, motion } from 'framer-motion'
-import { usePathname } from 'next/navigation'
 import { navLinks } from 'data'
-import { ModeToggle } from './ThemeProvider'
+import { LayoutGroup, motion } from 'framer-motion'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Sidenav() {
     const pathname = usePathname()
