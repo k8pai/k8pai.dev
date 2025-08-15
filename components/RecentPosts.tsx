@@ -1,45 +1,40 @@
-import React from 'react'
+import { getBlogPosts } from '@/lib/utils'
+import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
-import { allNotes, Notes } from 'contentlayer/generated'
-import { compareDesc, format, parseISO } from 'date-fns'
 
 const RecentPosts = () => {
-    let posts: Notes[] = []
-    try {
-        posts = allNotes
-            .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-            .slice(0, 3)
-    } catch (error) {
-        console.error('Error: ', error)
-    }
+    let posts = getBlogPosts()
     return (
         <div className="mt-12">
             <h1 className="tracking-wider leading-loose text-3xl font-bold">
                 Recent Notes
             </h1>
             {posts &&
-                posts.map(({ url, title, date, header }, idx) => (
+                posts.map(({ slug, content, metadata }, idx) => (
                     <div
                         key={`recent-post-${idx}`}
                         className="my-5 rounded-md transition-all"
                     >
-                        <Link href={`/notes/${url}`}>
-                            {header ? (
+                        <Link href={`/notes/${slug}`}>
+                            {metadata.title ? (
                                 <div className="flex items-center justify-between">
                                     <h2 className="transition-all duration-200 font-semibold text-lg">
-                                        {header}
+                                        {metadata.title}
                                     </h2>
                                     <time
-                                        dateTime={date}
+                                        dateTime={metadata.date}
                                         className="mb-2 block text-xs font-semibold "
                                     >
-                                        {format(parseISO(date), 'LLLL d, yyyy')}
+                                        {format(
+                                            parseISO(metadata.date),
+                                            'LLLL d, yyyy'
+                                        )}
                                     </time>
                                 </div>
                             ) : null}
                             <h2 className="text-base">
                                 <span className="transition-all duration-200 text-violet-200">
-                                    {title}
+                                    {metadata.title}
                                 </span>
                             </h2>
                         </Link>

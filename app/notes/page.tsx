@@ -1,7 +1,7 @@
+import { Metadata } from 'next'
 import { Suspense } from 'react'
 import PostFeed from './PostFeed'
 import Loading from './loading'
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://k8pai.dev'),

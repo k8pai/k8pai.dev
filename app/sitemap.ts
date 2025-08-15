@@ -1,15 +1,35 @@
-import { allNotes } from 'contentlayer/generated';
+import { promises as fs } from 'fs'
+import path from 'path'
+
+export const baseUrl = 'https://k8pai.dev'
+
+async function getNoteSlugs(dir: string) {
+    const entries = await fs.readdir(dir, {
+        recursive: true,
+        withFileTypes: true,
+    })
+    return entries
+        .filter((entry) => entry.isFile() && entry.name.endsWith('.mdx'))
+        .map((entry) => {
+            const relativePath = path.relative(dir, path.join(dir, entry.name))
+            return path.dirname(relativePath)
+        })
+        .map((slug) => slug.replace(/\\/g, '/'))
+}
 
 export default async function sitemap() {
-	const blogs = allNotes.map((post) => ({
-		url: `https://k8pai.dev/notes/${post.url}`,
-		lastModified: post.date,
-	}));
+    const notesDirectory = path.join(process.cwd(), 'contents')
+    const slugs = await getNoteSlugs(notesDirectory)
 
-	const routes = ['', '/notes', '/guestbook', '/secret'].map((route) => ({
-		url: `https://k8pai.dev${route}`,
-		lastModified: new Date().toISOString().split('T')[0],
-	}));
+    const notes = slugs.map((slug) => ({
+        url: `${baseUrl}/notes/${slug}`,
+        lastModified: new Date().toISOString(),
+    }))
 
-	return [...routes, ...blogs];
+    const routes = ['', '/notes', '/guestbook', '/secret'].map((route) => ({
+        url: `https://k8pai.dev${route}`,
+        lastModified: new Date().toISOString().split('T')[0],
+    }))
+
+    return [...routes, ...notes]
 }

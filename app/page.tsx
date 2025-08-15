@@ -1,9 +1,7 @@
-import { Metadata } from 'next'
-import React, { Suspense } from 'react'
-import Link from 'next/link'
-import { allNotes } from 'contentlayer/generated'
-import { compareDesc, format, parseISO } from 'date-fns'
 import RecentPosts from 'components/RecentPosts'
+import { Metadata } from 'next'
+import Link from 'next/link'
+import { Suspense } from 'react'
 
 export const metadata: Metadata = {
     title: 'Sudarsan K Pai',

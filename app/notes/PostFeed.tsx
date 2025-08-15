@@ -1,20 +1,21 @@
-import React from 'react'
-import Link from 'next/link'
+import { getBlogPosts } from '@/lib/utils'
 import { compareDesc, format, parseISO } from 'date-fns'
-import { allNotes } from 'contentlayer/generated'
+import Link from 'next/link'
 
 const PostFeed = () => {
-    const posts = allNotes.sort((a, b) =>
-        compareDesc(new Date(a.date), new Date(b.date))
+    const posts = getBlogPosts().sort((a, b) =>
+        compareDesc(new Date(a.metadata.date), new Date(b.metadata.date))
     )
+
+    console.log('posts => ', posts)
     return (
         <div>
             {/* {val.toString()} */}
-            {posts.map(({ url, title, date }, idx) => (
+            {posts.map(({ slug, metadata: { date, title } }, idx) => (
                 <div key={idx} className="mb-6">
                     <h2 className="mb-1 text-xl">
                         <Link
-                            href={`/notes/${url}`}
+                            href={`/notes/${slug}`}
                             className="transition-all duration-200 font-semibold "
                         >
                             {title}

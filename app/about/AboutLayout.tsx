@@ -1,10 +1,10 @@
 'use client'
 
-import React, { useCallback, useState } from 'react'
-import { motion } from 'framer-motion'
-import Resume from '../../components/resume/Resume'
+import { motion } from 'motion/react'
+import { useCallback, useState } from 'react'
 import Contact from '../../components/contact/Contact'
 import Portfolio from '../../components/portfolio/Portfolio'
+import Resume from '../../components/resume/Resume'
 import DownloadResumeButton from './DownloadResumeButton'
 
 type ContentType = {
