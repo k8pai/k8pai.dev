@@ -1,10 +1,10 @@
+import { socialLinks } from 'data'
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { MdLocationPin } from 'react-icons/md'
-import Image from 'next/image'
 import profilePhoto from '../../public/developer.png'
-import Link from 'next/link'
-import type { Metadata } from 'next'
-import { socialLinks } from 'data'
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://k8pai.dev'),
@@ -58,12 +58,13 @@ export default function RootLayout({
                     </div>
                     <div className="flex mt-3 items-center space-x-3">
                         {socialLinks.map(
-                            ({ color, Component, href }, elXid) => (
+                            ({ color, Component, href, title }, elXid) => (
                                 <Link
                                     target="_blank"
                                     key={elXid}
                                     href={href}
                                     className="p-1 transition-all duration-200  hover:scale-110 hover:shadow-md rounded-md"
+                                    title={title}
                                 >
                                     <Component color={color} size={'1.5em'} />
                                 </Link>
