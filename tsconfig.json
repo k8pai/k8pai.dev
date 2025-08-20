@@ -33,7 +33,8 @@
         ".next/types/**/*.ts",
         "lib/nodemailer.js",
         "lib/github/index.ts",
-        "contents/**/*.mdx"
+        "contents/**/*.mdx",
+        "next.config.js"
     ],
     "exclude": ["node_modules"]
 }

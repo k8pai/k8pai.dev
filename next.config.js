@@ -1,11 +1,9 @@
-import createMDX from '@next/mdx'
-import type { NextConfig } from 'next'
-import rehypeStringify from 'rehype-stringify'
-import remarkGfm from 'remark-gfm'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
+// @ts-check
 
-const nextConfig: NextConfig = {
+import createMDX from '@next/mdx'
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
     images: {
         domains: ['github.com', 'avatars.githubusercontent.com'],
@@ -43,8 +41,8 @@ const withMDX = createMDX({
     // Add markdown plugins here, as desired
     extension: /\.(md|mdx)$/,
     options: {
-        remarkPlugins: [remarkGfm, remarkParse, remarkRehype],
-        rehypePlugins: [rehypeStringify],
+        // remarkPlugins: [remarkGfm, remarkParse, remarkRehype],
+        // rehypePlugins: [rehypeStringify],
     },
 })
 
