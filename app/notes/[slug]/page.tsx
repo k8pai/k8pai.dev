@@ -4,7 +4,7 @@ import { baseUrl } from '@/app/sitemap'
 import { CustomMDX } from '@/components/Mdx'
 import { getBlogPosts } from '@/lib/mdx'
 import { format, parseISO } from 'date-fns'
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 // export const generateStaticParams = async () =>
@@ -51,10 +51,8 @@ export function generateStaticParams() {
 
 export const generateMetadata = async ({
     params,
-    Parent,
 }: {
     params: Props['params']
-    Parent: ResolvingMetadata
 }): Promise<Metadata> => {
     const { slug } = await params
     let post = getBlogPosts().find((post) => post.slug === slug)
