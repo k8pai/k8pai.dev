@@ -4,6 +4,7 @@ import { baseUrl } from '@/app/sitemap'
 import { CustomMDX } from '@/components/Mdx'
 import { getBlogPosts } from '@/lib/mdx'
 import { format, parseISO } from 'date-fns'
+import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
 // export const generateStaticParams = async () =>
@@ -40,19 +41,25 @@ import { notFound } from 'next/navigation'
 //     return <Post />
 // }
 
+type Props = {
+    params: Promise<{ slug: string }>
+}
+
 export function generateStaticParams() {
     return getBlogPosts().map((post) => ({ slug: post.slug }))
 }
 
 export const generateMetadata = async ({
     params,
+    Parent,
 }: {
-    params: { slug: string }
-}) => {
+    params: Props['params']
+    Parent: ResolvingMetadata
+}): Promise<Metadata> => {
     const { slug } = await params
     let post = getBlogPosts().find((post) => post.slug === slug)
     if (!post) {
-        return
+        return {}
     }
 
     let {
@@ -91,7 +98,7 @@ export const generateMetadata = async ({
 
 export const dynamicParams = false
 
-const PostLayout = async ({ params }: { params: { slug: string } }) => {
+const PostLayout = async ({ params }: Props) => {
     const { slug } = await params
     let post = getBlogPosts().find((post) => post.slug === slug)
 
