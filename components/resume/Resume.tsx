@@ -1,74 +1,10 @@
 'use client'
 
-import { FaJava } from 'react-icons/fa'
+import { LANGUAGES, SOFTSKILLS, TECHSKILLS } from '@/data'
 import { FcGraduationCap } from 'react-icons/fc'
-import {
-    SiC,
-    SiCplusplus,
-    SiCss3,
-    SiDocker,
-    SiExpress,
-    SiFramer,
-    SiGithubactions,
-    SiHtml5,
-    SiJavascript,
-    SiMongodb,
-    SiNextdotjs,
-    SiNodedotjs,
-    SiPython,
-    SiReact,
-    SiRedis,
-    SiRedux,
-    SiTailwindcss,
-    SiTypescript,
-} from 'react-icons/si'
 import TechSkills from './TechSkills'
 
 export default function Resume() {
-    const languages = ['English', 'Hindi', 'Malayalam', 'Konkani', 'Sanskrit']
-
-    const techSkills = [
-        { title: 'HTML', Component: SiHtml5, color: '#E34F26' },
-        { title: 'CSS', Component: SiCss3, color: '#1572B6' },
-        { title: 'Javascript', Component: SiJavascript, color: '#F7DF1E' },
-        { title: 'Typescript', Component: SiTypescript, color: '#3178C6' },
-        { title: 'Java', Component: FaJava, color: '' },
-        { title: 'C++', Component: SiCplusplus, color: '#00599C' },
-        { title: 'Objective C', Component: SiC, color: '#A8B9CC' },
-        { title: 'Python', Component: SiPython, color: '#3776AB' },
-        { title: 'React', Component: SiReact, color: '#61DAFB' },
-        { title: 'Redux', Component: SiRedux, color: '#764ABC' },
-        { title: 'Next JS', Component: SiNextdotjs, color: '#fff' },
-        { title: 'Framer Motion', Component: SiFramer, color: '#0055FF' },
-        { title: 'Tailwindcss', Component: SiTailwindcss, color: '#06B6D4' },
-        { title: 'Mongo', Component: SiMongodb, color: '#47A248' },
-        { title: 'Node js', Component: SiNodedotjs, color: '#339933' },
-        { title: 'Express js', Component: SiExpress, color: '#fff' },
-        { title: 'Redis', Component: SiRedis, color: '#DC382D' },
-        {
-            title: 'Github Actions',
-            Component: SiGithubactions,
-            color: '#2088FF',
-        },
-        {
-            title: 'Docker',
-            Component: SiDocker,
-            color: '#2496ED',
-        },
-        // {
-        //     title: 'Power BI',
-        //     Component: SiPowerbi,
-        //     color: '#ff0000',
-        // },
-    ]
-
-    const softSkills = [
-        'Communication',
-        'Collaboration',
-        'Time-Management',
-        'Problem Solving',
-        'Adaptability',
-    ]
     return (
         <div>
             {/* about me section  */}
@@ -165,7 +101,7 @@ export default function Resume() {
                     Tech Skills
                 </h1>
                 <div className="mt-3 flex flex-row flex-wrap items-center ">
-                    {techSkills.map((el, elXid) => {
+                    {TECHSKILLS.map((el, elXid) => {
                         return (
                             <TechSkills
                                 key={elXid}
@@ -184,7 +120,7 @@ export default function Resume() {
                     Soft Skills
                 </h1>
                 <div className="mt-3 flex flex-wrap items-center">
-                    {softSkills.map((el, elXid) => {
+                    {SOFTSKILLS.map((el, elXid) => {
                         return <TechSkills key={elXid}>{el}</TechSkills>
                     })}
                 </div>
@@ -196,7 +132,7 @@ export default function Resume() {
                     Languages
                 </h1>
                 <div className="mt-6 flex flex-wrap items-center ">
-                    {languages.map((el, elXid) => {
+                    {LANGUAGES.map((el, elXid) => {
                         return <TechSkills key={elXid}>{el}</TechSkills>
                     })}
                 </div>
