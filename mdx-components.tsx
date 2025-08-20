@@ -69,7 +69,6 @@ const components = {
     },
     code: ({ children, ...props }: ComponentPropsWithoutRef<'code'>) => {
         const codeHTML = highlight(children as string)
-        console.log('codeHTML', codeHTML)
         return (
             <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
         )
