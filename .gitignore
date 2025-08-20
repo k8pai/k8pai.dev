@@ -39,3 +39,5 @@ next-env.d.ts
 todo.ignore.md
 
 template.*
+
+package-lock.json
