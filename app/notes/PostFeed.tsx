@@ -7,7 +7,6 @@ const PostFeed = () => {
         compareDesc(new Date(a.metadata.date), new Date(b.metadata.date))
     )
 
-    console.log('posts => ', posts)
     return (
         <div>
             {/* {val.toString()} */}
