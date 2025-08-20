@@ -8,6 +8,7 @@
         "start": "next start",
         "lint": "next lint"
     },
+    "type": "module",
     "dependencies": {
         "@hookform/resolvers": "^3.3.2",
         "@mdx-js/loader": "^3.1.0",
