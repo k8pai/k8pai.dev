@@ -2,7 +2,7 @@
 
 import { baseUrl } from '@/app/sitemap'
 import { CustomMDX } from '@/components/Mdx'
-import { getBlogPosts } from '@/lib/utils'
+import { getBlogPosts } from '@/lib/mdx'
 import { format, parseISO } from 'date-fns'
 import { notFound } from 'next/navigation'
 

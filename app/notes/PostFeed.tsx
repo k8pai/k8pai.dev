@@ -1,4 +1,4 @@
-import { getBlogPosts } from '@/lib/utils'
+import { getBlogPosts } from '@/lib/mdx'
 import { compareDesc, format, parseISO } from 'date-fns'
 import Link from 'next/link'
 
