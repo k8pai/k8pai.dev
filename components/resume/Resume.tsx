@@ -101,7 +101,7 @@ export default function Resume() {
                 <div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4">
                     <div className="flex items-start space-x-4 p-2">
                         <FcGraduationCap size={'2em'} />
-                        <div className="flex-grow space-y-1">
+                        <div className="grow space-y-1">
                             <h1 className="text-2xl font-bold capitalize">
                                 Mahatma Gandhi University
                             </h1>
@@ -120,7 +120,7 @@ export default function Resume() {
                 <div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4">
                     <div className="flex items-start space-x-4 p-2">
                         <FcGraduationCap size={'2em'} />
-                        <div className="flex-grow space-y-1">
+                        <div className="grow space-y-1">
                             <h1 className="text-2xl font-bold capitalize">
                                 St Mary&apos;s HSS, Pattom.
                             </h1>
@@ -141,7 +141,7 @@ export default function Resume() {
                 <div className="mt-6 rounded-lg shadow-md bg-slate-200 dark:bg-[#181818] p-4">
                     <div className="flex items-start space-x-4 p-2">
                         <FcGraduationCap size={'2em'} />
-                        <div className="flex-grow space-y-1">
+                        <div className="grow space-y-1">
                             <h1 className="text-2xl font-bold capitalize">
                                 TDHS, Kochi.
                             </h1>

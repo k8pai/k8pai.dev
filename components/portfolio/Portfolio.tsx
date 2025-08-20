@@ -63,7 +63,7 @@ export default function Portfolio() {
 					<h1 className=" font-bold tracking-wide text-2xl capitalize">
 						Certificates
 					</h1>
-					<span className={'flex-grow'}></span>
+					<span className={'grow'}></span>
 					<button
 						className={`group relative bg-neutral-200 dark:bg-[#202020] rounded-md hover:shadow-md hidden lg:block`}
 						onClick={() => setIsGrid(!isGrid)}

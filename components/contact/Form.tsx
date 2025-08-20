@@ -60,7 +60,7 @@ export function SendMailForm() {
 							control={form.control}
 							name="name"
 							render={({ field }) => (
-								<FormItem className="w-full flex-grow">
+								<FormItem className="w-full grow">
 									<FormLabel>Name</FormLabel>
 									<FormControl>
 										<Input

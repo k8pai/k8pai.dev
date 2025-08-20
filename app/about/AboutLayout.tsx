@@ -51,7 +51,7 @@ const AboutLayout = () => {
                         </button>
                     )
                 })}
-                <span className={'flex-grow'}></span>
+                <span className={'grow'}></span>
                 <DownloadResumeButton name={content} />
             </div>
             {renderComponent()}
