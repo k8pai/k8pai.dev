@@ -33,6 +33,13 @@ const nextConfig = {
         ]
     },
     experimental: {
+        serverActions: {
+            allowedOrigins: [
+                'http://localhost:3000',
+                'k8pai.dev',
+                '*.k8pai.dev',
+            ],
+        },
         mdxRs: true,
     },
 }
