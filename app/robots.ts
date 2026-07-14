@@ -5,7 +5,7 @@ export default function robots() {
 				userAgent: '*',
 			},
 		],
-		sitemap: 'https://k8pai.dev/sitemap.xml',
-		host: 'https://k8pai.dev',
+		sitemap: 'https://dev.k8pai.com/sitemap.xml',
+		host: 'https://dev.k8pai.com',
 	};
 }
