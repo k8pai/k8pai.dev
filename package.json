@@ -31,7 +31,7 @@
         "motion": "^12.23.12",
         "next": "^15.4.6",
         "next-auth": "^4.24.5",
-        "next-mdx-remote": "^5.0.0",
+        "next-mdx-remote": "^6.0.0",
         "next-themes": "^0.2.1",
         "nodemailer": "^7.0.13",
         "react": "^19.1.0",
@@ -61,5 +61,13 @@
         "prettier": "^3.3.3",
         "prisma": "^4.15.0",
         "tailwindcss": "^4.1.12"
+    },
+    "allowScripts": {
+        "@prisma/client@4.16.2": true,
+        "@prisma/engines@4.16.2": true,
+        "sharp@0.34.5": true,
+        "sharp@0.32.6": true,
+        "prisma@4.16.2": true,
+        "unrs-resolver@1.12.2": true
     }
 }
