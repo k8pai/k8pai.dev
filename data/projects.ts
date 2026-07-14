@@ -185,7 +185,7 @@ export const projects: projectsType[] = [
     // {
     // 	name: 'Portfolio',
     // 	imageUrl: portfolio,
-    // 	projectUrl: 'https://k8pai.dev',
+    // 	projectUrl: 'https://dev.k8pai.com',
     // 	githubUrl: 'https://github.com/k8pai/k8pai.dev',
     // 	Components: [
     // 		{

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://k8pai.dev'),
+    metadataBase: new URL('https://dev.k8pai.com'),
     title: 'Guestbook | k8pai',
     description:
         'Guestbook, Inspired by one of the best web developer out there, Lee Robinson.',
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Guestbook',
         description:
             'Guestbook, Inspired by one of the best web developer out there, Lee Robinson.',
-        url: 'https://k8pai.dev/guestbook',
+        url: 'https://dev.k8pai.com/guestbook',
         siteName: 'Sudarsan k pai',
         locale: 'en-US',
         type: 'website',

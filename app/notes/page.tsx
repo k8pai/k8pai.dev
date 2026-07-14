@@ -4,13 +4,13 @@ import PostFeed from './PostFeed'
 import Loading from './loading'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://k8pai.dev'),
+    metadataBase: new URL('https://dev.k8pai.com'),
     title: 'Blog post',
     description: 'Software Engineer | Full Stack Developer | DevOps',
     openGraph: {
         title: 'Blogs | k8pai',
         description: 'Software Engineer | Full Stack Developer | DevOps',
-        url: 'https://k8pai.dev/about',
+        url: 'https://dev.k8pai.com/about',
         siteName: 'Sudarsan k pai',
         locale: 'en-US',
         type: 'website',

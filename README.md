@@ -1,4 +1,4 @@
-[Preview](https://k8pai.dev)
+[Preview](https://dev.k8pai.com)
 
 ![Portfolio Screenshot](screenshot.png)
 

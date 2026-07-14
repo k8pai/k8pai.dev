@@ -6,7 +6,10 @@ import createMDX from '@next/mdx'
 const nextConfig = {
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
     images: {
-        domains: ['github.com', 'avatars.githubusercontent.com'],
+        "remotePatterns": [
+            new URL("https://avatars.githubusercontent.com/**"),
+            new URL("https://github.com/**")
+        ]
     },
     async redirects() {
         return [

@@ -34,7 +34,7 @@ export const ContactEmailTemplate = ({
 				<Text style={paragraph}>
 					Best,
 					<br />
-					From Portfolio <a href="https://k8pai.dev">k8pai.dev</a>
+					From Portfolio <a href="https://dev.k8pai.com">k8pai.dev</a>
 				</Text>
 				<Hr style={hr} />
 				<Text style={footer}>

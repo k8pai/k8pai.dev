@@ -27,7 +27,7 @@ import { notFound } from 'next/navigation'
 //             description: summary ?? title,
 //             type: 'article',
 //             publishedTime,
-//             url: `https://k8pai.dev/notes/${url}`,
+//             url: `https://dev.k8pai.com/notes/${url}`,
 //         },
 //     }
 // }

@@ -7,13 +7,13 @@ import { MdLocationPin } from 'react-icons/md'
 import profilePhoto from '../../public/developer.png'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://k8pai.dev'),
+    metadataBase: new URL('https://dev.k8pai.com'),
     title: 'About',
     description: 'Software Engineer | Full Stack Developer | DevOps',
     openGraph: {
         title: 'About | k8pai',
         description: 'Software Engineer | Full Stack Developer | DevOps',
-        url: 'https://k8pai.dev/about',
+        url: 'https://dev.k8pai.com/about',
         siteName: 'Sudarsan k pai',
         locale: 'en-US',
         type: 'website',

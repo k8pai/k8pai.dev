@@ -7,7 +7,7 @@ import { ThemeProvider } from 'components/ThemeProvider'
 import { Toaster } from 'sonner'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://k8pai.dev'),
+    metadataBase: new URL('https://dev.k8pai.com'),
     title: {
         default: 'Sudarsan K Pai',
         template: '%s | k8pai',
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     description: 'Software Engineer | Full Stack Developer | DevOps',
     authors: {
         name: 'k8pai',
-        url: 'https://k8pai.dev',
+        url: 'https://dev.k8pai.com',
     },
     openGraph: {
         title: 'Sudarsan K Pai | k8pai',
         description: 'Software Engineer | Full Stack Developer | DevOps',
-        url: 'https://k8pai.dev',
+        url: 'https://dev.k8pai.com',
         siteName: 'Sudarsan K Pai',
         locale: 'en-US',
         type: 'website',
