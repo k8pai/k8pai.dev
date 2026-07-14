@@ -27,7 +27,7 @@ export default async function sitemap() {
     }))
 
     const routes = ['', '/notes', '/guestbook', '/secret'].map((route) => ({
-        url: `https://k8pai.dev${route}`,
+        url: `https://dev.k8pai.com${route}`,
         lastModified: new Date().toISOString().split('T')[0],
     }))
 
