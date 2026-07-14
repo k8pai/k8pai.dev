@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 
-export const baseUrl = 'https://k8pai.dev'
+export const baseUrl = 'https://dev.k8pai.com'
 
 async function getNoteSlugs(dir: string) {
     const entries = await fs.readdir(dir, {
