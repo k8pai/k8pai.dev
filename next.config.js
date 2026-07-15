@@ -30,7 +30,7 @@ const nextConfig = {
             },
             {
                 source: '/wa',
-                destination: 'https://wa.me/7994648190',
+                destination: 'https://wa.me/+917994648190',
                 permanent: true,
             },
         ]
