@@ -39,8 +39,8 @@ const nextConfig = {
         serverActions: {
             allowedOrigins: [
                 'http://localhost:3000',
-                'k8pai.dev',
-                '*.k8pai.dev',
+                'dev.k8pai.com',
+                '*.k8pai.com',
             ],
         },
         mdxRs: true,

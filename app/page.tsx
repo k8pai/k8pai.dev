@@ -5,7 +5,8 @@ import { Suspense } from 'react'
 
 export const metadata: Metadata = {
     title: 'Sudarsan K Pai',
-    description: 'Student | Web developer',
+    description:
+        'Full-stack developer building Next.js apps, automation tools, and developer utilities.',
 }
 
 export default function page() {
@@ -16,21 +17,36 @@ export default function page() {
                     Sudarsan K Pai
                 </h1>
                 <p className="tracking-wider leading-loose mt-4">
-                    As a dedicated full-stack web developer with a strong
-                    commitment to community engagement, I thrive on
-                    collaborating with others and delivering innovative
-                    solutions that make a positive difference.
+                    Full-stack developer building Next.js apps, automation
+                    workflows, and developer utilities with React, Node.js,
+                    TypeScript, and clean interface design.
                 </p>
                 <p className="tracking-wider leading-loose mt-4">
-                    My ultimate goal is to become a well-rounded and skilled
-                    full-stack web developer capable of delivering cutting-edge
-                    solutions that positively impact the digital world.
+                    I like turning repeated work into tools, shaping small ideas
+                    into useful products, and paying attention to the details
+                    that make software feel fast, understandable, and pleasant
+                    to use.
                 </p>
+
+                <div className="mt-5 flex flex-wrap gap-3">
+                    <Link
+                        href="/about"
+                        className="rounded-md bg-[#4338CA] px-3 py-2 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-[#3730A3]"
+                    >
+                        View Portfolio
+                    </Link>
+                    <Link
+                        href="/notes"
+                        className="rounded-md bg-slate-200 px-3 py-2 text-sm font-semibold tracking-wide text-neutral-900 transition-colors hover:bg-slate-300 dark:bg-[#181818] dark:text-neutral-100 dark:hover:bg-[#202020]"
+                    >
+                        Read Notes
+                    </Link>
+                </div>
 
                 <div className="my-5">
                     <p className="tracking-wider leading-loose mt-2">
-                        Uncovering powerful tools, libraries, and frameworks
-                        that redefine what's possible! 🚀💡
+                        Currently exploring tools and patterns around creative
+                        interfaces, automation, and modern web platforms.
                     </p>
                     <div className="mt-1">
                         <Link

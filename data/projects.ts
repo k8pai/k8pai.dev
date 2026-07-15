@@ -23,9 +23,18 @@ import { projectsType } from 'typings'
 
 export const projects: projectsType[] = [
     {
-        name: 'calendar',
+        name: 'Calendar',
         imageUrl: calendar,
-        projectUrl: 'https://calendar.k8pai.dev',
+        description:
+            'A focused calendar interface for planning dates and moving through schedules with smooth, responsive UI states.',
+        role: 'Frontend + UX',
+        year: '2025',
+        impact: 'Built as a polished scheduling experience with typed date logic and motion-driven interactions.',
+        highlights: [
+            'Designed responsive calendar views with shadcn/ui and Tailwind CSS',
+            'Handled date operations with date-fns and TypeScript',
+        ],
+        projectUrl: 'https://calendar.k8pai.com',
         githubUrl: 'https://github.com/k8pai/calendar',
         Components: [
             {
@@ -57,6 +66,15 @@ export const projects: projectsType[] = [
     {
         name: 'Gmail-Automation',
         imageUrl: pinit,
+        description:
+            'A Node.js automation project for connecting Gmail workflows with Google APIs and authenticated access.',
+        role: 'Backend Automation',
+        year: '2024',
+        impact: 'Explores practical email automation patterns, OAuth, and service integration from a command-line environment.',
+        highlights: [
+            'Integrated Gmail and Google APIs with Auth0 authentication',
+            'Structured automation logic around Node.js scripts',
+        ],
         projectUrl: '',
         githubUrl: 'https://github.com/k8pai/gmail-automation',
         Components: [
@@ -85,6 +103,15 @@ export const projects: projectsType[] = [
     {
         name: 'Nextauth-cli',
         imageUrl: pinit,
+        description:
+            'An npm package that helps scaffold NextAuth setup faster for Next.js projects.',
+        role: 'Developer Tool',
+        year: '2024',
+        impact: 'Turns a repeated auth setup task into a reusable CLI workflow for other developers.',
+        highlights: [
+            'Published as an npm package',
+            'Packaged TypeScript-based scaffolding for authentication setup',
+        ],
         projectUrl: 'https://www.npmjs.com/package/nextauth-cli',
         githubUrl: 'https://github.com/k8pai/nextauth-cli',
         Components: [
@@ -101,7 +128,16 @@ export const projects: projectsType[] = [
     {
         name: 'Linkwrap',
         imageUrl: linkwrap,
-        projectUrl: 'https://linkwrap.k8pai.dev',
+        description:
+            'A link management app for collecting and sharing important URLs through a simple web interface.',
+        role: 'Full Stack',
+        year: '2024',
+        impact: 'Combines a Next.js frontend with database-backed persistence for a practical personal productivity tool.',
+        highlights: [
+            'Built with Next.js, MongoDB, Prisma, and Tailwind CSS',
+            'Added animated interactions with Framer Motion',
+        ],
+        projectUrl: 'https://linkwrap.k8pai.com',
         githubUrl: 'https://github.com/k8pai/linkwrap',
         Components: [
             {
@@ -130,6 +166,15 @@ export const projects: projectsType[] = [
     {
         name: 'Tailwind Inputs',
         imageUrl: tailwindInputs,
+        description:
+            'A component documentation site for Tailwind-styled input patterns and UI examples.',
+        role: 'UI Library Docs',
+        year: '2023',
+        impact: 'Created as a focused reference for reusable form styling patterns.',
+        highlights: [
+            'Documented input variants in a Next.js site',
+            'Used Tailwind CSS and Framer Motion for presentation polish',
+        ],
         projectUrl: 'https://ti-docs-2.vercel.app',
         Components: [
             {
@@ -149,6 +194,15 @@ export const projects: projectsType[] = [
     {
         name: 'Todolist',
         imageUrl: todolist,
+        description:
+            'A clean task management app for creating and tracking simple daily todos.',
+        role: 'Frontend',
+        year: '2023',
+        impact: 'A compact project for practicing stateful UI, layout, and core CRUD interactions.',
+        highlights: [
+            'Built a responsive Next.js interface',
+            'Kept the interaction model intentionally simple and fast',
+        ],
         projectUrl: 'https://todolist-k8pai.vercel.app',
         githubUrl: 'https://github.com/k8pai/todolist',
         Components: [
@@ -163,8 +217,17 @@ export const projects: projectsType[] = [
         ],
     },
     {
-        name: 'Pinit (Chrome Extention)',
+        name: 'Pinit (Chrome Extension)',
         imageUrl: pinit,
+        description:
+            'A browser extension concept for pinning and quickly revisiting useful pages.',
+        role: 'Browser Extension',
+        year: '2023',
+        impact: 'Shows comfort building outside the usual web-app surface with HTML, JavaScript, and extension APIs.',
+        highlights: [
+            'Built with vanilla JavaScript and browser extension fundamentals',
+            'Focused on a small, repeatable productivity workflow',
+        ],
         // projectUrl: 'https://todolist-k8pai.vercel.app',
         githubUrl: 'https://github.com/k8pai/pinit',
         Components: [

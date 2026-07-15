@@ -7,6 +7,11 @@ export interface ProjectComponents {
 export interface projectsType {
     name: string
     imageUrl: StaticImageData
+    description: string
+    role?: string
+    year?: string
+    impact?: string
+    highlights?: string[]
     projectUrl?: string
     githubUrl?: string
     Components: ProjectComponents[]
