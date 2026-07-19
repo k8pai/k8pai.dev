@@ -1,8 +1,6 @@
 import { Metadata } from 'next'
 import React from 'react'
-import Sidenav from '../components/Sidenav'
 import './globals.css'
-import Footer from 'components/Footer'
 import { ThemeProvider } from 'components/ThemeProvider'
 import { Toaster } from 'sonner'
 
@@ -63,13 +61,7 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <div className="max-w-5xl flex flex-col mx-4 min-h-screen lg:mx-auto">
-                        <Sidenav />
-                        <main className="flex-auto min-w-0 my-4 mx-1 md:my-8 md:mx-5 flex flex-col px-2 lg:px-0">
-                            {children}
-                        </main>
-                        <Footer />
-                    </div>
+                    {children}
                     <Toaster
                         position="bottom-right"
                         richColors
