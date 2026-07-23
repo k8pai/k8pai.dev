@@ -1,41 +1,31 @@
-import { Metadata } from 'next'
-import { Suspense } from 'react'
-import PostFeed from './PostFeed'
-import Loading from './loading'
+import { getBlogPosts } from '@/lib/mdx'
+import BrowserShell from 'components/browser/BrowserShell'
+import NotesSection from 'components/browser/sections/NotesSection'
+import { compareDesc, format, parseISO } from 'date-fns'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://dev.k8pai.com'),
-    title: 'Blog post',
-    description: 'Software Engineer | Full Stack Developer | DevOps',
-    openGraph: {
-        title: 'Blogs | k8pai',
-        description: 'Software Engineer | Full Stack Developer | DevOps',
-        url: 'https://dev.k8pai.com/about',
-        siteName: 'Sudarsan k pai',
-        locale: 'en-US',
-        type: 'website',
-    },
-    twitter: {
-        title: 'Sudarsan K Pai',
-        card: 'summary_large_image',
-    },
+    title: 'Notes | Sudarsan K Pai',
+    description:
+        'Notes, technical writing, and thinking from Sudarsan K Pai.',
 }
 
-export default async function Page() {
-    return (
-        <div className="max-w-3xl">
-            <div className="mb-10 tracking-wider leading-loose">
-                <p className="mt-2">
-                    Each blog post is like deconstructing my learning process,
-                    unraveling the mysteries of programming, one line of code at
-                    a time.
-                </p>
+export default function Page() {
+    const posts = getBlogPosts()
+        .sort((a, b) =>
+            compareDesc(new Date(a.metadata.date), new Date(b.metadata.date))
+        )
+        .map(({ slug, metadata }) => ({
+            slug,
+            title: metadata.title,
+            summary: metadata.summary,
+            date: metadata.date,
+            displayDate: format(parseISO(metadata.date), 'LLLL d, yyyy'),
+        }))
 
-                <p className="mt-2">Happy coding!</p>
-            </div>
-            <Suspense fallback={<Loading />}>
-                <PostFeed />
-            </Suspense>
-        </div>
+    return (
+        <BrowserShell activeTab="notes">
+            <NotesSection posts={posts} />
+        </BrowserShell>
     )
 }

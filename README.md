@@ -59,29 +59,23 @@ This repository contains the source code for my personal portfolio website. It s
 ```
 |-- app/
 	|-- about
-	|-- guestbook
-	|-- secret
-	|-- solutions/
+	|-- api/
+		|-- auth/
+		|-- contact/
+	|-- notes
+	|-- projects
+	|-- work-experience
 	|-- page.tsx
 	|-- ...
 |-- components/
-	|-- Footer.tsx
-	|-- Header.tsx
-	|-- Logo.tsx
-	|-- ProjectCard.tsx
+	|-- browser/
+	|-- contact/
+	|-- ui/
 	|-- ...
 |-- lib/
 	|-- helper.ts
 	|-- nodemailer.js
 	|-- schema.ts
-	|-- ...
-|-- pages/
-	|-- api/
-		|-- auth/
-			|-- [...nextauth].ts
-		|-- contact.ts
-		|-- guestbook.ts
-		|-- interactions.ts
 	|-- ...
 |-- prisma/
 	|-- schema.prisma

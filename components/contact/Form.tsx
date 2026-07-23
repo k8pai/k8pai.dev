@@ -16,7 +16,6 @@ import {
 import { Input } from 'components/ui/input';
 import { ContactFormSchema } from 'lib/schema';
 import { Textarea } from 'components/ui/textarea';
-import { Resend } from 'resend';
 import { sendMail } from 'app/_actions';
 import { toast } from 'sonner';
 

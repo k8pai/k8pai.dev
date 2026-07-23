@@ -1,7 +1,11 @@
 export const navLinks = [
 	{
-		route: '/',
-		name: 'Home',
+		route: '/projects',
+		name: 'Projects',
+	},
+	{
+		route: '/work-experience',
+		name: 'Work Experience',
 	},
 	{
 		route: '/about',
@@ -10,9 +14,5 @@ export const navLinks = [
 	{
 		route: '/notes',
 		name: 'Notes',
-	},
-	{
-		route: '/guestbook',
-		name: 'Guestbook',
 	},
 ];
